@@ -1,0 +1,105 @@
+[curl]
+hidden = true
+install_system = "curl"
+
+[unzip]
+hidden = true
+install_system = "unzip"
+
+[zsync]
+hidden = true
+install_system = "zsync"
+
+[bun]
+dependencies = ["curl", "unzip"]
+install_command = "curl -fsSL https://bun.com/install | bash"
+update_command = "$HOME/.bun/bin/bun upgrade"
+skip_if_exists = "$HOME/.bun/bin/bun"
+
+[uv]
+dependencies = ["curl"]
+install_command = "curl -LsSf https://astral.sh/uv/install.sh | sh"
+update_command = "$HOME/.local/bin/uv self update"
+skip_if_exists = "$HOME/.local/bin/uv"
+
+[ruff]
+dependencies = ["uv"]
+install_command = "$HOME/.local/bin/uv tool install ruff"
+update_command = "$HOME/.local/bin/uv tool upgrade ruff"
+skip_if_exists = "$HOME/.local/bin/ruff"
+
+[rustup]
+dependencies = ["curl"]
+install_command = "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+update_command = "$HOME/.cargo/bin/rustup update"
+skip_if_exists = "$HOME/.cargo/bin/rustup"
+
+[zen.ubuntu]
+dependencies = ["zsync"]
+install_command = "bash <(curl -s https://updates.zen-browser.app/install.sh)"
+skip_if_exists = "$HOME/.local/bin/zen"
+
+[zen.arch]
+install_system = "zen-browser-bin"
+
+[stremio.ubuntu]
+install_system = "com.stremio.Stremio"
+flatpak = true
+
+[stremio.arch]
+install_system = "stremio"
+
+[chrome.ubuntu]
+install_command = "curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb"
+
+[chrome.arch]
+install_system = "google-chrome"
+
+[firefox]
+install_system = "firefox"
+
+[retroarch.ubuntu]
+install_system = "org.libretro.RetroArch"
+flatpak = true
+
+[retroarch.arch]
+install_system = "libretro"
+
+[discord.ubuntu]
+install_command = "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o discord.deb && sudo dpkg -i discord.deb && sudo apt-get install -f -y && rm discord.deb"
+
+[discord.arch]
+install_system = "discord"
+
+[krita]
+install_system = "krita"
+
+[gimp]
+install_system = "gimp"
+
+[inkscape]
+install_system = "inkscape"
+
+[blender]
+install_system = "blender"
+
+[obs]
+install_system = "obs-studio"
+
+[transmission]
+install_system = "transmission-gtk"
+
+[nicotine.ubuntu]
+install_system = "nicotine"
+
+[nicotine.arch]
+install_system = "nicotine+"
+
+[git]
+install_system = "git"
+
+[code.ubuntu]
+install_system = "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
+
+[code.arch]
+install_system = "visual-studio-code-bin"

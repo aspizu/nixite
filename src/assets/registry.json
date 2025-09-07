@@ -1,0 +1,53 @@
+{
+  "Web Browsers": {
+    "Zen": "zen",
+    "Google Chrome": "chrome",
+    "Firefox": "firefox"
+  },
+  "Messaging": {
+    "Zoom": "zoom",
+    "Discord": "discord"
+  },
+  "Media": {
+    "VLC": "vlc",
+    "Audacity": "audacity",
+    "Spotify": "spotify",
+    "Stremio": "stremio"
+  },
+  "Graphics": {
+    "Krita": "krita",
+    "GIMP": "gimp",
+    "Inkscape": "inkscape",
+    "Blender": "blender",
+    "OBS Studio": "obs"
+  },
+  "File Sharing": {
+    "Transmission": "transmission",
+    "Nicotine+": "nicotine"
+  },
+  "Security": {
+    "ProtonVPN": "protonvpn"
+  },
+  "Gaming": {
+    "Steam": "steam",
+    "RetroArch": "retroarch"
+  },
+  "Office": {
+    "LibreOffice": "Office",
+    "Obsidian": "obsidian",
+    "Notion": "notion"
+  },
+  "Text Editors": {
+    "Visual Studio Code": "code",
+    "Cursor": "cursor",
+    "Zed": "zed",
+    "Helix": "helix"
+  },
+  "Developer Tools": {
+    "Git": "git",
+    "Bun": "bun",
+    "uv": "uv",
+    "ruff": "ruff",
+    "rustup": "rustup"
+  }
+}
