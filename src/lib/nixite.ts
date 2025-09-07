@@ -2,6 +2,7 @@
 let pyodide = await loadPyodide();
 await pyodide.loadPackage("micropip");
 const micropip = pyodide.pyimport("micropip");
+await pyodide.loadPackage("typing-extensions");
 await micropip.install("nixite-0.1.0-py3-none-any.whl");
 const nixite = pyodide.pyimport("nixite");
 
