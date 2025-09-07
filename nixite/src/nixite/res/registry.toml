@@ -49,11 +49,11 @@ flatpak = true
 [stremio.arch]
 install_system = "stremio"
 
-[chrome.ubuntu]
+[google-chrome.ubuntu]
 dependencies = ["curl"]
 install_command = "curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb"
 
-[chrome.arch]
+[google-chrome.arch]
 install_system = "google-chrome"
 
 [firefox]
