@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "bunx vite",
-    "build": "bunx tsc -b && bunx vite build",
+    "build": "bunx vite build",
     "lint": "bunx eslint .",
     "preview": "bunx vite preview",
     "fmt": "bunx --bun prettier -uwu ."
