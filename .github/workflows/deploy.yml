@@ -18,6 +18,11 @@ jobs:
       - name: Checkout Main Repository
         uses: actions/checkout@v4
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - run: cd nixite && uv sync && uv build && mv dist/*.whl ../public/
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 

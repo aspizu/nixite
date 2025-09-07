@@ -34,12 +34,12 @@ install_command = "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | s
 update_command = "$HOME/.cargo/bin/rustup update"
 skip_if_exists = "$HOME/.cargo/bin/rustup"
 
-[zen.ubuntu]
+[zen-browser.ubuntu]
 dependencies = ["zsync"]
 install_command = "bash <(curl -s https://updates.zen-browser.app/install.sh)"
 skip_if_exists = "$HOME/.local/bin/zen"
 
-[zen.arch]
+[zen-browser.arch]
 install_system = "zen-browser-bin"
 
 [stremio.ubuntu]
@@ -50,6 +50,7 @@ flatpak = true
 install_system = "stremio"
 
 [chrome.ubuntu]
+dependencies = ["curl"]
 install_command = "curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb"
 
 [chrome.arch]
@@ -66,6 +67,7 @@ flatpak = true
 install_system = "libretro"
 
 [discord.ubuntu]
+dependencies = ["curl"]
 install_command = "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o discord.deb && sudo dpkg -i discord.deb && sudo apt-get install -f -y && rm discord.deb"
 
 [discord.arch]
@@ -89,17 +91,71 @@ install_system = "obs-studio"
 [transmission]
 install_system = "transmission-gtk"
 
-[nicotine.ubuntu]
+[nicotine-plus.ubuntu]
 install_system = "nicotine"
 
-[nicotine.arch]
+[nicotine-plus.arch]
 install_system = "nicotine+"
+
+[proton-vpn.ubuntu]
+install_system = "com.protonvpn.www"
+flatpak = true
+
+[proton-vpn.arch]
+install_system = "proton-vpn-gtk-app"
 
 [git]
 install_system = "git"
 
-[code.ubuntu]
+[vscode.ubuntu]
+dependencies = ["curl"]
 install_system = "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
 
-[code.arch]
+[vscode.arch]
 install_system = "visual-studio-code-bin"
+
+[vlc]
+install_system = "vlc"
+
+[audacity]
+install_system = "audacity"
+
+[spotify.ubuntu]
+install_system = "com.spotify.Client"
+flatpak = true
+
+[spotify.arch]
+install_system = "spotify-launcher"
+
+[libreoffice.ubuntu]
+install_system = "libreoffice"
+
+[libreoffice.arch]
+install_system = "libreoffice-fresh"
+
+[obsidian.ubuntu]
+install_system = "md.obsidian.Obsidian"
+flatpak = true
+
+[obsidian.arch]
+install_system = "obsidian"
+
+[notion.ubuntu]
+install_command = "echo \"Notion is not available on Ubuntu.\""
+
+[notion.arch]
+install_system = "notion-app-electron"
+
+[zed.ubuntu]
+dependencies = ["curl"]
+install_command = "curl -f https://zed.dev/install.sh | sh"
+
+[zed.arch]
+install_system = "zed"
+
+[helix.ubuntu]
+install_system = "helix"
+snap = "classic"
+
+[helix.arch]
+install_system = "helix"

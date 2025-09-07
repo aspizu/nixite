@@ -1,11 +1,11 @@
 {
   "Web Browsers": {
-    "Zen": "zen",
-    "Google Chrome": "chrome",
+    "Zen": "zen-browser",
+    "Google Chrome": "google-chrome",
     "Firefox": "firefox"
   },
   "Messaging": {
-    "Zoom": "zoom",
+    "Zoom": "zoom-desktop",
     "Discord": "discord"
   },
   "Media": {
@@ -23,23 +23,22 @@
   },
   "File Sharing": {
     "Transmission": "transmission",
-    "Nicotine+": "nicotine"
+    "Nicotine+": "nicotine-plus"
   },
   "Security": {
-    "ProtonVPN": "protonvpn"
+    "ProtonVPN": "proton-vpn"
   },
   "Gaming": {
     "Steam": "steam",
     "RetroArch": "retroarch"
   },
   "Office": {
-    "LibreOffice": "Office",
+    "LibreOffice": "libreoffice",
     "Obsidian": "obsidian",
     "Notion": "notion"
   },
   "Text Editors": {
-    "Visual Studio Code": "code",
-    "Cursor": "cursor",
+    "Visual Studio Code": "vscode",
     "Zed": "zed",
     "Helix": "helix"
   },
