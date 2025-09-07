@@ -5,7 +5,7 @@ function Pkg({ pkgName, pkg }: { pkgName: string; pkg: string }) {
   return (
     <div className="flex items-center">
       <Checkbox />
-      <img src={`/icons/${pkg}.svg`} width={24} height={24} className="p-1" />
+      <img src={`icons/${pkg}.svg`} width={24} height={24} className="p-1" />
       <h2 className="font-medium">{pkgName}</h2>
     </div>
   );

@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
+    "dev": "bunx vite",
+    "build": "bunx tsc -b && bunx vite build",
+    "lint": "bunx eslint .",
+    "preview": "bunx vite preview",
     "fmt": "bunx --bun prettier -uwu ."
   },
   "dependencies": {
