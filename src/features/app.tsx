@@ -17,7 +17,7 @@ const linkStyle =
 
 function onInstall() {
     const store = useStore.getState()
-    const script = createScript(store.distro, store.selection)
+    const script = createScript(store.distro, [...store.selection])
     const blob = new Blob([script], {type: "text/plain"})
     saveAs(blob, "nixite.sh")
 }
