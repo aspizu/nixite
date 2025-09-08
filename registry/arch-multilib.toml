@@ -1,0 +1,5 @@
+[ubuntu]
+install_command = "echo \"No ubuntu package should depend on `arch-multilib`, registry is broken.\""
+
+[arch]
+install_command = "grep -q '^\\[multilib\\]' /etc/pacman.conf || (sudo sed -i '/^\\[multilib\\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Sy)"

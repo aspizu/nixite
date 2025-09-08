@@ -1,0 +1,5 @@
+[ubuntu]
+
+[arch]
+dependencies = ["arch-multilib"]
+install_system = "steam"

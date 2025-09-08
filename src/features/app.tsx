@@ -110,6 +110,7 @@ export function App() {
                 </Category>
                 <Category name="Gaming">
                     <Pkg id="retroarch" name="RetroArch" />
+                    <Pkg id="steam" name="Steam" />
                 </Category>
                 <Category name="Graphics & Design">
                     <Pkg id="blender" name="Blender" />
