@@ -13,5 +13,5 @@ install_flatpak() {
     if ! command -v flatpak &> /dev/null; then
         sudo pacman -S --needed --noconfirm flatpak
     fi
-    flatpak install flathub "$@"
+    flatpak install flathub -y "$@"
 }

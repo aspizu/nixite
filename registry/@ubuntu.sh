@@ -7,5 +7,5 @@ install_flatpak() {
         install_system flatpak
         flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     fi
-    flatpak install flathub "$@"
+    flatpak install flathub -y "$@"
 }

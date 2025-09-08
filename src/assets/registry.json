@@ -1,7 +1,25 @@
 {
+    "krita": {
+        "ubuntu": {"install_system": "krita"},
+        "arch": {"install_system": "krita"}
+    },
     "audacity": {
         "ubuntu": {"install_system": "audacity"},
         "arch": {"install_system": "audacity"}
+    },
+    "nixite-updater": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+        },
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+        }
+    },
+    "stremio": {
+        "ubuntu": {"install_system": "com.stremio.Stremio", "flatpak": true},
+        "arch": {"install_system": "stremio"}
     },
     "blender": {
         "ubuntu": {"install_system": "blender"},
@@ -19,78 +37,13 @@
             "skip_if_exists": "$HOME/.bun/bin/bun"
         }
     },
-    "curl": {"ubuntu": {"install_system": "curl"}, "arch": {"install_system": "curl"}},
-    "discord": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
-        },
-        "arch": {"install_system": "discord"}
+    "unzip": {
+        "ubuntu": {"install_system": "unzip"},
+        "arch": {"install_system": "unzip"}
     },
-    "firefox": {
-        "ubuntu": {"install_system": "firefox"},
-        "arch": {"install_system": "firefox"}
-    },
-    "gimp": {"ubuntu": {"install_system": "gimp"}, "arch": {"install_system": "gimp"}},
-    "git": {"ubuntu": {"install_system": "git"}, "arch": {"install_system": "git"}},
-    "google-chrome": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
-        },
-        "arch": {"install_system": "google-chrome"}
-    },
-    "helix": {
-        "ubuntu": {"install_system": "helix", "snap": "classic"},
-        "arch": {"install_system": "helix"}
-    },
-    "inkscape": {
-        "ubuntu": {"install_system": "inkscape"},
-        "arch": {"install_system": "inkscape"}
-    },
-    "krita": {
-        "ubuntu": {"install_system": "krita"},
-        "arch": {"install_system": "krita"}
-    },
-    "libreoffice": {
-        "ubuntu": {"install_system": "libreoffice"},
-        "arch": {"install_system": "libreoffice-fresh"}
-    },
-    "nicotine-plus": {
-        "ubuntu": {"install_system": "nicotine"},
-        "arch": {"install_system": "nicotine+"}
-    },
-    "notion": {
-        "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
-        "arch": {"install_system": "notion-app-electron"}
-    },
-    "obs": {
-        "ubuntu": {"install_system": "obs-studio"},
-        "arch": {"install_system": "obs-studio"}
-    },
-    "obsidian": {
-        "ubuntu": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
-        "arch": {"install_system": "obsidian"}
-    },
-    "proton-vpn": {
-        "ubuntu": {"install_system": "com.protonvpn.www", "flatpak": true},
-        "arch": {"install_system": "proton-vpn-gtk-app"}
-    },
-    "retroarch": {
-        "ubuntu": {"install_system": "org.libretro.RetroArch", "flatpak": true},
-        "arch": {"install_system": "libretro"}
-    },
-    "ruff": {
-        "ubuntu": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        },
-        "arch": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        }
+    "sober": {
+        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
     },
     "rustup": {
         "ubuntu": {
@@ -104,21 +57,38 @@
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         }
     },
+    "obs": {
+        "ubuntu": {"install_system": "obs-studio"},
+        "arch": {"install_system": "obs-studio"}
+    },
+    "notion": {
+        "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
+        "arch": {"install_system": "notion-app-electron"}
+    },
+    "firefox": {
+        "ubuntu": {"install_system": "firefox"},
+        "arch": {"install_system": "firefox"}
+    },
+    "gimp": {"ubuntu": {"install_system": "gimp"}, "arch": {"install_system": "gimp"}},
+    "telegram": {
+        "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
+        "arch": {"install_system": "telegram-desktop"}
+    },
     "spotify": {
         "ubuntu": {"install_system": "com.spotify.Client", "flatpak": true},
         "arch": {"install_system": "spotify-launcher"}
     },
-    "stremio": {
-        "ubuntu": {"install_system": "com.stremio.Stremio", "flatpak": true},
-        "arch": {"install_system": "stremio"}
+    "curl": {"ubuntu": {"install_system": "curl"}, "arch": {"install_system": "curl"}},
+    "zoom-desktop": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
+        },
+        "arch": {"install_system": "zoom"}
     },
-    "transmission": {
-        "ubuntu": {"install_system": "transmission-gtk"},
-        "arch": {"install_system": "transmission-gtk"}
-    },
-    "unzip": {
-        "ubuntu": {"install_system": "unzip"},
-        "arch": {"install_system": "unzip"}
+    "steam": {
+        "ubuntu": {},
+        "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"}
     },
     "uv": {
         "ubuntu": {
@@ -132,6 +102,14 @@
             "skip_if_exists": "$HOME/.local/bin/uv"
         }
     },
+    "proton-vpn": {
+        "ubuntu": {"install_system": "com.protonvpn.www", "flatpak": true},
+        "arch": {"install_system": "proton-vpn-gtk-app"}
+    },
+    "transmission": {
+        "ubuntu": {"install_system": "transmission-gtk"},
+        "arch": {"install_system": "transmission-gtk"}
+    },
     "vlc": {"ubuntu": {"install_system": "vlc"}, "arch": {"install_system": "vlc"}},
     "vscode": {
         "ubuntu": {
@@ -140,39 +118,20 @@
         },
         "arch": {"install_system": "visual-studio-code-bin"}
     },
-    "zed": {
+    "retroarch": {
+        "ubuntu": {"install_system": "org.libretro.RetroArch", "flatpak": true},
+        "arch": {"install_system": "libretro"}
+    },
+    "nicotine-plus": {
+        "ubuntu": {"install_system": "nicotine"},
+        "arch": {"install_system": "nicotine+"}
+    },
+    "google-chrome": {
         "ubuntu": {
             "dependencies": ["curl"],
-            "install_command": "curl -f https://zed.dev/install.sh | sh"
+            "install_command": "curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
         },
-        "arch": {"install_system": "zed"}
-    },
-    "zen-browser": {
-        "ubuntu": {
-            "dependencies": ["curl", "zsync"],
-            "install_command": "bash <(curl -s https://updates.zen-browser.app/install.sh)",
-            "skip_if_exists": "$HOME/.local/bin/zen"
-        },
-        "arch": {"install_system": "zen-browser-bin"}
-    },
-    "zoom-desktop": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
-        },
-        "arch": {"install_system": "zoom"}
-    },
-    "zsync": {
-        "ubuntu": {"install_system": "zsync"},
-        "arch": {"install_system": "zsync"}
-    },
-    "telegram": {
-        "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
-        "arch": {"install_system": "telegram-desktop"}
-    },
-    "steam": {
-        "ubuntu": {},
-        "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"}
+        "arch": {"install_system": "google-chrome"}
     },
     "arch-multilib": {
         "ubuntu": {
@@ -182,22 +141,63 @@
             "install_command": "grep -q '^\\[multilib\\]' /etc/pacman.conf || (sudo sed -i '/^\\[multilib\\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Syu)"
         }
     },
-    "sober": {
-        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
+    "git": {"ubuntu": {"install_system": "git"}, "arch": {"install_system": "git"}},
+    "libreoffice": {
+        "ubuntu": {"install_system": "libreoffice"},
+        "arch": {"install_system": "libreoffice-fresh"}
+    },
+    "discord": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
+        },
+        "arch": {"install_system": "discord"}
+    },
+    "obsidian": {
+        "ubuntu": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
+        "arch": {"install_system": "obsidian"}
+    },
+    "zsync": {
+        "ubuntu": {"install_system": "zsync"},
+        "arch": {"install_system": "zsync"}
+    },
+    "zen-browser": {
+        "ubuntu": {
+            "dependencies": ["curl", "zsync"],
+            "install_command": "bash <(curl -s https://updates.zen-browser.app/install.sh)",
+            "skip_if_exists": "$HOME/.local/bin/zen"
+        },
+        "arch": {"install_system": "zen-browser-bin"}
+    },
+    "zed": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -f https://zed.dev/install.sh | sh"
+        },
+        "arch": {"install_system": "zed"}
     },
     "lutris": {
         "ubuntu": {"install_system": "net.lutris.Lutris", "flatpak": true},
         "arch": {"install_system": "lutris"}
     },
-    "nixite-updater": {
+    "inkscape": {
+        "ubuntu": {"install_system": "inkscape"},
+        "arch": {"install_system": "inkscape"}
+    },
+    "ruff": {
         "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
         },
         "arch": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
         }
+    },
+    "helix": {
+        "ubuntu": {"install_system": "helix", "snap": "classic"},
+        "arch": {"install_system": "helix"}
     }
 }
