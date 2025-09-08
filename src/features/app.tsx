@@ -100,6 +100,7 @@ export function App() {
                 <Category name="Communication">
                     <Pkg id="discord" name="Discord" />
                     <Pkg id="zoom-desktop" name="Zoom" />
+                    <Pkg id="telegram" name="Telegram" />
                 </Category>
                 <Category name="Media & Entertainment">
                     <Pkg id="audacity" name="Audacity" />
