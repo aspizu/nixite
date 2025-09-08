@@ -53,7 +53,7 @@ export function createScript(distro: string, selection: string[]) {
         }
 
         if (pkg.skip_if_exists) {
-            s += "fi"
+            s += "fi\n"
         }
     }
 
