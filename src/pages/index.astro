@@ -7,81 +7,153 @@ import Pkg from "../components/Pkg.astro"
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
+
+        <!-- Primary Meta Tags -->
+        <title>Nixite - installs your linux software</title>
+        <meta name="title" content="Nixite - installs your linux software" />
+        <meta
+            name="description"
+            content="Generate bash scripts to install all your Linux software unattendedly. Nixite picks the best installation method, suppresses prompts, and includes an updater for all your packages."
+        />
+        <meta
+            name="keywords"
+            content="linux, software installer, package manager, automation, bash script, ubuntu, arch linux, firefox, discord, steam, development tools"
+        />
+        <meta name="author" content="aspizu" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://aspizu.github.io/nixite/" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://aspizu.github.io/nixite/" />
+        <meta property="og:title" content="Nixite - installs your linux software" />
+        <meta
+            property="og:description"
+            content="Generate bash scripts to install all your Linux software unattendedly. Nixite picks the best installation method, suppresses prompts, and includes an updater for all your packages."
+        />
+        <meta
+            property="og:image"
+            content="https://aspizu.github.io/nixite/og-image.png"
+        />
+        <meta property="og:site_name" content="Nixite" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://aspizu.github.io/nixite/" />
+        <meta
+            property="twitter:title"
+            content="Nixite - installs your linux software"
+        />
+        <meta
+            property="twitter:description"
+            content="Generate bash scripts to install all your Linux software unattendedly. Nixite picks the best installation method, suppresses prompts, and includes an updater for all your packages."
+        />
+        <meta
+            property="twitter:image"
+            content="https://aspizu.github.io/nixite/og-image.png"
+        />
+        <meta property="twitter:creator" content="@aspizu" />
+
+        <!-- Additional SEO -->
+        <meta name="theme-color" content="#ffffff" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Nixite" />
     </head>
+
     <body>
-        <h1 class="Title">Nixite</h1>
-        <p class="Description">
-            Nixite generates a bash script to install all your Linux software
-            unattendedly. Nixite picks the best method. Nixite suppresses all prompts
-            and dialogs. Nixite installs a <code>nixite-updater</code> command to update
-            all your package managers and software at once.
-            <br />
-            Made with ❤️ by <a href="https://github.com/aspizu">aspizu</a>. Star the
-            project on <a href="https://github.com/aspizu/nixite">GitHub</a>.
-        </p>
-        <div class="Pkgs">
-            <Category name="Web Browsers">
-                <Pkg id="firefox" name="Firefox" />
-                <Pkg id="google-chrome" name="Google Chrome" />
-                <Pkg id="zen-browser" name="Zen Browser" />
-                <Pkg id="tor-browser" name="Tor Browser" />
-            </Category>
-            <Category name="Communication">
-                <Pkg id="discord" name="Discord" />
-                <Pkg id="zoom-desktop" name="Zoom" />
-                <Pkg id="telegram" name="Telegram" />
-            </Category>
-            <Category name="Media & Entertainment">
-                <Pkg id="audacity" name="Audacity" />
-                <Pkg id="spotify" name="Spotify" />
-                <Pkg id="stremio" name="Stremio" />
-                <Pkg id="vlc" name="VLC Media Player" />
-            </Category>
-            <Category name="Gaming">
-                <Pkg id="retroarch" name="RetroArch" />
-                <Pkg id="steam" name="Steam" />
-                <Pkg id="sober" name="Sober" />
-                <Pkg id="lutris" name="Lutris" />
-            </Category>
-            <Category name="Graphics & Design">
-                <Pkg id="blender" name="Blender" />
-                <Pkg id="gimp" name="GIMP" />
-                <Pkg id="inkscape" name="Inkscape" />
-                <Pkg id="krita" name="Krita" />
-            </Category>
-            <Category name="Office & Productivity">
-                <Pkg id="libreoffice" name="LibreOffice" />
-                <Pkg id="notion" name="Notion" />
-                <Pkg id="obsidian" name="Obsidian" />
-            </Category>
-            <Category name="Development Tools">
-                <Pkg id="bun" name="Bun" />
-                <Pkg id="git" name="Git" />
-                <Pkg id="helix" name="Helix Editor" />
-                <Pkg id="ruff" name="Ruff" />
-                <Pkg id="rustup" name="rustup" />
-                <Pkg id="uv" name="uv" />
-                <Pkg id="vscode" name="Visual Studio Code" />
-                <Pkg id="zed" name="Zed Editor" />
-            </Category>
-            <Category name="Utilities">
-                <Pkg id="obs" name="OBS Studio" />
-                <Pkg id="proton-vpn" name="Proton VPN" />
-                <Pkg id="transmission" name="Transmission" />
-            </Category>
-            <Category name="File Sharing">
-                <Pkg id="nicotine-plus" name="Nicotine+" />
-            </Category>
-        </div>
-        <button type="button" id="install-btn">Install your Nixite</button>
-        <br />
-        <p class="Description">
-            Download and run <code>bash ~/Downloads/nixite.sh</code> in your terminal. Some
-            installers might prompt for a password.
-        </p>
+        <header>
+            <h1 class="Title">Nixite</h1>
+            <p class="Description">
+                Nixite generates a bash script to install all your Linux software
+                unattendedly. Nixite picks the best method. Nixite suppresses all
+                prompts and dialogs. Nixite installs a <code>nixite-updater</code> command
+                to update all your package managers and software at once.
+                <br />
+                Made with ❤️ by <a
+                    href="https://github.com/aspizu"
+                    rel="noopener"
+                    target="_blank">aspizu</a
+                >. Star the project on <a
+                    href="https://github.com/aspizu/nixite"
+                    rel="noopener"
+                    target="_blank">GitHub</a
+                >.
+            </p>
+        </header>
+
+        <main>
+            <section class="Pkgs" aria-label="Available software packages">
+                <Category name="Web Browsers">
+                    <Pkg id="firefox" name="Firefox" />
+                    <Pkg id="google-chrome" name="Google Chrome" />
+                    <Pkg id="zen-browser" name="Zen Browser" />
+                    <Pkg id="tor-browser" name="Tor Browser" />
+                </Category>
+                <Category name="Communication">
+                    <Pkg id="discord" name="Discord" />
+                    <Pkg id="zoom-desktop" name="Zoom" />
+                    <Pkg id="telegram" name="Telegram" />
+                </Category>
+                <Category name="Media & Entertainment">
+                    <Pkg id="audacity" name="Audacity" />
+                    <Pkg id="spotify" name="Spotify" />
+                    <Pkg id="stremio" name="Stremio" />
+                    <Pkg id="vlc" name="VLC Media Player" />
+                </Category>
+                <Category name="Gaming">
+                    <Pkg id="retroarch" name="RetroArch" />
+                    <Pkg id="steam" name="Steam" />
+                    <Pkg id="sober" name="Sober" />
+                    <Pkg id="lutris" name="Lutris" />
+                </Category>
+                <Category name="Graphics & Design">
+                    <Pkg id="blender" name="Blender" />
+                    <Pkg id="gimp" name="GIMP" />
+                    <Pkg id="inkscape" name="Inkscape" />
+                    <Pkg id="krita" name="Krita" />
+                </Category>
+                <Category name="Office & Productivity">
+                    <Pkg id="libreoffice" name="LibreOffice" />
+                    <Pkg id="notion" name="Notion" />
+                    <Pkg id="obsidian" name="Obsidian" />
+                </Category>
+                <Category name="Development Tools">
+                    <Pkg id="bun" name="Bun" />
+                    <Pkg id="git" name="Git" />
+                    <Pkg id="helix" name="Helix Editor" />
+                    <Pkg id="ruff" name="Ruff" />
+                    <Pkg id="rustup" name="rustup" />
+                    <Pkg id="uv" name="uv" />
+                    <Pkg id="vscode" name="Visual Studio Code" />
+                    <Pkg id="zed" name="Zed Editor" />
+                </Category>
+                <Category name="Utilities">
+                    <Pkg id="obs" name="OBS Studio" />
+                    <Pkg id="proton-vpn" name="Proton VPN" />
+                    <Pkg id="transmission" name="Transmission" />
+                </Category>
+                <Category name="File Sharing">
+                    <Pkg id="nicotine-plus" name="Nicotine+" />
+                </Category>
+            </section>
+
+            <section class="install-section">
+                <button
+                    type="button"
+                    id="install-btn"
+                    aria-label="Generate and download Nixite installation script"
+                    >Install your Nixite</button
+                >
+                <p class="Description">
+                    Download and run <code>bash ~/Downloads/nixite.sh</code> in your terminal.
+                    Some installers might prompt for a password.
+                </p>
+            </section>
+        </main>
+
         <script src="../scripts/nixite.ts"></script>
     </body>
 </html>
@@ -141,6 +213,10 @@ import Pkg from "../components/Pkg.astro"
         margin-bottom: 1rem;
         padding-inline: 0.5rem;
         font-size: 0.875rem;
+        line-height: 1.5;
+    }
+    .install-section {
+        padding-inline: 0.5rem;
     }
     a {
         font-weight: 600;
