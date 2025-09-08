@@ -1,64 +1,16 @@
 {
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview",
-        "fmt": "prettier -uwu .",
-        "check": "tsc -b && eslint ."
-    },
-    "name": "nixite",
-    "version": "0.1.0",
-    "private": true,
+    "name": "tmp",
     "type": "module",
-    "description": "...",
-    "homepage": "https://aspizu.github.io/nixite",
-    "author": {
-        "name": "Priyanshu Dangare",
-        "email": "aspizu@protonmail.com",
-        "url": "https://aspizu.github.io/"
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro",
+        "fmt": "prettier -uwu ."
     },
     "dependencies": {
-        "@fontsource-variable/gelasio": "^5.2.7",
-        "@fontsource-variable/ubuntu-sans": "^5.2.9",
-        "@fontsource/cascadia-code": "^5.2.2",
-        "@icons-pack/react-simple-icons": "^13.7.0",
-        "@preact/signals-react": "^3.3.0",
-        "@radix-ui/react-checkbox": "^1.3.3",
-        "@radix-ui/react-select": "^2.2.6",
-        "@radix-ui/react-slot": "^1.2.3",
-        "@tailwindcss/vite": "^4.1.13",
-        "@uidotdev/usehooks": "^2.4.1",
-        "class-variance-authority": "^0.7.1",
-        "clsx": "^2.1.1",
-        "file-saver": "^2.0.5",
-        "immer": "^10.1.3",
-        "localforage": "^1.10.0",
-        "lucide-react": "^0.542.0",
-        "react": "^19.1.1",
-        "react-dom": "^19.1.1",
-        "tailwind-merge": "^3.3.1",
-        "tailwindcss": "^4.1.13",
-        "vite": "^7.1.4",
-        "zustand": "^5.0.8"
-    },
-    "devDependencies": {
-        "@preact/signals-react-transform": "^0.6.0",
-        "@types/bun": "^1.2.21",
-        "@types/file-saver": "^2.0.7",
-        "@types/node": "^24.3.1",
-        "@types/react": "^19.1.12",
-        "@types/react-dom": "^19.1.9",
-        "@vitejs/plugin-react": "^5.0.2",
-        "eslint": "^9.35.0",
-        "eslint-plugin-ban-relative-imports": "^0.1.1",
-        "eslint-plugin-react-hooks": "^5.2.0",
-        "eslint-plugin-react-refresh": "^0.4.20",
-        "globals": "^16.3.0",
-        "prettier": "^3.6.2",
-        "prettier-plugin-tailwindcss": "^0.6.14",
-        "tw-animate-css": "^1.3.8",
-        "typescript": "^5.9.2",
-        "typescript-eslint": "^8.42.0",
-        "vite-plugin-node-polyfills": "^0.24.0"
+        "astro": "^5.13.6",
+        "file-saver": "^2.0.5"
     }
 }

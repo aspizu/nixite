@@ -1,5 +1,27 @@
-import hooks_ from "@/assets/hooks.json"
-import registry_ from "@/assets/registry.json"
+import {saveAs} from "file-saver"
+import hooks_ from "../../public/hooks.json"
+import registry_ from "../../public/registry.json"
+
+function onInstallClick() {
+    const selection: string[] = ["nixite-updater"]
+    document.querySelectorAll(".Pkg>input").forEach((checkbox_) => {
+        const checkbox = checkbox_ as HTMLInputElement
+        if (checkbox.checked) {
+            selection.push(checkbox.dataset.id!)
+        }
+    })
+    const distros = ["ubuntu", "arch"]
+    const scripts = distros.map(
+        (distro) =>
+            `nixite_installer_for_${distro}() {\n${createScript(distro, selection)}\n}\n`,
+    )
+    let script = scripts.join("\n") + hooks.common + "\n"
+    const blob = new Blob([script], {type: "text/plain;charset=utf-8"})
+    saveAs(blob, "nixite.sh")
+}
+
+const installBtn = document.getElementById("install-btn") as HTMLButtonElement
+installBtn.addEventListener("click", onInstallClick)
 
 interface Pkg {
     dependencies?: string[]
@@ -17,8 +39,6 @@ const hooks: Hooks = hooks_ as any
 const registry: Registry = registry_ as any
 
 export function createScript(distro: string, selection: string[]) {
-    selection.push("nixite-updater")
-
     const pkgs: Pkg[] = []
 
     function resolvePkg(pkgName: string) {
@@ -34,7 +54,7 @@ export function createScript(distro: string, selection: string[]) {
         resolvePkg(pkgName)
     }
 
-    let s = hooks.common + hooks[distro]
+    let s = hooks[distro]
 
     for (const pkg of pkgs) {
         if (pkg.skip_if_exists) {

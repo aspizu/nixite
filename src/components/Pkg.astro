@@ -1,0 +1,13 @@
+---
+interface Props {
+    id: string
+    name: string
+}
+const {id, name} = Astro.props
+---
+
+<label class="Pkg">
+    <input type="checkbox" data-id={id} />
+    <img src={`icons/${id}.svg`} width={24} height={24} alt={name} />
+    {name}
+</label>
