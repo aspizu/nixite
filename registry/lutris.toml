@@ -1,0 +1,6 @@
+[ubuntu]
+install_system = "net.lutris.Lutris"
+flatpak = true
+
+[arch]
+install_system = "lutris"

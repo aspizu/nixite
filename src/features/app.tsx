@@ -112,6 +112,7 @@ export function App() {
                     <Pkg id="retroarch" name="RetroArch" />
                     <Pkg id="steam" name="Steam" />
                     <Pkg id="sober" name="Sober" />
+                    <Pkg id="lutris" name="Lutris" />
                 </Category>
                 <Category name="Graphics & Design">
                     <Pkg id="blender" name="Blender" />

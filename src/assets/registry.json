@@ -193,5 +193,9 @@
     "sober": {
         "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
         "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
+    },
+    "lutris": {
+        "ubuntu": {"install_system": "net.lutris.Lutris", "flatpak": true},
+        "arch": {"install_system": "lutris"}
     }
 }
