@@ -11,13 +11,11 @@
         "ubuntu": {
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
-            "update_command": "$HOME/.bun/bin/bun upgrade",
             "skip_if_exists": "$HOME/.bun/bin/bun"
         },
         "arch": {
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
-            "update_command": "$HOME/.bun/bin/bun upgrade",
             "skip_if_exists": "$HOME/.bun/bin/bun"
         }
     },
@@ -86,13 +84,11 @@
         "ubuntu": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "update_command": "$HOME/.local/bin/uv tool upgrade ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
         },
         "arch": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "update_command": "$HOME/.local/bin/uv tool upgrade ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
         }
     },
@@ -100,13 +96,11 @@
         "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
-            "update_command": "$HOME/.cargo/bin/rustup update",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         },
         "arch": {
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
-            "update_command": "$HOME/.cargo/bin/rustup update",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         }
     },
@@ -130,13 +124,11 @@
         "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "update_command": "$HOME/.local/bin/uv self update",
             "skip_if_exists": "$HOME/.local/bin/uv"
         },
         "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "update_command": "$HOME/.local/bin/uv self update",
             "skip_if_exists": "$HOME/.local/bin/uv"
         }
     },
@@ -197,5 +189,15 @@
     "lutris": {
         "ubuntu": {"install_system": "net.lutris.Lutris", "flatpak": true},
         "arch": {"install_system": "lutris"}
+    },
+    "nixite-updater": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+        },
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+        }
     }
 }

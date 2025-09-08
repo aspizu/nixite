@@ -1,4 +1,3 @@
 dependencies = ["uv"]
 install_command = "$HOME/.local/bin/uv tool install ruff"
-update_command = "$HOME/.local/bin/uv tool upgrade ruff"
 skip_if_exists = "$HOME/.local/bin/ruff"

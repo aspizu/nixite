@@ -1,0 +1,2 @@
+dependencies = ["curl"]
+install_command = "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"

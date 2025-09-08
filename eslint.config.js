@@ -28,6 +28,7 @@ export default tseslint.config([
             ...reactRefresh.configs.recommended.rules,
             ...reactHooks.configs.recommended.rules,
             "ban-relative-imports/ban-relative-imports": "error",
+            "@typescript-eslint/no-explicit-any": "off",
             "func-style": ["error", "declaration"],
         },
     },

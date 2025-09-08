@@ -13,10 +13,12 @@ interface Pkg {
 type Hooks = Record<string, string>
 type Registry = Record<string, Record<string, Pkg>>
 
-const hooks: Hooks = hooks_
-const registry: Registry = registry_
+const hooks: Hooks = hooks_ as any
+const registry: Registry = registry_ as any
 
 export function createScript(distro: string, selection: string[]) {
+    selection.push("nixite-updater")
+
     const pkgs: Pkg[] = []
 
     function resolvePkg(pkgName: string) {

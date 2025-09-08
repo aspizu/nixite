@@ -1,4 +1,3 @@
 dependencies = ["curl"]
 install_command = "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
-update_command = "$HOME/.cargo/bin/rustup update"
 skip_if_exists = "$HOME/.cargo/bin/rustup"
