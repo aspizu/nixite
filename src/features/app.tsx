@@ -90,30 +90,50 @@ export function App() {
                     <Pkg id="google-chrome" name="Google Chrome" />
                     <Pkg id="zen-browser" name="Zen Browser" />
                 </Category>
-                <Category name="Messaging">
-                    <Pkg id="zoom-desktop" name="Zoom" />
+                <Category name="Communication">
                     <Pkg id="discord" name="Discord" />
+                    <Pkg id="zoom-desktop" name="Zoom" />
                 </Category>
-                <Category name="Media">
-                    <Pkg id="vlc" name="VLC" />
+                <Category name="Media & Entertainment">
                     <Pkg id="audacity" name="Audacity" />
                     <Pkg id="spotify" name="Spotify" />
                     <Pkg id="stremio" name="Stremio" />
+                    <Pkg id="vlc" name="VLC Media Player" />
                 </Category>
-                <Category name="Web Browsers">
-                    <Pkg id="firefox" name="Firefox" />
-                    <Pkg id="google-chrome" name="Google Chrome" />
-                    <Pkg id="zen-browser" name="Zen Browser" />
+                <Category name="Gaming">
+                    <Pkg id="retroarch" name="RetroArch" />
                 </Category>
-                <Category name="Messaging">
-                    <Pkg id="zoom-desktop" name="Zoom" />
-                    <Pkg id="discord" name="Discord" />
+                <Category name="Graphics & Design">
+                    <Pkg id="blender" name="Blender" />
+                    <Pkg id="gimp" name="GIMP" />
+                    <Pkg id="inkscape" name="Inkscape" />
+                    <Pkg id="krita" name="Krita" />
                 </Category>
-                <Category name="Media">
-                    <Pkg id="vlc" name="VLC" />
-                    <Pkg id="audacity" name="Audacity" />
-                    <Pkg id="spotify" name="Spotify" />
-                    <Pkg id="stremio" name="Stremio" />
+                <Category name="Office & Productivity">
+                    <Pkg id="libreoffice" name="LibreOffice" />
+                    <Pkg id="notion" name="Notion" />
+                    <Pkg id="obsidian" name="Obsidian" />
+                </Category>
+                <Category name="Development Tools">
+                    <Pkg id="bun" name="Bun" />
+                    <Pkg id="git" name="Git" />
+                    <Pkg id="helix" name="Helix Editor" />
+                    <Pkg id="ruff" name="Ruff (Python Linter)" />
+                    <Pkg id="rustup" name="Rust (rustup)" />
+                    <Pkg id="uv" name="uv (Python Package Manager)" />
+                    <Pkg id="vscode" name="Visual Studio Code" />
+                    <Pkg id="zed" name="Zed Editor" />
+                </Category>
+                <Category name="Utilities">
+                    <Pkg id="curl" name="curl" />
+                    <Pkg id="obs" name="OBS Studio" />
+                    <Pkg id="proton-vpn" name="Proton VPN" />
+                    <Pkg id="transmission" name="Transmission" />
+                    <Pkg id="unzip" name="unzip" />
+                    <Pkg id="zsync" name="zsync" />
+                </Category>
+                <Category name="File Sharing">
+                    <Pkg id="nicotine-plus" name="Nicotine+" />
                 </Category>
             </div>
         </div>
