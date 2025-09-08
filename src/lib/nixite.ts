@@ -31,7 +31,7 @@ export function createScript(distro: string, selection: string[]) {
         resolvePkg(pkgName)
     }
 
-    let s = hooks[distro]
+    let s = hooks.common + hooks[distro]
 
     for (const pkg of pkgs) {
         if (pkg.skip_if_exists) {
