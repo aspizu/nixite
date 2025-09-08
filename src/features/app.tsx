@@ -125,9 +125,9 @@ export function App() {
                     <Pkg id="bun" name="Bun" />
                     <Pkg id="git" name="Git" />
                     <Pkg id="helix" name="Helix Editor" />
-                    <Pkg id="ruff" name="Ruff (Python Linter)" />
-                    <Pkg id="rustup" name="Rust (rustup)" />
-                    <Pkg id="uv" name="uv (Python Package Manager)" />
+                    <Pkg id="ruff" name="Ruff" />
+                    <Pkg id="rustup" name="rustup" />
+                    <Pkg id="uv" name="uv" />
                     <Pkg id="vscode" name="Visual Studio Code" />
                     <Pkg id="zed" name="Zed Editor" />
                 </Category>
@@ -136,8 +136,6 @@ export function App() {
                     <Pkg id="obs" name="OBS Studio" />
                     <Pkg id="proton-vpn" name="Proton VPN" />
                     <Pkg id="transmission" name="Transmission" />
-                    <Pkg id="unzip" name="unzip" />
-                    <Pkg id="zsync" name="zsync" />
                 </Category>
                 <Category name="File Sharing">
                     <Pkg id="nicotine-plus" name="Nicotine+" />
