@@ -189,5 +189,9 @@
         "arch": {
             "install_command": "grep -q '^\\[multilib\\]' /etc/pacman.conf || (sudo sed -i '/^\\[multilib\\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Syu)"
         }
+    },
+    "sober": {
+        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
     }
 }
