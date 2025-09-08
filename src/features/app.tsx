@@ -109,6 +109,7 @@ export function App() {
                     <Pkg id="firefox" name="Firefox" />
                     <Pkg id="google-chrome" name="Google Chrome" />
                     <Pkg id="zen-browser" name="Zen Browser" />
+                    <Pkg id="tor-browser" name="Tor Browser" />
                 </Category>
                 <Category name="Communication">
                     <Pkg id="discord" name="Discord" />
