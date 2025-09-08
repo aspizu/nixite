@@ -30,7 +30,14 @@ function Pkg({id, name}: {id: string; name: string}) {
                 checked={isSelected}
                 onCheckedChange={(value) => setSelection(id, Boolean(value))}
             />
-            <img src={`icons/${id}.svg`} />
+            <img
+                src={`icons/${id}.svg`}
+                width={24}
+                height={24}
+                onError={(event) => {
+                    ;(event.target as HTMLImageElement).src = "icons/unknown.svg"
+                }}
+            />
             <span className={isSelected ? "" : "text-foreground/75"}>{name}</span>
         </label>
     )

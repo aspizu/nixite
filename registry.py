@@ -7,9 +7,12 @@ import tomllib
 
 
 def copy_icon_for_pkg(pkg_name: str):
+    icon_name = pkg_name
+    if pkg_name == "proton-vpn":
+        icon_name = "proton-vpn-logo"
     with contextlib.suppress(FileNotFoundError, FileExistsError):
         shutil.copy(
-            f"/usr/share/icons/Papirus/24x24/apps/{pkg_name}.svg",
+            f"/usr/share/icons/Papirus/24x24/apps/{icon_name}.svg",
             f"public/icons/{pkg_name}.svg",
         )
 
