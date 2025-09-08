@@ -5,6 +5,10 @@
         "arch": {"install_system": "unzip"}
     },
     "git": {"ubuntu": {"install_system": "git"}, "arch": {"install_system": "git"}},
+    "zsync": {
+        "ubuntu": {"install_system": "zsync"},
+        "arch": {"install_system": "zsync"}
+    },
     "firefox": {
         "ubuntu": {"install_system": "firefox"},
         "arch": {"install_system": "firefox"}
@@ -39,5 +43,10 @@
         },
         "arch": {"install_system": "zen-browser-bin"}
     },
-    "zoom-desktop": {"ubuntu": {}, "arch": {}}
+    "zoom-desktop": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o zoom.deb && sudo apt install ./zoom.deb -y"
+        }
+    }
 }
