@@ -1,3 +1,5 @@
+export DEBIAN_FRONTEND=noninteractive
+
 install_system() {
     sudo apt install -y "$@"
 }
