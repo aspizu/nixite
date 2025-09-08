@@ -1,0 +1,5 @@
+[ubuntu]
+install_command = "echo \"Notion is not available on Ubuntu.\""
+
+[arch]
+install_system = "notion-app-electron"

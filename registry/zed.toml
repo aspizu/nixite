@@ -1,0 +1,6 @@
+[ubuntu]
+dependencies = ["curl"]
+install_command = "curl -f https://zed.dev/install.sh | sh"
+
+[arch]
+install_system = "zed"

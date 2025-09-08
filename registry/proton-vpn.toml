@@ -1,0 +1,6 @@
+[ubuntu]
+install_system = "com.protonvpn.www"
+flatpak = true
+
+[arch]
+install_system = "proton-vpn-gtk-app"

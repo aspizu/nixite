@@ -1,0 +1,4 @@
+dependencies = ["curl"]
+install_command = "curl -LsSf https://astral.sh/uv/install.sh | sh"
+update_command = "$HOME/.local/bin/uv self update"
+skip_if_exists = "$HOME/.local/bin/uv"

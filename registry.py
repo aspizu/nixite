@@ -19,16 +19,9 @@ registry = {}
 for pkg_path in registry_path.glob("*.toml"):
     with pkg_path.open("rb") as pkg_file:
         pkg = tomllib.load(pkg_file)
-        if pkg_path.stem == "$common":
-            for common_pkg in pkg["packages"]:
-                pkg = {"install_system": common_pkg}
-                pkg = {"ubuntu": pkg, "arch": pkg}
-                registry[common_pkg] = pkg
-                copy_icon_for_pkg(common_pkg)
-        else:
-            if "ubuntu" not in pkg:
-                pkg = {"ubuntu": pkg, "arch": pkg}
-            registry[pkg_path.stem] = pkg
+        if "ubuntu" not in pkg:
+            pkg = {"ubuntu": pkg, "arch": pkg}
+        registry[pkg_path.stem] = pkg
         copy_icon_for_pkg(pkg_path.stem)
 
 
@@ -41,3 +34,21 @@ with open("src/assets/hooks.json", "w") as hooks_file:
 
 with open("src/assets/registry.json", "w") as registry_file:
     json.dump(registry, registry_file)
+
+
+for pkg_name, pkg in registry.items():
+    for pkg in pkg.values():
+        for dep_name in pkg.get("dependencies", []):
+            if dep_name not in registry:
+                print(f"Warning: {pkg_name} depends on unknown package {dep_name}")
+        if "curl" in pkg.get("install_command", ""):
+            if "curl" not in pkg.get("dependencies", []):
+                print(
+                    f"Warning: {pkg_name} uses curl in install_command but does not list it as a dependency"
+                )
+        if "install_command" in pkg and "install_system" in pkg:
+            print(
+                f"Warning: {pkg_name} has both install_command and install_system defined"
+            )
+        if "flatpak" in pkg and "snap" in pkg:
+            print(f"Warning: {pkg_name} has both flatpak and snap defined")

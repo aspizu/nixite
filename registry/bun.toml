@@ -1,0 +1,4 @@
+dependencies = ["curl", "unzip"]
+install_command = "curl -fsSL https://bun.com/install | bash"
+update_command = "$HOME/.bun/bin/bun upgrade"
+skip_if_exists = "$HOME/.bun/bin/bun"

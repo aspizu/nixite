@@ -1,0 +1,6 @@
+[ubuntu]
+install_system = "com.spotify.Client"
+flatpak = true
+
+[arch]
+install_system = "spotify-launcher"

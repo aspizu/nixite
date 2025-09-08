@@ -1,0 +1,5 @@
+[ubuntu]
+install_system = "libreoffice"
+
+[arch]
+install_system = "libreoffice-fresh"

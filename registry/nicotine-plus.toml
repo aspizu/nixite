@@ -1,0 +1,5 @@
+[ubuntu]
+install_system = "nicotine"
+
+[arch]
+install_system = "nicotine+"

@@ -1,9 +1,0 @@
-packages = [
-    "curl",
-    "unzip",
-    "git",
-    "zsync",
-    "firefox",
-    "vlc",
-    "audacity",
-]

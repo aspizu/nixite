@@ -1,0 +1,6 @@
+[ubuntu]
+dependencies = ["curl"]
+install_command = "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
+
+[arch]
+install_system = "discord"

@@ -1,0 +1,6 @@
+[ubuntu]
+install_system = "helix"
+snap = "classic"
+
+[arch]
+install_system = "helix"
