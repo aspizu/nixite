@@ -26,6 +26,7 @@ export function createScript(distro: string, selection: string[]) {
         for (const depName of pkg.dependencies || []) {
             resolvePkg(depName)
         }
+        if (pkgs.includes(pkg)) return
         pkgs.push(pkg)
     }
 
