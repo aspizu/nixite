@@ -1,0 +1,6 @@
+[ubuntu]
+dependencies = ["curl"]
+install_command = "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
+
+[arch]
+install_command = "visual-studio-code-bin"

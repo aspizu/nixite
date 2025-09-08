@@ -1,52 +1,43 @@
 {
-  "Web Browsers": {
-    "Zen": "zen-browser",
-    "Google Chrome": "google-chrome",
-    "Firefox": "firefox"
-  },
-  "Messaging": {
-    "Zoom": "zoom-desktop",
-    "Discord": "discord"
-  },
-  "Media": {
-    "VLC": "vlc",
-    "Audacity": "audacity",
-    "Spotify": "spotify",
-    "Stremio": "stremio"
-  },
-  "Graphics": {
-    "Krita": "krita",
-    "GIMP": "gimp",
-    "Inkscape": "inkscape",
-    "Blender": "blender",
-    "OBS Studio": "obs"
-  },
-  "File Sharing": {
-    "Transmission": "transmission",
-    "Nicotine+": "nicotine-plus"
-  },
-  "Security": {
-    "ProtonVPN": "proton-vpn"
-  },
-  "Gaming": {
-    "Steam": "steam",
-    "RetroArch": "retroarch"
-  },
-  "Office": {
-    "LibreOffice": "libreoffice",
-    "Obsidian": "obsidian",
-    "Notion": "notion"
-  },
-  "Text Editors": {
-    "Visual Studio Code": "vscode",
-    "Zed": "zed",
-    "Helix": "helix"
-  },
-  "Developer Tools": {
-    "Git": "git",
-    "Bun": "bun",
-    "uv": "uv",
-    "ruff": "ruff",
-    "rustup": "rustup"
-  }
+    "curl": {"ubuntu": {"install_system": "curl"}, "arch": {"install_system": "curl"}},
+    "unzip": {
+        "ubuntu": {"install_system": "unzip"},
+        "arch": {"install_system": "unzip"}
+    },
+    "git": {"ubuntu": {"install_system": "git"}, "arch": {"install_system": "git"}},
+    "firefox": {
+        "ubuntu": {"install_system": "firefox"},
+        "arch": {"install_system": "firefox"}
+    },
+    "vlc": {"ubuntu": {"install_system": "vlc"}, "arch": {"install_system": "vlc"}},
+    "audacity": {
+        "ubuntu": {"install_system": "audacity"},
+        "arch": {"install_system": "audacity"}
+    },
+    "discord": {"ubuntu": {}, "arch": {}},
+    "google-chrome": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb && rm google-chrome-stable_current_amd64.deb"
+        },
+        "arch": {"install_system": "google-chrome"}
+    },
+    "spotify": {"ubuntu": {}, "arch": {}},
+    "stremio": {"ubuntu": {}, "arch": {}},
+    "vscode": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
+        },
+        "arch": {"install_command": "visual-studio-code-bin"}
+    },
+    "zen-browser": {
+        "ubuntu": {
+            "dependencies": ["curl", "zsync"],
+            "install_command": "bash <(curl -s https://updates.zen-browser.app/install.sh)",
+            "skip_if_exists": "$HOME/.local/bin/zen"
+        },
+        "arch": {"install_system": "zen-browser-bin"}
+    },
+    "zoom-desktop": {"ubuntu": {}, "arch": {}}
 }

@@ -1,0 +1,3 @@
+[ubuntu]
+dependencies = ["curl"]
+install_command = "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o zoom.deb && sudo apt install ./zoom.deb -y"

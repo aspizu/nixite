@@ -1,0 +1,7 @@
+[ubuntu]
+dependencies = ["curl", "zsync"]
+install_command = "bash <(curl -s https://updates.zen-browser.app/install.sh)"
+skip_if_exists = "$HOME/.local/bin/zen"
+
+[arch]
+install_system = "zen-browser-bin"
