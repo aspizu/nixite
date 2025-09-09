@@ -1,6 +1,8 @@
 ---
 import Category from "../components/Category.astro"
 import Pkg from "../components/Pkg.astro"
+import "../styles/index.css"
+const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-black/75 font-medium'
 ---
 
 <html lang="en">
@@ -66,188 +68,87 @@ import Pkg from "../components/Pkg.astro"
         <meta name="apple-mobile-web-app-title" content="Nixite" />
     </head>
 
-    <body>
-        <header>
-            <h1 class="Title">Nixite</h1>
-            <p class="Description">
-                Nixite generates a bash script to install all your Linux software
-                unattendedly. Nixite picks the best method. Nixite suppresses all
-                prompts and dialogs. Nixite installs a <code>nixite-updater</code> command
-                to update all your package managers and software at once.
-                <br />
-                Made with ❤️ by <a
-                    href="https://github.com/aspizu"
-                    rel="noopener"
-                    target="_blank">aspizu</a
-                >. Star the project on <a
-                    href="https://github.com/aspizu/nixite"
-                    rel="noopener"
-                    target="_blank">GitHub</a
-                >.
-            </p>
-        </header>
-
-        <main>
-            <section class="Pkgs" aria-label="Available software packages">
-                <Category name="Web Browsers">
-                    <Pkg id="firefox" name="Firefox" />
-                    <Pkg id="google-chrome" name="Google Chrome" />
-                    <Pkg id="zen-browser" name="Zen Browser" />
-                    <Pkg id="tor-browser" name="Tor Browser" />
-                </Category>
-                <Category name="Communication">
-                    <Pkg id="discord" name="Discord" />
-                    <Pkg id="zoom-desktop" name="Zoom" />
-                    <Pkg id="telegram" name="Telegram" />
-                </Category>
-                <Category name="Media & Entertainment">
-                    <Pkg id="audacity" name="Audacity" />
-                    <Pkg id="spotify" name="Spotify" />
-                    <Pkg id="stremio" name="Stremio" />
-                    <Pkg id="vlc" name="VLC Media Player" />
-                </Category>
-                <Category name="Gaming">
-                    <Pkg id="retroarch" name="RetroArch" />
-                    <Pkg id="steam" name="Steam" />
-                    <Pkg id="sober" name="Sober" />
-                    <Pkg id="lutris" name="Lutris" />
-                </Category>
-                <Category name="Graphics & Design">
-                    <Pkg id="blender" name="Blender" />
-                    <Pkg id="gimp" name="GIMP" />
-                    <Pkg id="inkscape" name="Inkscape" />
-                    <Pkg id="krita" name="Krita" />
-                </Category>
-                <Category name="Office & Productivity">
-                    <Pkg id="libreoffice" name="LibreOffice" />
-                    <Pkg id="notion" name="Notion" />
-                    <Pkg id="obsidian" name="Obsidian" />
-                </Category>
-                <Category name="Development Tools">
-                    <Pkg id="bun" name="Bun" />
-                    <Pkg id="git" name="Git" />
-                    <Pkg id="helix" name="Helix Editor" />
-                    <Pkg id="ruff" name="Ruff" />
-                    <Pkg id="rustup" name="rustup" />
-                    <Pkg id="uv" name="uv" />
-                    <Pkg id="vscode" name="Visual Studio Code" />
-                    <Pkg id="zed" name="Zed Editor" />
-                </Category>
-                <Category name="Utilities">
-                    <Pkg id="obs" name="OBS Studio" />
-                    <Pkg id="proton-vpn" name="Proton VPN" />
-                    <Pkg id="transmission" name="Transmission" />
-                </Category>
-                <Category name="File Sharing">
-                    <Pkg id="nicotine-plus" name="Nicotine+" />
-                </Category>
-            </section>
-
-            <section class="install-section">
-                <button
-                    type="button"
-                    id="install-btn"
-                    aria-label="Generate and download Nixite installation script"
-                    >Install your Nixite</button
-                >
-                <p class="Description">
-                    Download and run <code>bash ~/Downloads/nixite.sh</code> in your terminal.
-                    Some installers might prompt for a password.
+    <body class="flex flex-col">
+        <div class="flex flex-col px-4 border-b-neutral-200 border-b items-center">
+            <div class="flex flex-col max-w-[1024px] p-4 gap-4">
+                <h1 class="text-3xl">Nixite</h1>
+                <p>
+                    Nixite generates a bash script to automatically install all your Linux software unattendedly.
+                    Nixite prevents prompts and picks the best installation method. Nixite supports Ubuntu-based systems and Arch-based systems. Nixite installs a nixite-updater script to update all package managers and software at once.
                 </p>
-            </section>
-        </main>
-
+                <p>
+                    Made with ❤️ by <a class={linkStyle} href="https://github.com/aspizu" target="_blank">aspizu</a>.
+                    Star the project on <a class={linkStyle} href="https://github.com/aspizu/nixite" target="_blank">GitHub</a>.
+                </p>
+            </div>
+        </div>
+        <div class="flex flex-col flex-wrap max-h-[720px] mr-auto gap-4 p-4">
+            <Category name="Web Browsers">
+                <Pkg id="firefox" name="Firefox" />
+                <Pkg id="google-chrome" name="Google Chrome" />
+                <Pkg id="zen-browser" name="Zen Browser" />
+                <Pkg id="tor-browser" name="Tor Browser" />
+            </Category>
+            <Category name="Communication">
+                <Pkg id="discord" name="Discord" />
+                <Pkg id="zoom-desktop" name="Zoom" />
+                <Pkg id="telegram" name="Telegram" />
+            </Category>
+            <Category name="Media & Entertainment">
+                <Pkg id="audacity" name="Audacity" />
+                <Pkg id="spotify" name="Spotify" />
+                <Pkg id="stremio" name="Stremio" />
+                <Pkg id="vlc" name="VLC Media Player" />
+            </Category>
+            <Category name="Gaming">
+                <Pkg id="retroarch" name="RetroArch" />
+                <Pkg id="steam" name="Steam" />
+                <Pkg id="sober" name="Sober" />
+                <Pkg id="lutris" name="Lutris" />
+            </Category>
+            <Category name="Graphics & Design">
+                <Pkg id="blender" name="Blender" />
+                <Pkg id="gimp" name="GIMP" />
+                <Pkg id="inkscape" name="Inkscape" />
+                <Pkg id="krita" name="Krita" />
+            </Category>
+            <Category name="Office & Productivity">
+                <Pkg id="libreoffice" name="LibreOffice" />
+                <Pkg id="notion" name="Notion" />
+                <Pkg id="obsidian" name="Obsidian" />
+            </Category>
+            <Category name="Development Tools">
+                <Pkg id="bun" name="Bun" />
+                <Pkg id="git" name="Git" />
+                <Pkg id="helix" name="Helix Editor" />
+                <Pkg id="ruff" name="Ruff" />
+                <Pkg id="rustup" name="rustup" />
+                <Pkg id="uv" name="uv" />
+                <Pkg id="vscode" name="Visual Studio Code" />
+                <Pkg id="zed" name="Zed Editor" />
+            </Category>
+            <Category name="Utilities">
+                <Pkg id="obs" name="OBS Studio" />
+                <Pkg id="proton-vpn" name="Proton VPN" />
+                <Pkg id="transmission" name="Transmission" />
+            </Category>
+            <Category name="File Sharing">
+                <Pkg id="nicotine-plus" name="Nicotine+" />
+            </Category>
+        </div>
+        <div class="flex flex-col px-4 border-t-neutral-200 border-t items-center">
+            <div class="flex flex-col max-w-[1024px] p-4 gap-4 items-center">
+                <div class="flex items-center max-w-[480px] gap-4">
+                    <button type="button" class="border shrink-0 rounded border-neutral-400 text-neutral-700 hover:bg-neutral-300 bg-neutral-200 font-medium py-2 px-4 mx-auto shadow-sm focus:outline-2 outline-black/25">Get your Nixite</button>
+                    <p class="text-sm text-neutral-600">
+                        Run <code class="bg-neutral-100">nixite-updater</code> to update everything.
+                    </p>
+                </div>
+                <p class="text-sm text-neutral-600">
+                    Download and run <code class="bg-neutral-100">bash ~/Downloads/nixite.sh</code> in your terminal. Some installers may prompt for a password.
+                </p>
+            </div>
+        </div>
         <script src="../scripts/nixite.ts"></script>
     </body>
 </html>
-
-<style is:global>
-    * {
-        font: inherit;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    :root {
-        font-family: system-ui, sans-serif;
-    }
-    .Pkg {
-        user-select: none;
-        display: flex;
-        align-items: center;
-        gap: 0.25rem;
-        padding-inline: 0.25rem;
-        border-radius: 0.25rem;
-        &:hover {
-            background: #eee;
-        }
-    }
-    .Pkgs {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        max-height: 720px;
-        gap: 0.5rem;
-        padding: 0.5rem;
-    }
-    .Category {
-        h3 {
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-        }
-    }
-    .Category__Pkgs {
-        display: flex;
-        flex-direction: column;
-    }
-    code {
-        font-family: monospace;
-        background: #eee;
-        padding: 0.125rem 0.25rem;
-        border-radius: 0.25rem;
-    }
-    .Title {
-        font-size: 2.25rem;
-        margin: 1rem 0 0.5rem;
-        padding-inline: 0.5rem;
-    }
-    .Description {
-        margin-bottom: 1rem;
-        padding-inline: 0.5rem;
-        font-size: 0.875rem;
-        line-height: 1.5;
-    }
-    .install-section {
-        padding-inline: 0.5rem;
-    }
-    a {
-        font-weight: 600;
-        color: inherit;
-        text-decoration: underline;
-        text-decoration-color: #ccc;
-        &:hover {
-            text-decoration-color: #888;
-        }
-    }
-    #install-btn {
-        margin-inline: 0.5rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid #ccc;
-        padding: 0.5rem 1rem;
-        border-radius: 0.25rem;
-        background: white;
-        font-weight: 600;
-        cursor: pointer;
-        &:hover {
-            background: #eee;
-        }
-        &:active {
-            background: #ddd;
-        }
-        &:focus {
-            outline: 2px solid rgba(0, 0, 0, 0.5);
-            outline-offset: 2px;
-        }
-    }
-</style>

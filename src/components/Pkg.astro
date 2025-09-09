@@ -6,8 +6,8 @@ interface Props {
 const {id, name} = Astro.props
 ---
 
-<label class="Pkg">
-    <input type="checkbox" data-id={id} />
-    <img src={`icons/${id}.svg`} width={24} height={24} alt={name} />
+<label class="flex items-center hover:bg-neutral-200 px-2 rounded gap-1 select-none">
+    <input class="pkg-checkbox" type="checkbox" data-id={id} />
+    <img src={`icons/${id}.svg`} width={24} height={24} alt={name} onerror="this.src = 'icons/unknown.svg'" />
     {name}
 </label>

@@ -4,7 +4,7 @@ import registry_ from "../../public/registry.json"
 
 function onInstallClick() {
     const selection: string[] = ["nixite-updater"]
-    document.querySelectorAll(".Pkg>input").forEach((checkbox_) => {
+    document.querySelectorAll(".pkg-checkbox").forEach((checkbox_) => {
         const checkbox = checkbox_ as HTMLInputElement
         if (checkbox.checked) {
             selection.push(checkbox.dataset.id!)
