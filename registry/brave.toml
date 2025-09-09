@@ -1,0 +1,2 @@
+dependencies = ["curl"]
+install_command = "curl -fsS https://dl.brave.com/install.sh | sh"
