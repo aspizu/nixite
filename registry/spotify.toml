@@ -1,6 +1,6 @@
 [ubuntu]
-install_system = "com.spotify.Client"
-flatpak = true
+dependencies = ["ubuntu-spotify"]
+install_system = "spotify-client"
 
 [arch]
-install_system = "spotify-launcher"
+install_system = "spotify"
