@@ -80,3 +80,13 @@ export function createScript(distro: string, selection: string[]) {
 
     return s
 }
+
+let defaults = false
+addEventListener("keyup", (event) => {
+    if (event.key == "a") {
+        document
+            .querySelectorAll('.pkg-checkbox[data-default="true"]')
+            .forEach((box) => ((box as HTMLInputElement).checked = !defaults))
+        defaults = !defaults
+    }
+})

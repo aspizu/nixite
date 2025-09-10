@@ -85,32 +85,32 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
         <div class="flex flex-col flex-wrap max-h-[720px] mr-auto gap-4 p-4">
             <Category name="Web Browsers">
                 <Pkg id="firefox" name="Firefox" />
-                <Pkg id="google-chrome" name="Google Chrome" />
-                <Pkg id="zen-browser" name="Zen Browser" />
-                <Pkg id="brave" name="Brave" />
+                <Pkg id="google-chrome" name="Google Chrome" default />
+                <Pkg id="zen-browser" name="Zen Browser" default />
+                <Pkg id="brave" name="Brave"  />
                 <Pkg id="tor-browser" name="Tor Browser" />
             </Category>
             <Category name="Communication">
-                <Pkg id="discord" name="Discord" />
+                <Pkg id="discord" name="Discord" default />
                 <Pkg id="zoom-desktop" name="Zoom" />
-                <Pkg id="telegram" name="Telegram" />
+                <Pkg id="telegram" name="Telegram" default />
             </Category>
             <Category name="Media & Entertainment">
                 <Pkg id="audacity" name="Audacity" />
                 <Pkg id="spotify" name="Spotify" />
-                <Pkg id="stremio" name="Stremio" />
+                <Pkg id="stremio" name="Stremio" default />
                 <Pkg id="vlc" name="VLC Media Player" />
             </Category>
             <Category name="Gaming">
-                <Pkg id="retroarch" name="RetroArch" />
+                <Pkg id="retroarch" name="RetroArch" default />
                 <Pkg id="steam" name="Steam" />
                 <Pkg id="sober" name="Sober" />
                 <Pkg id="lutris" name="Lutris" />
             </Category>
             <Category name="Graphics & Design">
                 <Pkg id="blender" name="Blender" />
-                <Pkg id="gimp" name="GIMP" />
-                <Pkg id="inkscape" name="Inkscape" />
+                <Pkg id="gimp" name="GIMP" default />
+                <Pkg id="inkscape" name="Inkscape" default />
                 <Pkg id="krita" name="Krita" />
             </Category>
             <Category name="Office & Productivity">
@@ -119,23 +119,23 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 <Pkg id="obsidian" name="Obsidian" />
             </Category>
             <Category name="Development Tools">
-                <Pkg id="bun" name="Bun" />
-                <Pkg id="git" name="Git" />
-                <Pkg id="helix" name="Helix Editor" />
-                <Pkg id="ruff" name="Ruff" />
-                <Pkg id="rustup" name="rustup" />
-                <Pkg id="uv" name="uv" />
+                <Pkg id="bun" name="Bun" default />
+                <Pkg id="git" name="Git" default />
+                <Pkg id="helix" name="Helix Editor" default />
+                <Pkg id="ruff" name="Ruff" default />
+                <Pkg id="rustup" name="rustup" default />
+                <Pkg id="uv" name="uv" default />
                 <Pkg id="vscode" name="Visual Studio Code" />
-                <Pkg id="zed" name="Zed Editor" />
+                <Pkg id="zed" name="Zed Editor" default />
             </Category>
             <Category name="Utilities">
                 <Pkg id="obs" name="OBS Studio" />
-                <Pkg id="proton-vpn" name="Proton VPN" />
-                <Pkg id="transmission" name="Transmission" />
-                <Pkg id="chezmoi" name="chezmoi" />
+                <Pkg id="proton-vpn" name="Proton VPN" default />
+                <Pkg id="transmission" name="Transmission" default />
+                <Pkg id="chezmoi" name="chezmoi" default />
             </Category>
             <Category name="File Sharing">
-                <Pkg id="nicotine-plus" name="Nicotine+" />
+                <Pkg id="nicotine-plus" name="Nicotine+" default />
             </Category>
         </div>
         <div class="flex flex-col px-4 border-t-neutral-200 border-t items-center">
