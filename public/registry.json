@@ -210,6 +210,10 @@
         "ubuntu": {},
         "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"}
     },
+    "chezmoi": {
+        "ubuntu": {"install_system": "chezmoi", "snap": "classic"},
+        "arch": {"install_system": "chezmoi"}
+    },
     "retroarch": {
         "ubuntu": {"install_system": "org.libretro.RetroArch", "flatpak": true},
         "arch": {"install_system": "libretro"}

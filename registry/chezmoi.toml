@@ -1,0 +1,6 @@
+[ubuntu]
+install_system = "chezmoi"
+snap = "classic"
+
+[arch]
+install_system = "chezmoi"
