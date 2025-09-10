@@ -1,0 +1,3 @@
+dependencies = ["curl"]
+install_command = "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh"
+skip_if_exists = "$HOME/.cargo/bin/goboscript"

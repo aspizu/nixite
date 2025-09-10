@@ -178,9 +178,21 @@
         },
         "arch": {"install_system": "visual-studio-code-bin"}
     },
+    "ubuntu-spotify": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+        },
+        "arch": {
+            "install_command": "echo \"ubuntu-spotify shouldn't be installed on Arch Linux, registry is broken.\""
+        }
+    },
     "spotify": {
-        "ubuntu": {"install_system": "com.spotify.Client", "flatpak": true},
-        "arch": {"install_system": "spotify-launcher"}
+        "ubuntu": {
+            "dependencies": ["ubuntu-spotify"],
+            "install_system": "spotify-client"
+        },
+        "arch": {"install_system": "spotify"}
     },
     "google-chrome": {
         "ubuntu": {
@@ -209,6 +221,18 @@
     "steam": {
         "ubuntu": {},
         "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"}
+    },
+    "goboscript": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
+            "skip_if_exists": "$HOME/.cargo/bin/goboscript"
+        },
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
+            "skip_if_exists": "$HOME/.cargo/bin/goboscript"
+        }
     },
     "chezmoi": {
         "ubuntu": {"install_system": "chezmoi", "snap": "classic"},
