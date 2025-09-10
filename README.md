@@ -40,4 +40,4 @@ prettier -uwu .
 `install_command = "bash command here..."` for custom installers.
 When using this, add a `skip_if_exists = "filepath"` to prevent the installer from running again.
 
-Add the package entry `<Pkg id="app-name" name="App Name" />` in `src/index.astro`
+Add the package entry `<Pkg id="app-name" name="App Name" />` in `src/pages/index.astro`
