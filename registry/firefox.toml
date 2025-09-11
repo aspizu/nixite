@@ -1,1 +1,8 @@
+[debian]
+install_system = "firefox-esr"
+
+[ubuntu]
+install_system = "firefox"
+
+[arch]
 install_system = "firefox"
