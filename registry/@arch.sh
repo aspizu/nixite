@@ -1,9 +1,9 @@
 install_system() {
     if ! command -v paru &> /dev/null; then
         sudo pacman -S --needed --noconfirm git base-devel
-        cd /tmp || exit
+        cd /tmp || return
         git clone https://aur.archlinux.org/paru-bin.git
-        cd paru-bin || exit
+        cd paru-bin || return
         makepkg -si --needed --noconfirm
     fi
     paru -S --needed --noconfirm "$@"

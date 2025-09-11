@@ -1,8 +1,13 @@
 {
-    "curl": {"ubuntu": {"install_system": "curl"}, "arch": {"install_system": "curl"}},
+    "curl": {
+        "ubuntu": {"install_system": "curl"},
+        "arch": {"install_system": "curl"},
+        "debian": {"install_system": "curl"}
+    },
     "zsync": {
         "ubuntu": {"install_system": "zsync"},
-        "arch": {"install_system": "zsync"}
+        "arch": {"install_system": "zsync"},
+        "debian": {"install_system": "zsync"}
     },
     "discord": {
         "ubuntu": {
@@ -17,20 +22,28 @@
     },
     "blender": {
         "ubuntu": {"install_system": "blender"},
-        "arch": {"install_system": "blender"}
+        "arch": {"install_system": "blender"},
+        "debian": {"install_system": "blender"}
     },
-    "git": {"ubuntu": {"install_system": "git"}, "arch": {"install_system": "git"}},
+    "git": {
+        "ubuntu": {"install_system": "git"},
+        "arch": {"install_system": "git"},
+        "debian": {"install_system": "git"}
+    },
     "tor-browser": {
         "ubuntu": {"install_system": "torbrowser-launcher"},
-        "arch": {"install_system": "torbrowser-launcher"}
+        "arch": {"install_system": "torbrowser-launcher"},
+        "debian": {"install_system": "torbrowser-launcher"}
     },
     "unzip": {
         "ubuntu": {"install_system": "unzip"},
-        "arch": {"install_system": "unzip"}
+        "arch": {"install_system": "unzip"},
+        "debian": {"install_system": "unzip"}
     },
     "transmission": {
         "ubuntu": {"install_system": "transmission-gtk"},
-        "arch": {"install_system": "transmission-gtk"}
+        "arch": {"install_system": "transmission-gtk"},
+        "debian": {"install_system": "transmission-gtk"}
     },
     "notion": {
         "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
@@ -46,6 +59,11 @@
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "skip_if_exists": "$HOME/.local/bin/uv"
         }
     },
     "bun": {
@@ -58,6 +76,11 @@
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
+        },
+        "debian": {
+            "dependencies": ["curl", "unzip"],
+            "install_command": "curl -fsSL https://bun.com/install | bash",
+            "skip_if_exists": "$HOME/.bun/bin/bun"
         }
     },
     "proton-vpn": {
@@ -66,7 +89,8 @@
     },
     "firefox": {
         "ubuntu": {"install_system": "firefox"},
-        "arch": {"install_system": "firefox"}
+        "arch": {"install_system": "firefox"},
+        "debian": {"install_system": "firefox"}
     },
     "rustup": {
         "ubuntu": {
@@ -78,6 +102,11 @@
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+            "skip_if_exists": "$HOME/.cargo/bin/rustup"
         }
     },
     "nixite-updater": {
@@ -86,6 +115,10 @@
             "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
         },
         "arch": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+        },
+        "debian": {
             "dependencies": ["curl"],
             "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
         }
@@ -102,6 +135,10 @@
         "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         }
     },
     "zed": {
@@ -113,15 +150,18 @@
     },
     "krita": {
         "ubuntu": {"install_system": "krita"},
-        "arch": {"install_system": "krita"}
+        "arch": {"install_system": "krita"},
+        "debian": {"install_system": "krita"}
     },
     "audacity": {
         "ubuntu": {"install_system": "audacity"},
-        "arch": {"install_system": "audacity"}
+        "arch": {"install_system": "audacity"},
+        "debian": {"install_system": "audacity"}
     },
     "inkscape": {
         "ubuntu": {"install_system": "inkscape"},
-        "arch": {"install_system": "inkscape"}
+        "arch": {"install_system": "inkscape"},
+        "debian": {"install_system": "inkscape"}
     },
     "telegram": {
         "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
@@ -135,7 +175,11 @@
         "ubuntu": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
         "arch": {"install_system": "obsidian"}
     },
-    "gimp": {"ubuntu": {"install_system": "gimp"}, "arch": {"install_system": "gimp"}},
+    "gimp": {
+        "ubuntu": {"install_system": "gimp"},
+        "arch": {"install_system": "gimp"},
+        "debian": {"install_system": "gimp"}
+    },
     "zoom-desktop": {
         "ubuntu": {
             "dependencies": ["curl"],
@@ -145,7 +189,8 @@
     },
     "obs": {
         "ubuntu": {"install_system": "obs-studio"},
-        "arch": {"install_system": "obs-studio"}
+        "arch": {"install_system": "obs-studio"},
+        "debian": {"install_system": "obs-studio"}
     },
     "arch-multilib": {
         "ubuntu": {
@@ -161,7 +206,8 @@
     },
     "sober": {
         "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
+        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "debian": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
     },
     "zen-browser": {
         "ubuntu": {
@@ -201,7 +247,11 @@
         },
         "arch": {"install_system": "google-chrome"}
     },
-    "vlc": {"ubuntu": {"install_system": "vlc"}, "arch": {"install_system": "vlc"}},
+    "vlc": {
+        "ubuntu": {"install_system": "vlc"},
+        "arch": {"install_system": "vlc"},
+        "debian": {"install_system": "vlc"}
+    },
     "ruff": {
         "ubuntu": {
             "dependencies": ["uv"],
@@ -209,6 +259,11 @@
             "skip_if_exists": "$HOME/.local/bin/ruff"
         },
         "arch": {
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
+        },
+        "debian": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
@@ -229,6 +284,11 @@
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
         },
         "arch": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
+            "skip_if_exists": "$HOME/.cargo/bin/goboscript"
+        },
+        "debian": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"

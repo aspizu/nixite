@@ -5,6 +5,8 @@ from pathlib import Path
 
 import tomllib
 
+distros = {"ubuntu", "debian", "arch"}
+
 
 def copy_icon_for_pkg(pkg_name: str):
     icon_name = pkg_name
@@ -23,7 +25,7 @@ for pkg_path in registry_path.glob("*.toml"):
     with pkg_path.open("rb") as pkg_file:
         pkg = tomllib.load(pkg_file)
         if "ubuntu" not in pkg:
-            pkg = {"ubuntu": pkg, "arch": pkg}
+            pkg = {dist_name: pkg for dist_name in distros}
         registry[pkg_path.stem] = pkg
         copy_icon_for_pkg(pkg_path.stem)
 
@@ -40,6 +42,8 @@ with open("public/registry.json", "w") as registry_file:
 
 
 for pkg_name, pkg in registry.items():
+    if set(pkg.keys()) != distros:
+        print(f"Warning: {pkg_name} does not have instructions for every supported distro, missing: {', '.join(distros - set(pkg.keys()))}")
     for pkg in pkg.values():
         for dep_name in pkg.get("dependencies", []):
             if dep_name not in registry:

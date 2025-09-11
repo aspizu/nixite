@@ -1,27 +1,5 @@
-import {saveAs} from "file-saver"
 import hooks_ from "../../public/hooks.json"
 import registry_ from "../../public/registry.json"
-
-function onInstallClick() {
-    const selection: string[] = ["nixite-updater"]
-    document.querySelectorAll(".pkg-checkbox").forEach((checkbox_) => {
-        const checkbox = checkbox_ as HTMLInputElement
-        if (checkbox.checked) {
-            selection.push(checkbox.dataset.id!)
-        }
-    })
-    const distros = ["ubuntu", "arch"]
-    const scripts = distros.map(
-        (distro) =>
-            `nixite_installer_for_${distro}() {\n${createScript(distro, selection)}\n}\n`,
-    )
-    let script = scripts.join("\n") + hooks.common + "\n"
-    const blob = new Blob([script], {type: "text/plain;charset=utf-8"})
-    saveAs(blob, "nixite.sh")
-}
-
-const installBtn = document.getElementById("install-btn") as HTMLButtonElement
-installBtn.addEventListener("click", onInstallClick)
 
 interface Pkg {
     dependencies?: string[]
@@ -35,8 +13,8 @@ interface Pkg {
 type Hooks = Record<string, string>
 type Registry = Record<string, Record<string, Pkg>>
 
-const hooks: Hooks = hooks_ as any
-const registry: Registry = registry_ as any
+export const hooks: Hooks = hooks_ as any
+export const registry: Registry = registry_ as any
 
 export function createScript(distro: string, selection: string[]) {
     const pkgs: Pkg[] = []
@@ -54,7 +32,24 @@ export function createScript(distro: string, selection: string[]) {
         resolvePkg(pkgName)
     }
 
-    let s = hooks[distro]
+    let s = hooks.common
+
+    s += `
+if [[ -f /etc/os-release ]]; then
+    source /etc/os-release
+    FAMILY=\${ID_LIKE:-$ID}
+    if [[ "$FAMILY" != *"${distro}"* ]]; then
+        echo "This script was designed to run on ${distro}, but the current system is running $ID, select $ID in Nixite and download again."
+        exit 1
+    fi
+else
+    echo "File not found: /etc/os-release, are you running Linux?"
+    exit 1
+fi
+
+`
+
+    s += hooks[distro] + "\n"
 
     for (const pkg of pkgs) {
         if (pkg.skip_if_exists) {
@@ -80,13 +75,3 @@ export function createScript(distro: string, selection: string[]) {
 
     return s
 }
-
-let defaults = false
-addEventListener("keyup", (event) => {
-    if (event.key == "a") {
-        document
-            .querySelectorAll('.pkg-checkbox[data-default="true"]')
-            .forEach((box) => ((box as HTMLInputElement).checked = !defaults))
-        defaults = !defaults
-    }
-})

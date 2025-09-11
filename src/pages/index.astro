@@ -82,6 +82,14 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 </p>
             </div>
         </div>
+        <label>
+            Distribution
+            <select class="border rounded p-1" id="distro">
+                <!-- <option value="debian">Debian Stable</option> -->
+                <option value="ubuntu">Ubuntu</option>
+                <option value="arch">Arch Linux</option>
+            </select>
+        </label>
         <div class="flex flex-col flex-wrap max-h-[720px] mr-auto gap-4 p-4">
             <Category name="Web Browsers">
                 <Pkg id="firefox" name="Firefox" />
@@ -153,6 +161,6 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 </p>
             </div>
         </div>
-        <script src="../scripts/nixite.ts"></script>
+        <script src="../scripts/index.ts"></script>
     </body>
 </html>
