@@ -1,0 +1,12 @@
+[fedora]
+dependencies = ["fedora-workstation-repositories"]
+install_command = "sudo dnf -y config-manager setopt google-chrome.enabled=1"
+
+[ubuntu]
+install_command = "exit 1"
+
+[debian]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"

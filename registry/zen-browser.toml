@@ -10,3 +10,7 @@ skip_if_exists = "$HOME/.local/bin/zen"
 
 [arch]
 install_system = "zen-browser-bin"
+
+[fedora]
+dependencies = ["fedora-zen-browser"]
+install_system = "zen-browser"

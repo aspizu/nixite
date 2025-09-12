@@ -8,3 +8,7 @@ install_command = "curl -L \"https://code.visualstudio.com/sha/download?build=st
 
 [arch]
 install_system = "visual-studio-code-bin"
+
+[fedora]
+dependencies = ["fedora-vscode"]
+install_system = "code"

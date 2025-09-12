@@ -8,3 +8,7 @@ flatpak = true
 
 [arch]
 install_system = "telegram-desktop"
+
+[fedora]
+dependencies = ["rpmfusion"]
+install_system = "telegram-desktop"

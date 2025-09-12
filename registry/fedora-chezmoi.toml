@@ -1,0 +1,11 @@
+[fedora]
+install_command = "sudo dnf -y copr enable lihaohong/chezmoi"
+
+[ubuntu]
+install_command = "exit 1"
+
+[debian]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"

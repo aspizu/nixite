@@ -5,7 +5,7 @@ from pathlib import Path
 
 import tomllib
 
-distros = {"ubuntu", "debian", "arch"}
+distros = {"ubuntu", "debian", "fedora", "arch"}
 
 
 def copy_icon_for_pkg(pkg_name: str):

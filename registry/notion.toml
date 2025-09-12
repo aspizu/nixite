@@ -6,3 +6,6 @@ install_command = "echo \"Notion is not available on Debian.\""
 
 [arch]
 install_system = "notion-app-electron"
+
+[debian]
+install_command = "echo \"Notion is not available on Fedora.\""

@@ -7,3 +7,6 @@ install_system = "torbrowser-launcher"
 
 [arch]
 install_system = "torbrowser-launcher"
+
+[fedora]
+install_system = "torbrowser-launcher"

@@ -6,3 +6,6 @@ install_system = "nicotine+"
 
 [debian]
 install_system = "nicotine"
+
+[fedora]
+install_system = "nicotine+"

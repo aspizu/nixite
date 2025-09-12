@@ -1,0 +1,11 @@
+[fedora]
+install_command = "sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+
+[ubuntu]
+install_command = "exit 1"
+
+[debian]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"

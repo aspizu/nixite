@@ -6,3 +6,6 @@ install_system = "libreoffice-fresh"
 
 [debian]
 install_system = "libreoffice"
+
+[fedora]
+install_system = "libreoffice"
