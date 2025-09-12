@@ -11,5 +11,5 @@ install_command = "sudo sh -c \"$(curl -fsLS get.chezmoi.io)\" -- -b /usr/local/
 skip_if_exists = "/usr/local/bin/chezmoi"
 
 [fedora]
-dependencies = ["copr-chezmoi"]
+dependencies = ["fedora-chezmoi"]
 install_system = "chezmoi"

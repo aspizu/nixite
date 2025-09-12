@@ -8,3 +8,6 @@ install_command = "curl -sS https://download.spotify.com/debian/pubkey_C85668DF6
 
 [arch]
 install_command = "echo \"ubuntu-spotify shouldn't be installed on Arch Linux, registry is broken.\""
+
+[fedora]
+install_command = "exit 1"
