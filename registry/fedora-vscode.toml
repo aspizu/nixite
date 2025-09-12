@@ -1,5 +1,6 @@
 [fedora]
 install_command = "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\necho -e \"[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null\ndnf check-update"
+skip_if_exists = "/etc/yum.repos.d/vscode.repo"
 
 [ubuntu]
 install_command = "exit 1"

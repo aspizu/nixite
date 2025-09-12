@@ -1,10 +1,12 @@
 [ubuntu]
 dependencies = ["curl"]
 install_command = "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+skip_if_exists = "/etc/apt/sources.list.d/spotify.list"
 
 [debian]
 dependencies = ["curl"]
 install_command = "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+skip_if_exists = "/etc/apt/sources.list.d/spotify.list"
 
 [arch]
 install_command = "echo \"ubuntu-spotify shouldn't be installed on Arch Linux, registry is broken.\""

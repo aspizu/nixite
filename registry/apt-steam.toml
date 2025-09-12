@@ -1,8 +1,10 @@
 [ubuntu]
 install_command = "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y"
+skip_if_exists = "/usr/share/keyrings/steam.gpg"
 
 [debian]
 install_command = "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y"
+skip_if_exists = "/usr/share/keyrings/steam.gpg"
 
 [arch]
 install_command = "exit 1"

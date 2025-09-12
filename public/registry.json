@@ -9,15 +9,15 @@
     },
     "curl": {
         "fedora": {"install_system": "curl"},
-        "ubuntu": {"install_system": "curl"},
+        "arch": {"install_system": "curl"},
         "debian": {"install_system": "curl"},
-        "arch": {"install_system": "curl"}
+        "ubuntu": {"install_system": "curl"}
     },
     "zsync": {
         "fedora": {"install_system": "zsync"},
-        "ubuntu": {"install_system": "zsync"},
+        "arch": {"install_system": "zsync"},
         "debian": {"install_system": "zsync"},
-        "arch": {"install_system": "zsync"}
+        "ubuntu": {"install_system": "zsync"}
     },
     "discord": {
         "ubuntu": {
@@ -33,10 +33,12 @@
     },
     "apt-steam": {
         "ubuntu": {
-            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y"
+            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y",
+            "skip_if_exists": "/usr/share/keyrings/steam.gpg"
         },
         "debian": {
-            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y"
+            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y",
+            "skip_if_exists": "/usr/share/keyrings/steam.gpg"
         },
         "arch": {"install_command": "exit 1"},
         "fedora": {"install_command": "exit 1"}
@@ -49,15 +51,15 @@
     },
     "blender": {
         "fedora": {"install_system": "blender"},
-        "ubuntu": {"install_system": "blender"},
+        "arch": {"install_system": "blender"},
         "debian": {"install_system": "blender"},
-        "arch": {"install_system": "blender"}
+        "ubuntu": {"install_system": "blender"}
     },
     "git": {
         "fedora": {"install_system": "git"},
-        "ubuntu": {"install_system": "git"},
+        "arch": {"install_system": "git"},
         "debian": {"install_system": "git"},
-        "arch": {"install_system": "git"}
+        "ubuntu": {"install_system": "git"}
     },
     "tor-browser": {
         "ubuntu": {"install_system": "torbrowser-launcher"},
@@ -70,15 +72,15 @@
     },
     "unzip": {
         "fedora": {"install_system": "unzip"},
-        "ubuntu": {"install_system": "unzip"},
+        "arch": {"install_system": "unzip"},
         "debian": {"install_system": "unzip"},
-        "arch": {"install_system": "unzip"}
+        "ubuntu": {"install_system": "unzip"}
     },
     "transmission": {
         "fedora": {"install_system": "transmission-gtk"},
-        "ubuntu": {"install_system": "transmission-gtk"},
+        "arch": {"install_system": "transmission-gtk"},
         "debian": {"install_system": "transmission-gtk"},
-        "arch": {"install_system": "transmission-gtk"}
+        "ubuntu": {"install_system": "transmission-gtk"}
     },
     "notion": {
         "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
@@ -92,7 +94,7 @@
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
         },
-        "ubuntu": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
@@ -102,7 +104,7 @@
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
         },
-        "arch": {
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
@@ -114,7 +116,7 @@
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
         },
-        "ubuntu": {
+        "arch": {
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
@@ -124,7 +126,7 @@
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
         },
-        "arch": {
+        "ubuntu": {
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
@@ -148,7 +150,7 @@
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         },
-        "ubuntu": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
@@ -158,7 +160,7 @@
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         },
-        "arch": {
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
@@ -167,19 +169,23 @@
     "nixite-updater": {
         "fedora": {
             "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
-        },
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
         },
         "arch": {
             "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater"
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
+        },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
         }
     },
     "stremio": {
@@ -193,7 +199,7 @@
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         },
-        "ubuntu": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         },
@@ -201,16 +207,16 @@
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         },
-        "arch": {
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         }
     },
     "fedora-workstation-repositories": {
         "fedora": {"install_system": "fedora-workstation-repositories"},
-        "ubuntu": {"install_system": "fedora-workstation-repositories"},
+        "arch": {"install_system": "fedora-workstation-repositories"},
         "debian": {"install_system": "fedora-workstation-repositories"},
-        "arch": {"install_system": "fedora-workstation-repositories"}
+        "ubuntu": {"install_system": "fedora-workstation-repositories"}
     },
     "zed": {
         "ubuntu": {
@@ -229,15 +235,15 @@
     },
     "krita": {
         "fedora": {"install_system": "krita"},
-        "ubuntu": {"install_system": "krita"},
+        "arch": {"install_system": "krita"},
         "debian": {"install_system": "krita"},
-        "arch": {"install_system": "krita"}
+        "ubuntu": {"install_system": "krita"}
     },
     "audacity": {
         "fedora": {"install_system": "audacity"},
-        "ubuntu": {"install_system": "audacity"},
+        "arch": {"install_system": "audacity"},
         "debian": {"install_system": "audacity"},
-        "arch": {"install_system": "audacity"}
+        "ubuntu": {"install_system": "audacity"}
     },
     "debian-non-free": {
         "debian": {
@@ -257,9 +263,9 @@
     },
     "inkscape": {
         "fedora": {"install_system": "inkscape"},
-        "ubuntu": {"install_system": "inkscape"},
+        "arch": {"install_system": "inkscape"},
         "debian": {"install_system": "inkscape"},
-        "arch": {"install_system": "inkscape"}
+        "ubuntu": {"install_system": "inkscape"}
     },
     "telegram": {
         "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
@@ -281,9 +287,9 @@
     },
     "gimp": {
         "fedora": {"install_system": "gimp"},
-        "ubuntu": {"install_system": "gimp"},
+        "arch": {"install_system": "gimp"},
         "debian": {"install_system": "gimp"},
-        "arch": {"install_system": "gimp"}
+        "ubuntu": {"install_system": "gimp"}
     },
     "zoom-desktop": {
         "ubuntu": {
@@ -295,16 +301,13 @@
             "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
         },
         "arch": {"install_system": "zoom"},
-        "fedora": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://zoom.us/client/latest/zoom_x86_64.rpm -o /tmp/zoom.deb && sudo dnf install -y /tmp/zoom.rpm && rm /tmp/zoom.rpm"
-        }
+        "fedora": {"install_system": "https://zoom.us/client/latest/zoom_x86_64.rpm"}
     },
     "obs": {
         "fedora": {"install_system": "obs-studio"},
-        "ubuntu": {"install_system": "obs-studio"},
+        "arch": {"install_system": "obs-studio"},
         "debian": {"install_system": "obs-studio"},
-        "arch": {"install_system": "obs-studio"}
+        "ubuntu": {"install_system": "obs-studio"}
     },
     "arch-multilib": {
         "arch": {
@@ -322,9 +325,9 @@
     },
     "sober": {
         "fedora": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
         "debian": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
+        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
     },
     "zen-browser": {
         "ubuntu": {
@@ -384,13 +387,14 @@
     },
     "vlc": {
         "fedora": {"install_system": "vlc"},
-        "ubuntu": {"install_system": "vlc"},
+        "arch": {"install_system": "vlc"},
         "debian": {"install_system": "vlc"},
-        "arch": {"install_system": "vlc"}
+        "ubuntu": {"install_system": "vlc"}
     },
     "fedora-vscode": {
         "fedora": {
-            "install_command": "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\necho -e \"[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null\ndnf check-update"
+            "install_command": "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\necho -e \"[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null\ndnf check-update",
+            "skip_if_exists": "/etc/yum.repos.d/vscode.repo"
         },
         "ubuntu": {"install_command": "exit 1"},
         "debian": {"install_command": "exit 1"},
@@ -402,7 +406,7 @@
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
         },
-        "ubuntu": {
+        "arch": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
@@ -412,7 +416,7 @@
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
         },
-        "arch": {
+        "ubuntu": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
@@ -433,11 +437,13 @@
     "apt-spotify": {
         "ubuntu": {
             "dependencies": ["curl"],
-            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update",
+            "skip_if_exists": "/etc/apt/sources.list.d/spotify.list"
         },
         "debian": {
             "dependencies": ["curl"],
-            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update",
+            "skip_if_exists": "/etc/apt/sources.list.d/spotify.list"
         },
         "arch": {
             "install_command": "echo \"ubuntu-spotify shouldn't be installed on Arch Linux, registry is broken.\""
@@ -459,7 +465,7 @@
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
         },
-        "ubuntu": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
@@ -469,7 +475,7 @@
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
         },
-        "arch": {
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
