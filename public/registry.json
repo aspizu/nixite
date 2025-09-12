@@ -1,4 +1,11 @@
 {
+    "debian-contrib": {
+        "debian": {
+            "install_command": "sudo sed -i '/^[^#].* main/ {\n  /contrib/! s/main/& contrib/\n}' /etc/apt/sources.list && sudo apt update -y"
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
     "curl": {
         "debian": {"install_system": "curl"},
         "arch": {"install_system": "curl"},
@@ -14,11 +21,25 @@
             "dependencies": ["curl"],
             "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
         },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
+        },
         "arch": {"install_system": "discord"}
+    },
+    "apt-steam": {
+        "ubuntu": {
+            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y"
+        },
+        "debian": {
+            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y"
+        },
+        "arch": {"install_command": "exit 1"}
     },
     "lutris": {
         "ubuntu": {"install_system": "net.lutris.Lutris", "flatpak": true},
-        "arch": {"install_system": "lutris"}
+        "arch": {"install_system": "lutris"},
+        "debian": {"install_system": "net.lutris.Lutris", "flatpak": true}
     },
     "blender": {
         "debian": {"install_system": "blender"},
@@ -31,9 +52,12 @@
         "ubuntu": {"install_system": "git"}
     },
     "tor-browser": {
-        "debian": {"install_system": "torbrowser-launcher"},
-        "arch": {"install_system": "torbrowser-launcher"},
-        "ubuntu": {"install_system": "torbrowser-launcher"}
+        "ubuntu": {"install_system": "torbrowser-launcher"},
+        "debian": {
+            "dependencies": ["debian-contrib"],
+            "install_system": "torbrowser-launcher"
+        },
+        "arch": {"install_system": "torbrowser-launcher"}
     },
     "unzip": {
         "debian": {"install_system": "unzip"},
@@ -47,6 +71,7 @@
     },
     "notion": {
         "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
+        "debian": {"install_command": "echo \"Notion is not available on Debian.\""},
         "arch": {"install_system": "notion-app-electron"}
     },
     "uv": {
@@ -85,6 +110,7 @@
     },
     "proton-vpn": {
         "ubuntu": {"install_system": "com.protonvpn.www", "flatpak": true},
+        "debian": {"install_system": "com.protonvpn.www", "flatpak": true},
         "arch": {"install_system": "proton-vpn-gtk-app"}
     },
     "firefox": {
@@ -125,6 +151,7 @@
     },
     "stremio": {
         "ubuntu": {"install_system": "com.stremio.Stremio", "flatpak": true},
+        "debian": {"install_system": "com.stremio.Stremio", "flatpak": true},
         "arch": {"install_system": "stremio"}
     },
     "brave": {
@@ -146,6 +173,10 @@
             "dependencies": ["curl"],
             "install_command": "curl -f https://zed.dev/install.sh | sh"
         },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -f https://zed.dev/install.sh | sh"
+        },
         "arch": {"install_system": "zed"}
     },
     "krita": {
@@ -158,6 +189,13 @@
         "arch": {"install_system": "audacity"},
         "ubuntu": {"install_system": "audacity"}
     },
+    "debian-non-free": {
+        "debian": {
+            "install_command": "sudo sed -i '/^[^#].* main/ {\n  /non-free/! s/main/& non-free/\n}' /etc/apt/sources.list && sudo apt update -y"
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
     "inkscape": {
         "debian": {"install_system": "inkscape"},
         "arch": {"install_system": "inkscape"},
@@ -165,14 +203,17 @@
     },
     "telegram": {
         "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
+        "debian": {"install_system": "org.telegram.desktop", "flatpak": true},
         "arch": {"install_system": "telegram-desktop"}
     },
     "helix": {
         "ubuntu": {"install_system": "helix", "snap": "classic"},
-        "arch": {"install_system": "helix"}
+        "arch": {"install_system": "helix"},
+        "debian": {"install_system": "com.helix_editor.Helix", "flatpak": true}
     },
     "obsidian": {
         "ubuntu": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
+        "debian": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
         "arch": {"install_system": "obsidian"}
     },
     "gimp": {
@@ -185,6 +226,10 @@
             "dependencies": ["curl"],
             "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
         },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
+        },
         "arch": {"install_system": "zoom"}
     },
     "obs": {
@@ -193,16 +238,16 @@
         "ubuntu": {"install_system": "obs-studio"}
     },
     "arch-multilib": {
-        "ubuntu": {
-            "install_command": "echo \"No ubuntu package should depend on `arch-multilib`, registry is broken.\""
-        },
         "arch": {
             "install_command": "grep -q '^\\[multilib\\]' /etc/pacman.conf || (sudo sed -i '/^\\[multilib\\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Syu)"
-        }
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "debian": {"install_command": "exit 1"}
     },
     "libreoffice": {
         "ubuntu": {"install_system": "libreoffice"},
-        "arch": {"install_system": "libreoffice-fresh"}
+        "arch": {"install_system": "libreoffice-fresh"},
+        "debian": {"install_system": "libreoffice"}
     },
     "sober": {
         "debian": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
@@ -215,6 +260,11 @@
             "install_command": "bash <(curl -s https://updates.zen-browser.app/install.sh)",
             "skip_if_exists": "$HOME/.local/bin/zen"
         },
+        "debian": {
+            "dependencies": ["curl", "zsync"],
+            "install_command": "bash <(curl -s https://updates.zen-browser.app/install.sh)",
+            "skip_if_exists": "$HOME/.local/bin/zen"
+        },
         "arch": {"install_system": "zen-browser-bin"}
     },
     "vscode": {
@@ -222,26 +272,23 @@
             "dependencies": ["curl"],
             "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
         },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
+        },
         "arch": {"install_system": "visual-studio-code-bin"}
     },
-    "ubuntu-spotify": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
-        },
-        "arch": {
-            "install_command": "echo \"ubuntu-spotify shouldn't be installed on Arch Linux, registry is broken.\""
-        }
-    },
     "spotify": {
-        "ubuntu": {
-            "dependencies": ["ubuntu-spotify"],
-            "install_system": "spotify-client"
-        },
+        "ubuntu": {"dependencies": ["apt-spotify"], "install_system": "spotify-client"},
+        "debian": {"dependencies": ["apt-spotify"], "install_system": "spotify-client"},
         "arch": {"install_system": "spotify"}
     },
     "google-chrome": {
         "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
+        },
+        "debian": {
             "dependencies": ["curl"],
             "install_command": "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
         },
@@ -271,11 +318,26 @@
     },
     "nicotine-plus": {
         "ubuntu": {"install_system": "nicotine"},
-        "arch": {"install_system": "nicotine+"}
+        "arch": {"install_system": "nicotine+"},
+        "debian": {"install_system": "nicotine"}
     },
     "steam": {
-        "ubuntu": {},
+        "ubuntu": {"dependencies": ["apt-steam"], "install_system": "steam-launcher"},
+        "debian": {"dependencies": ["apt-steam"], "install_system": "steam-launcher"},
         "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"}
+    },
+    "apt-spotify": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\necho \"deb https://repository.spotify.com stable non-free\" | sudo tee /etc/apt/sources.list.d/spotify.list\nsudo apt-get update"
+        },
+        "arch": {
+            "install_command": "echo \"ubuntu-spotify shouldn't be installed on Arch Linux, registry is broken.\""
+        }
     },
     "goboscript": {
         "debian": {
@@ -296,10 +358,16 @@
     },
     "chezmoi": {
         "ubuntu": {"install_system": "chezmoi", "snap": "classic"},
-        "arch": {"install_system": "chezmoi"}
+        "arch": {"install_system": "chezmoi"},
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "sudo sh -c \"$(curl -fsLS get.chezmoi.io)\" -- -b /usr/local/bin",
+            "skip_if_exists": "/usr/local/bin/chezmoi"
+        }
     },
     "retroarch": {
         "ubuntu": {"install_system": "org.libretro.RetroArch", "flatpak": true},
+        "debian": {"install_system": "org.libretro.RetroArch", "flatpak": true},
         "arch": {"install_system": "libretro"}
     }
 }
