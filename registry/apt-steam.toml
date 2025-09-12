@@ -6,3 +6,6 @@ install_command = "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowe
 
 [arch]
 install_command = "exit 1"
+
+[fedora]
+install_command = "exit 1"

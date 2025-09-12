@@ -8,3 +8,7 @@ install_command = "curl -L \"https://discord.com/api/download?platform=linux&for
 
 [arch]
 install_system = "discord"
+
+[fedora]
+dependencies = ["rpmfusion"]
+install_system = "discord"

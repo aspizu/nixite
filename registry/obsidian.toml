@@ -8,3 +8,7 @@ flatpak = true
 
 [arch]
 install_system = "obsidian"
+
+[fedora]
+install_system = "md.obsidian.Obsidian"
+flatpak = true

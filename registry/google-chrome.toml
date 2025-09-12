@@ -8,3 +8,7 @@ install_command = "curl -L https://dl.google.com/linux/direct/google-chrome-stab
 
 [arch]
 install_system = "google-chrome"
+
+[fedora]
+dependencies = ["fedora-google-chrome"]
+install_system = "google-chrome"

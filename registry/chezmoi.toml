@@ -9,3 +9,7 @@ install_system = "chezmoi"
 dependencies = ["curl"]
 install_command = "sudo sh -c \"$(curl -fsLS get.chezmoi.io)\" -- -b /usr/local/bin"
 skip_if_exists = "/usr/local/bin/chezmoi"
+
+[fedora]
+dependencies = ["fedora-chezmoi"]
+install_system = "chezmoi"

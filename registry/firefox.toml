@@ -6,3 +6,6 @@ install_system = "firefox"
 
 [arch]
 install_system = "firefox"
+
+[fedora]
+install_system = "firefox"

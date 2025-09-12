@@ -6,3 +6,6 @@ install_command = "exit 1"
 
 [debian]
 install_command = "exit 1"
+
+[fedora]
+install_command = "exit 1"

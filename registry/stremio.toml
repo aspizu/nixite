@@ -8,3 +8,7 @@ flatpak = true
 
 [arch]
 install_system = "stremio"
+
+[fedora]
+install_system = "com.stremio.Stremio"
+flatpak = true

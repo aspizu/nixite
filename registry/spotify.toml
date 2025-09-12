@@ -8,3 +8,7 @@ install_system = "spotify-client"
 
 [arch]
 install_system = "spotify"
+
+[fedora]
+install_system = "com.spotify.Client"
+flatpak = true

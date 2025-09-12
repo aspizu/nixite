@@ -8,3 +8,6 @@ install_system = "lutris"
 [debian]
 install_system = "net.lutris.Lutris"
 flatpak = true
+
+[fedora]
+install_system = "lutris"

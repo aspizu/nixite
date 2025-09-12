@@ -9,3 +9,7 @@ install_system = "steam-launcher"
 [arch]
 dependencies = ["arch-multilib"]
 install_system = "steam"
+
+[fedora]
+dependencies = ["rpmfusion"]
+install_system = "steam"
