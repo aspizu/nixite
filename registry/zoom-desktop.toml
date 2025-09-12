@@ -10,5 +10,4 @@ install_command = "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/
 install_system = "zoom"
 
 [fedora]
-dependencies = ["curl"]
-install_command = "curl -L https://zoom.us/client/latest/zoom_x86_64.rpm -o /tmp/zoom.deb && sudo dnf install -y /tmp/zoom.rpm && rm /tmp/zoom.rpm"
+install_system = "https://zoom.us/client/latest/zoom_x86_64.rpm"
