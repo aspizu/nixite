@@ -1,4 +1,10 @@
 [ubuntu]
+dependencies = ["apt-steam"]
+install_system = "steam-launcher"
+
+[debian]
+dependencies = ["apt-steam"]
+install_system = "steam-launcher"
 
 [arch]
 dependencies = ["arch-multilib"]

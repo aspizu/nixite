@@ -4,3 +4,7 @@ flatpak = true
 
 [arch]
 install_system = "lutris"
+
+[debian]
+install_system = "net.lutris.Lutris"
+flatpak = true

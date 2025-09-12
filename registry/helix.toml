@@ -4,3 +4,7 @@ snap = "classic"
 
 [arch]
 install_system = "helix"
+
+[debian]
+install_system = "com.helix_editor.Helix"
+flatpak = true

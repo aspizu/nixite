@@ -2,5 +2,9 @@
 install_system = "com.stremio.Stremio"
 flatpak = true
 
+[debian]
+install_system = "com.stremio.Stremio"
+flatpak = true
+
 [arch]
 install_system = "stremio"

@@ -1,5 +1,9 @@
 [ubuntu]
-dependencies = ["ubuntu-spotify"]
+dependencies = ["apt-spotify"]
+install_system = "spotify-client"
+
+[debian]
+dependencies = ["apt-spotify"]
 install_system = "spotify-client"
 
 [arch]

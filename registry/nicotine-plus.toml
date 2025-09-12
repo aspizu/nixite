@@ -3,3 +3,6 @@ install_system = "nicotine"
 
 [arch]
 install_system = "nicotine+"
+
+[debian]
+install_system = "nicotine"

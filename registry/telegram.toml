@@ -2,5 +2,9 @@
 install_system = "org.telegram.desktop"
 flatpak = true
 
+[debian]
+install_system = "org.telegram.desktop"
+flatpak = true
+
 [arch]
 install_system = "telegram-desktop"

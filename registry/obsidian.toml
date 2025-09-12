@@ -2,5 +2,9 @@
 install_system = "md.obsidian.Obsidian"
 flatpak = true
 
+[debian]
+install_system = "md.obsidian.Obsidian"
+flatpak = true
+
 [arch]
 install_system = "obsidian"

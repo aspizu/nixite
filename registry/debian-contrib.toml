@@ -1,0 +1,8 @@
+[debian]
+install_command = "sudo sed -i '/^[^#].* main/ {\n  /contrib/! s/main/& contrib/\n}' /etc/apt/sources.list && sudo apt update -y"
+
+[ubuntu]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"

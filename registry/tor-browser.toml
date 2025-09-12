@@ -1,1 +1,9 @@
+[ubuntu]
+install_system = "torbrowser-launcher"
+
+[debian]
+dependencies = ["debian-contrib"]
+install_system = "torbrowser-launcher"
+
+[arch]
 install_system = "torbrowser-launcher"

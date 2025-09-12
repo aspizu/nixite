@@ -2,5 +2,9 @@
 dependencies = ["curl"]
 install_command = "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
 
+[debian]
+dependencies = ["curl"]
+install_command = "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
+
 [arch]
 install_system = "google-chrome"

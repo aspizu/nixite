@@ -2,5 +2,9 @@
 install_system = "org.libretro.RetroArch"
 flatpak = true
 
+[debian]
+install_system = "org.libretro.RetroArch"
+flatpak = true
+
 [arch]
 install_system = "libretro"
