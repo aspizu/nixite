@@ -7,7 +7,14 @@
 
 [**Open Nixite**](https://aspizu.github.io/nixite/)
 
-Nixite generates a bash script to unattendedly install all your Linux software. Nixite supports Ubuntu and Arch Linux. Nixite automatically configures your system and installs software using the best method available. Nixite tries to supress confirmation prompts.
+Nixite generates a bash script to unattendedly install all your Linux software. Nixite automatically configures your system and installs software using the best method available. Nixite tries to suppress confirmation prompts.
+
+### Nixite supports the following Linux distributions:
+
+- Debian Stable
+- Ubuntu Desktop
+- Fedora Workstation
+- Arch Linux
 
 ## Contributing
 
