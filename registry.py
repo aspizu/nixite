@@ -8,10 +8,16 @@ import tomllib
 distros = {"ubuntu", "debian", "fedora", "arch"}
 
 
+icon_names = {
+    "proton-vpn": "proton-vpn-logo",
+    "alacritty": "Alacritty",
+    "wezterm": "org.wezfurlong.wezterm",
+    "ghostty": "com.mitchellh.ghostty",
+}
+
+
 def copy_icon_for_pkg(pkg_name: str):
-    icon_name = pkg_name
-    if pkg_name == "proton-vpn":
-        icon_name = "proton-vpn-logo"
+    icon_name = icon_names.get(pkg_name, pkg_name)
     with contextlib.suppress(FileNotFoundError, FileExistsError):
         shutil.copy(
             f"/usr/share/icons/Papirus/24x24/apps/{icon_name}.svg",
@@ -43,7 +49,9 @@ with open("public/registry.json", "w") as registry_file:
 
 for pkg_name, pkg in registry.items():
     if set(pkg.keys()) != distros:
-        print(f"Warning: {pkg_name} does not have instructions for every supported distro, missing: {', '.join(distros - set(pkg.keys()))}")
+        print(
+            f"Warning: {pkg_name} does not have instructions for every supported distro, missing: {', '.join(distros - set(pkg.keys()))}"
+        )
     for pkg in pkg.values():
         for dep_name in pkg.get("dependencies", []):
             if dep_name not in registry:

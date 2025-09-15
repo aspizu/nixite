@@ -1,0 +1,14 @@
+[arch]
+install_system = "ghostty"
+
+[fedora]
+dependencies = ["fedora-ghostty"]
+install_system = "ghostty"
+
+[ubuntu]
+install_system = "ghostty"
+snap = "classic"
+
+[debian]
+dependencies = ["apt-ghostty"]
+install_system = "ghostty"

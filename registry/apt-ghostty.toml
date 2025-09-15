@@ -1,0 +1,13 @@
+[debian]
+dependencies = ["curl"]
+install_command = "curl -fsSL https://download.opensuse.org/repositories/home:clayrisser:sid/Debian_Unstable/Release.key | gpg --dearmor | sudo tee /etc/apt/keyrings/home_clayrisser_sid.gpg > /dev/null\nARCH=\"$(dpkg --print-architecture)\"\nsudo tee /etc/apt/sources.list.d/home:clayrisser:sid.sources > /dev/null <<EOF\nTypes: deb\nURIs:\nhttp://download.opensuse.org/repositories/home:/clayrisser:/sid/Debian_Unstable/\nSuites: /\nArchitectures: $ARCH\nSigned-By: /etc/apt/keyrings/home_clayrisser_sid.gpg\nEOF\nsudo apt -y update"
+skip_if_exists = "/etc/apt/keyrings/home_clayrisser_sid.gpg"
+
+[ubuntu]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"
+
+[fedora]
+install_command = "exit 1"

@@ -1,0 +1,14 @@
+[debian]
+dependencies = ["apt-wezterm"]
+install_system = "wezterm"
+
+[ubuntu]
+dependencies = ["apt-wezterm"]
+install_system = "wezterm"
+
+[arch]
+install_system = "wezterm"
+
+[fedora]
+dependencies = ["fedora-wezterm"]
+install_system = "wezterm"
