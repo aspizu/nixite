@@ -1,0 +1,13 @@
+[debian]
+dependencies = ["curl"]
+install_command = "curl -L https://vencord.dev/download/vesktop/amd64/deb -o /tmp/vesktop.deb && sudo apt -y install /tmp/vesktop.deb && rm /tmp/vesktop.deb"
+
+[ubuntu]
+dependencies = ["curl"]
+install_command = "curl -L https://vencord.dev/download/vesktop/amd64/deb -o /tmp/vesktop.deb && sudo apt -y install /tmp/vesktop.deb && rm /tmp/vesktop.deb"
+
+[fedora]
+install_system = "https://vencord.dev/download/vesktop/amd64/rpm"
+
+[arch]
+install_system = "vesktop"
