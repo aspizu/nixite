@@ -13,6 +13,7 @@ icon_names = {
     "alacritty": "Alacritty",
     "wezterm": "org.wezfurlong.wezterm",
     "ghostty": "com.mitchellh.ghostty",
+    "prismlauncher": "org.prismlauncher.PrismLauncher",
 }
 
 

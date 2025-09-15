@@ -1,0 +1,14 @@
+[arch]
+install_system = "prismlauncher"
+
+[debian]
+install_system = "org.prismlauncher.PrismLauncher"
+flatpak = true
+
+[ubuntu]
+install_system = "org.prismlauncher.PrismLauncher"
+flatpak = true
+
+[fedora]
+install_system = "org.prismlauncher.PrismLauncher"
+flatpak = true
