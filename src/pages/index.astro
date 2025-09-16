@@ -77,19 +77,21 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 <p>
                     Made with ❤️ by <a class={linkStyle} href="https://github.com/aspizu" target="_blank">aspizu</a>.
                     Star the project on <a class={linkStyle} href="https://github.com/aspizu/nixite" target="_blank">GitHub</a>.
-                    Inspired by <a class={linkStyle} href="https://ninite.com/">Ninite</a>, <a class={linkStyle} href="https://packagepicker.co/">PackagePicker.co</a>
+                    Inspired by <a class={linkStyle} href="https://ninite.com/" target="_blank">Ninite</a>, <a class={linkStyle} href="https://packagepicker.co/" target="_blank">PackagePicker.co</a>
                 </p>
             </div>
         </div>
-        <label>
-            Distribution
-            <select class="border rounded p-1" id="distro">
-                <option value="debian">Debian Stable</option>
-                <option value="ubuntu">Ubuntu Desktop</option>
-                <option value="fedora">Fedora Workstation</option>
-                <option value="arch">Arch Linux</option>
-            </select>
-        </label>
+        <div class="flex pl-4 pt-4">
+            <label class="text-xs font-medium flex flex-col mr-auto gap-1">
+                Distribution
+                <select class="border text-sm font-medium rounded px-2 py-1 border-neutral-300 shadow-xs" id="distro">
+                    <option value="debian">Debian Stable</option>
+                    <option value="ubuntu">Ubuntu Desktop</option>
+                    <option value="fedora">Fedora Workstation</option>
+                    <option value="arch">Arch Linux</option>
+                </select>
+            </label>
+        </div>
         <div class="flex flex-col flex-wrap max-h-[720px] mr-auto gap-4 p-4">
             <Category name="Web Browsers">
                 <Pkg id="firefox" name="Firefox" />
@@ -163,7 +165,7 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
         <div class="flex flex-col px-4 border-t-neutral-200 border-t items-center">
             <div class="flex flex-col max-w-[1024px] p-4 gap-4 items-center">
                 <div class="flex items-center max-w-[480px] gap-4">
-                    <button id="install-btn" type="button" class="border shrink-0 rounded border-neutral-400 text-neutral-700 hover:bg-neutral-300 bg-neutral-200 font-medium py-2 px-4 mx-auto shadow-sm focus:outline-2 outline-black/25">Get your Nixite</button>
+                    <button id="install-btn" type="button" class="font-medium bg-blue-400 text-white px-3 py-1 rounded-lg shadow-sm active:bg-blue-500 transition-colors">GET YOUR NIXITE</button>
                     <p class="text-sm text-neutral-600">
                         Run <code class="bg-neutral-100">nixite-updater</code> to update everything.
                     </p>

@@ -5,6 +5,47 @@ const installBtn = document.getElementById("install-btn") as HTMLButtonElement
 const distroSelect = document.getElementById("distro") as HTMLSelectElement
 installBtn.addEventListener("click", onInstallClick)
 
+function renderBadges() {
+    document.querySelectorAll(".pkg-checkbox").forEach((checkbox_) => {
+        const checkbox = checkbox_ as HTMLInputElement
+        const id = checkbox.dataset.id!
+        const pkg = nixite.registry[id][distroSelect.value]
+        const badge = checkbox.parentElement!.querySelector(
+            ".Badge",
+        )! as HTMLSpanElement
+        badge.textContent = ""
+        function setColor(newColor: string) {
+            const oldColor = badge.dataset.color!
+            badge.classList.remove(oldColor)
+            badge.dataset.color = newColor
+            badge.classList.add(newColor)
+        }
+        if (
+            pkg.install_command ||
+            pkg.dependencies?.find(
+                (e) => e.startsWith("apt-") || e.startsWith("fedora-"),
+            )
+        ) {
+            badge.textContent = "3rd party"
+            setColor("bg-red-300")
+        }
+        if (pkg.snap) {
+            badge.textContent = "snap"
+            setColor("bg-yellow-300")
+        }
+        if (pkg.flatpak) {
+            badge.textContent = "flatpak"
+            setColor("bg-green-300")
+        }
+    })
+}
+
+renderBadges()
+
+distroSelect.oninput = () => {
+    renderBadges()
+}
+
 function onInstallClick() {
     const selection: string[] = ["nixite-updater"]
     document.querySelectorAll(".pkg-checkbox").forEach((checkbox_) => {

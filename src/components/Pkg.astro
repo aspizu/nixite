@@ -11,4 +11,5 @@ const {id, name, default: isDefault} = Astro.props
     <input class="pkg-checkbox" type="checkbox" data-id={id} data-default={Boolean(isDefault)} />
     <img src={`icons/${id}.svg`} width={24} height={24} alt={name} onerror="this.src = 'icons/unknown.svg'" />
     {name}
+    <span class="Badge text-xs text-shadow-gray-800 rounded px-1 shadow-xs"></span>
 </label>
