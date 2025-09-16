@@ -7,7 +7,11 @@
 
 [**Open Nixite**](https://aspizu.github.io/nixite/)
 
-Nixite generates a bash script to unattendedly install all your Linux software. Nixite automatically configures your system and installs software using the best method available. Nixite tries to suppress confirmation prompts.
+Nixite generates a bash script to unattendedly install all your Linux software.
+Nixite automatically configures your system and installs software using the best method available.
+Nixite tries to suppress confirmation prompts.
+
+Inspired by [**Ninite**](https://Ninite.com/), [**PackagePicker.co**](https://PackagePicker.co/)
 
 ### Nixite supports the following Linux distributions:
 
@@ -18,27 +22,28 @@ Nixite generates a bash script to unattendedly install all your Linux software. 
 
 ## Contributing
 
-To add a new package, create a file `app-name.toml` inside `registry/`
+To add a new package, create a file `app_name.toml` inside `registry/`
 
 You can add common instructions for all distros, or separate instructions for each distro.
 
 ```toml
-install_system = "package-name" # uses apt on Ubuntu, pacman on Arch Linux
+install_system = "package_name" # uses apt on Ubuntu, pacman on Arch Linux
 ```
 
 ```toml
 [ubuntu]
-install_system = "package-name-on-apt"
+install_system = "package_name_on_apt"
 
 [arch]
-install_system = "package-name-on-pacman"
+install_system = "package_name_on_pacman"
 ```
+
+Use `search_pkgs.py` to find package names on various Linux distro repositories.
 
 Install Papirus icon theme and run:
 
 ```shell
-python registry.py
-prettier -uwu .
+python registry.py && prettier -uwu public/*.json
 ```
 
 `flatpak = true` to install using flatpak, `install_system` should be the flathub package name.
