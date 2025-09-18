@@ -96,25 +96,28 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
             <Category name="Web Browsers">
                 <Pkg id="firefox" name="Firefox" />
                 <Pkg id="google-chrome" name="Google Chrome" default />
+                <Pkg id="ungoogled-chromium" name="Ungoogled Chromium" />
                 <Pkg id="zen-browser" name="Zen Browser" default />
                 <Pkg id="brave" name="Brave"  />
                 <Pkg id="tor-browser" name="Tor Browser" />
             </Category>
             <Category name="Communication">
-                <Pkg id="discord" name="Discord" default />
+                <Pkg id="thunderbird" name="Thunderbird" />
+                <Pkg id="discord" name="Discord" />
                 <Pkg id="vesktop" name="Vesktop" default />
                 <Pkg id="zoom-desktop" name="Zoom" />
                 <Pkg id="telegram" name="Telegram" default />
+                <Pkg id="slack" name="Slack" />
             </Category>
             <Category name="Media & Entertainment">
-                <Pkg id="audacity" name="Audacity" />
-                <Pkg id="easytag" name="Easytag" />
-                <Pkg id="kdenlive" name="Kdenlive" />
-                <Pkg id="soundconverter" name="Soundconverter" />
                 <Pkg id="spotify" name="Spotify" />
                 <Pkg id="strawberry" name="Strawberry" />
                 <Pkg id="stremio" name="Stremio" default />
                 <Pkg id="vlc" name="VLC Media Player" />
+            </Category>
+            <Category name="File Sharing">
+                <Pkg id="nicotine-plus" name="Nicotine+" default />
+                <Pkg id="localsend" name="LocalSend" />
             </Category>
             <Category name="Gaming">
                 <Pkg id="retroarch" name="RetroArch" default />
@@ -122,12 +125,10 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 <Pkg id="sober" name="Sober" />
                 <Pkg id="lutris" name="Lutris" />
                 <Pkg id="prismlauncher" name="Prism Launcher" />
+                <Pkg id="heroicgameslauncher" name="Heroic Games Launcher" />
             </Category>
-            <Category name="File Sharing">
-                <Pkg id="nicotine-plus" name="Nicotine+" default />
-            </Category>
+
             <Category name="Graphics & Design">
-                <Pkg id="blender" name="Blender" />
                 <Pkg id="gimp" name="GIMP" default />
                 <Pkg id="inkscape" name="Inkscape" default />
                 <Pkg id="krita" name="Krita" />
@@ -136,6 +137,15 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 <Pkg id="libreoffice" name="LibreOffice" />
                 <Pkg id="notion" name="Notion" />
                 <Pkg id="obsidian" name="Obsidian" />
+            </Category>
+            <Category name="Studio">
+                <Pkg id="blender" name="Blender" default />
+                <Pkg id="audacity" name="Audacity" default />
+                <Pkg id="easytag" name="Easytag" />
+                <Pkg id="kdenlive" name="Kdenlive" default />
+                <Pkg id="soundconverter" name="Soundconverter" />
+                <Pkg id="obs" name="OBS Studio" default />
+                <Pkg id="ffmpeg" name="FFmpeg" default />
             </Category>
             <Category name="Development Tools">
                 <Pkg id="bun" name="Bun" default />
@@ -149,7 +159,6 @@ const linkStyle = 'underline decoration-2 decoration-black/50 hover:decoration-b
                 <Pkg id="goboscript" name="goboscript" default />
             </Category>
             <Category name="Utilities">
-                <Pkg id="obs" name="OBS Studio" />
                 <Pkg id="proton-vpn" name="Proton VPN" default />
                 <Pkg id="transmission" name="Transmission" default />
                 <Pkg id="chezmoi" name="chezmoi" default />

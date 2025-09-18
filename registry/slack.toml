@@ -1,0 +1,14 @@
+[debian]
+install_system = "com.slack.Slack"
+flatpak = true
+
+[ubuntu]
+install_system = "slack"
+snap = true
+
+[fedora]
+install_system = "com.slack.Slack"
+flatpak = true
+
+[arch]
+install_system = "slack-desktop"

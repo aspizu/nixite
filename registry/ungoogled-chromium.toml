@@ -1,0 +1,14 @@
+[arch]
+install_system = "ungoogled-chromium-bin"
+
+[debian]
+dependencies = ["apt-ungoogled-chromium"]
+install_system = "ungoogled-chromium"
+
+[ubuntu]
+dependencies = ["apt-ungoogled-chromium"]
+install_system = "ungoogled-chromium"
+
+[fedora]
+dependencies = ["fedora-ungoogled-chromium"]
+install_system = "ungoogled-chromium"

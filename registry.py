@@ -14,6 +14,9 @@ icon_names = {
     "wezterm": "org.wezfurlong.wezterm",
     "ghostty": "com.mitchellh.ghostty",
     "prismlauncher": "org.prismlauncher.PrismLauncher",
+    "localsend": "localsend_app",
+    "heroicgameslauncher": "com.heroicgameslauncher.hgl",
+    "ungoogled-chromium": "com.github.Eloston.UngoogledChromium",
 }
 
 

@@ -1,0 +1,14 @@
+[debian]
+install_system = "org.localsend.localsend_app"
+flatpak = true
+
+[fedora]
+install_system = "org.localsend.localsend_app"
+flatpak = true
+
+[ubuntu]
+install_system = "localsend"
+snap = true
+
+[arch]
+install_system = "localsend-bin"
