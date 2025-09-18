@@ -1,0 +1,2 @@
+install_system = "cc.arduino.IDE2"
+flatpak = true
