@@ -51,6 +51,13 @@ fi
 
     s += hooks[distro] + "\n"
 
+    // Add flathub if any package has flatpak: true
+    // Ideally this should be done by adding flathub as a dependency to the flatpak packages, and adding flathub.toml to the registry.
+    // But that would require modifying many files in the registry so I'd avoid doing it myself.
+    if (pkgs.some(pkg => pkg.flatpak)) {
+        s += `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo\n`
+    }
+
     for (const pkg of pkgs) {
         if (pkg.skip_if_exists) {
             s += `if [[ ! -f "${pkg.skip_if_exists}" ]]; then\n`
