@@ -1,5 +1,5 @@
 install_system() {
-    sudo dnf install -y "$@"
+    sudo dnf install -y --allowerasing "$@"
 }
 
 install_flatpak() {
