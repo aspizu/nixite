@@ -40,13 +40,27 @@ function renderBadges() {
     })
 }
 
+const preview = document.getElementById("preview")!
+
+function renderPreview() {
+    preview.textContent = generateScript()
+}
+
 renderBadges()
+renderPreview()
 
 distroSelect.oninput = () => {
     renderBadges()
+    renderPreview()
 }
 
-function onInstallClick() {
+document.querySelectorAll(".pkg-checkbox").forEach((box) => {
+    box.addEventListener("input", () => {
+        renderPreview()
+    })
+})
+
+function generateScript(): string {
     const selection: string[] = []
     document.querySelectorAll(".pkg-checkbox").forEach((checkbox_) => {
         const checkbox = checkbox_ as HTMLInputElement
@@ -55,6 +69,11 @@ function onInstallClick() {
         }
     })
     const script = nixite.createScript(distroSelect.value, selection)
+    return script
+}
+
+function onInstallClick() {
+    const script = generateScript()
     const blob = new Blob([script], {type: "text/plain;charset=utf-8"})
     saveAs(blob, "nixite.sh")
 }
