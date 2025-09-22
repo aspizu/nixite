@@ -24,3 +24,6 @@ pnpm-debug.log*
 .idea/
 
 nixite.sh
+
+src/registry.json
+src/hooks.json
