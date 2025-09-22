@@ -85,5 +85,6 @@ addEventListener("keyup", (event: KeyboardEvent) => {
             .querySelectorAll('.pkg-checkbox[data-default="true"]')
             .forEach((box) => ((box as HTMLInputElement).checked = !defaults))
         defaults = !defaults
+        renderPreview()
     }
 })
