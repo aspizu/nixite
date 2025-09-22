@@ -18,7 +18,6 @@ cat <<'EOF'
             \/           \/                \/
 EOF
 
-# Messages
 echo -e "${BLUE}    Sit back while we install your linux software"
 echo -e "${RESET}Report bugs to ${CYAN}${UNDERLINE}https://github.com/aspizu/nixite/issues${NO_UNDERLINE}${RESET}"
 echo
