@@ -1,0 +1,9 @@
+---
+interface Props {
+  value: string
+}
+const {value} = Astro.props
+---
+<input class="inline-flex font-mono text-black dark:text-white font-semibold" style={{
+    width: `${value.length}ch`
+}} readonly value={value}>
