@@ -37,8 +37,7 @@ export function createScript(distro: string, selection: string[]) {
     s += `
 if [[ -f /etc/os-release ]]; then
     source /etc/os-release
-    FAMILY="$ID $ID_LIKE"
-    if ! grep -qw "${distro}" <<< "$FAMILY"; then
+    if [[ "$ID" -eq "${distro}" ]]; then
         echo "This script was designed to run on ${distro}, but the current system is running $ID, select $ID in Nixite and download again."
         exit 1
     fi
