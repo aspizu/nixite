@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# Colors
 BLACK="\e[0;30m"
 BLUE="\e[1;34m"
 CYAN="\e[36m"
@@ -9,7 +8,6 @@ RESET="\e[0m"
 UNDERLINE="\e[4m"
 NO_UNDERLINE="\e[24m"
 
-# ASCII art
 echo -e "${BLACK}"
 cat <<'EOF'
                 .__         .__   __
