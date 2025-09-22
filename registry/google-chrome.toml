@@ -11,4 +11,4 @@ install_system = "google-chrome"
 
 [fedora]
 dependencies = ["fedora-google-chrome"]
-install_system = "google-chrome"
+install_system = "google-chrome-stable"
