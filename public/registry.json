@@ -1,38 +1,206 @@
 {
-    "bun": {
-        "debian": {
-            "dependencies": ["curl", "unzip"],
-            "install_command": "curl -fsSL https://bun.com/install | bash",
-            "skip_if_exists": "$HOME/.bun/bin/bun"
-        },
-        "ubuntu": {
-            "dependencies": ["curl", "unzip"],
-            "install_command": "curl -fsSL https://bun.com/install | bash",
-            "skip_if_exists": "$HOME/.bun/bin/bun"
-        },
-        "fedora": {
-            "dependencies": ["curl", "unzip"],
-            "install_command": "curl -fsSL https://bun.com/install | bash",
-            "skip_if_exists": "$HOME/.bun/bin/bun"
-        },
-        "arch": {
-            "dependencies": ["curl", "unzip"],
-            "install_command": "curl -fsSL https://bun.com/install | bash",
-            "skip_if_exists": "$HOME/.bun/bin/bun"
-        }
-    },
-    "chezmoi": {
-        "ubuntu": {"install_system": "chezmoi", "snap": "classic"},
-        "arch": {"install_system": "chezmoi"},
+    "vesktop": {
         "debian": {
             "dependencies": ["curl"],
-            "install_command": "sudo sh -c \"$(curl -fsLS get.chezmoi.io)\" -- -b /usr/local/bin",
-            "skip_if_exists": "/usr/local/bin/chezmoi"
+            "install_command": "curl -L https://vencord.dev/download/vesktop/amd64/deb -o /tmp/vesktop.deb && sudo apt -y install /tmp/vesktop.deb && rm /tmp/vesktop.deb"
         },
-        "fedora": {"dependencies": ["fedora-chezmoi"], "install_system": "chezmoi"}
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://vencord.dev/download/vesktop/amd64/deb -o /tmp/vesktop.deb && sudo apt -y install /tmp/vesktop.deb && rm /tmp/vesktop.deb"
+        },
+        "fedora": {"install_system": "https://vencord.dev/download/vesktop/amd64/rpm"},
+        "arch": {"install_system": "vesktop"}
+    },
+    "uv": {
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "skip_if_exists": "$HOME/.local/bin/uv"
+        },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "skip_if_exists": "$HOME/.local/bin/uv"
+        },
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "skip_if_exists": "$HOME/.local/bin/uv"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "skip_if_exists": "$HOME/.local/bin/uv"
+        }
+    },
+    "telegram": {
+        "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
+        "debian": {"install_system": "org.telegram.desktop", "flatpak": true},
+        "arch": {"install_system": "telegram-desktop"},
+        "fedora": {"dependencies": ["rpmfusion"], "install_system": "telegram-desktop"}
+    },
+    "thunderbird": {
+        "arch": {"install_system": "thunderbird"},
+        "ubuntu": {"install_system": "thunderbird"},
+        "fedora": {"install_system": "thunderbird"},
+        "debian": {"install_system": "thunderbird"}
+    },
+    "fedora-workstation-repositories": {
+        "arch": {"install_system": "fedora-workstation-repositories"},
+        "ubuntu": {"install_system": "fedora-workstation-repositories"},
+        "fedora": {"install_system": "fedora-workstation-repositories"},
+        "debian": {"install_system": "fedora-workstation-repositories"}
+    },
+    "fedora-vscode": {
+        "fedora": {
+            "install_command": "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\necho -e \"[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null\ndnf check-update",
+            "skip_if_exists": "/etc/yum.repos.d/vscode.repo"
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "debian": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "krita": {
+        "arch": {"install_system": "krita"},
+        "ubuntu": {"install_system": "krita"},
+        "fedora": {"install_system": "krita"},
+        "debian": {"install_system": "krita"}
+    },
+    "slack": {
+        "debian": {"install_system": "com.slack.Slack", "flatpak": true},
+        "ubuntu": {"install_system": "slack", "snap": true},
+        "fedora": {"install_system": "com.slack.Slack", "flatpak": true},
+        "arch": {"install_system": "slack-desktop"}
+    },
+    "libreoffice": {
+        "ubuntu": {"install_system": "libreoffice"},
+        "arch": {"install_system": "libreoffice-fresh"},
+        "debian": {"install_system": "libreoffice"},
+        "fedora": {"install_system": "libreoffice"}
+    },
+    "tor-browser": {
+        "ubuntu": {"install_system": "torbrowser-launcher"},
+        "debian": {
+            "dependencies": ["debian-contrib"],
+            "install_system": "torbrowser-launcher"
+        },
+        "arch": {"install_system": "torbrowser-launcher"},
+        "fedora": {"install_system": "torbrowser-launcher"}
+    },
+    "spotify": {
+        "ubuntu": {"dependencies": ["apt-spotify"], "install_system": "spotify-client"},
+        "debian": {"dependencies": ["apt-spotify"], "install_system": "spotify-client"},
+        "arch": {"install_system": "spotify"},
+        "fedora": {"install_system": "com.spotify.Client", "flatpak": true}
+    },
+    "lutris": {
+        "ubuntu": {"install_system": "net.lutris.Lutris", "flatpak": true},
+        "arch": {"install_system": "lutris"},
+        "debian": {"install_system": "net.lutris.Lutris", "flatpak": true},
+        "fedora": {"install_system": "lutris"}
+    },
+    "fedora-ungoogled-chromium": {
+        "fedora": {
+            "install_command": "sudo dnf -y copr enable wojnilowicz/ungoogled-chromium"
+        },
+        "debian": {"install_command": "exit 1"},
+        "ubuntu": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "blender": {
+        "arch": {"install_system": "blender"},
+        "ubuntu": {"install_system": "blender"},
+        "fedora": {"install_system": "blender"},
+        "debian": {"install_system": "blender"}
+    },
+    "arch-multilib": {
+        "arch": {
+            "install_command": "grep -q '^\\[multilib\\]' /etc/pacman.conf || (sudo sed -i '/^\\[multilib\\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Syu)"
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "debian": {"install_command": "exit 1"},
+        "fedora": {"install_command": "exit 1"}
+    },
+    "vlc": {
+        "arch": {"install_system": "vlc"},
+        "ubuntu": {"install_system": "vlc"},
+        "fedora": {"install_system": "vlc"},
+        "debian": {"install_system": "vlc"}
+    },
+    "ghostty": {
+        "arch": {"install_system": "ghostty"},
+        "fedora": {"dependencies": ["fedora-ghostty"], "install_system": "ghostty"},
+        "ubuntu": {"install_system": "ghostty", "snap": "classic"},
+        "debian": {"dependencies": ["apt-ghostty"], "install_system": "ghostty"}
+    },
+    "kdenlive": {
+        "arch": {"install_system": "kdenlive"},
+        "ubuntu": {"install_system": "kdenlive"},
+        "fedora": {"install_system": "kdenlive"},
+        "debian": {"install_system": "kdenlive"}
+    },
+    "git": {
+        "arch": {"install_system": "git"},
+        "ubuntu": {"install_system": "git"},
+        "fedora": {"install_system": "git"},
+        "debian": {"install_system": "git"}
+    },
+    "debian-contrib": {
+        "debian": {
+            "install_command": "sudo sed -i '/^[^#].* main/ {\n  /contrib/! s/main/& contrib/\n}' /etc/apt/sources.list && sudo apt update -y"
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"},
+        "fedora": {"install_command": "exit 1"}
+    },
+    "gnome-boxes": {
+        "arch": {"install_system": "gnome-boxes"},
+        "ubuntu": {"install_system": "gnome-boxes"},
+        "fedora": {"install_system": "gnome-boxes"},
+        "debian": {"install_system": "gnome-boxes"}
+    },
+    "firefox": {
+        "debian": {"install_system": "firefox-esr"},
+        "ubuntu": {"install_system": "firefox"},
+        "arch": {"install_system": "firefox"},
+        "fedora": {"install_system": "firefox"}
+    },
+    "flameshot": {
+        "arch": {"install_system": "flameshot"},
+        "ubuntu": {"install_system": "flameshot"},
+        "fedora": {"install_system": "flameshot"},
+        "debian": {"install_system": "flameshot"}
+    },
+    "audacity": {
+        "arch": {"install_system": "audacity"},
+        "ubuntu": {"install_system": "audacity"},
+        "fedora": {"install_system": "audacity"},
+        "debian": {"install_system": "audacity"}
+    },
+    "nixite-updater": {
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
+        },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
+        },
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
+            "skip_if_exists": "/usr/local/bin/nixite-updater"
+        }
     },
     "goboscript": {
-        "debian": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
@@ -47,14 +215,76 @@
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
         },
-        "arch": {
+        "debian": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
         }
     },
-    "fedora-chezmoi": {
-        "fedora": {"install_command": "sudo dnf -y copr enable lihaohong/chezmoi"},
+    "apt-steam": {
+        "ubuntu": {
+            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y",
+            "skip_if_exists": "/usr/share/keyrings/steam.gpg"
+        },
+        "debian": {
+            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y",
+            "skip_if_exists": "/usr/share/keyrings/steam.gpg"
+        },
+        "arch": {"install_command": "exit 1"},
+        "fedora": {"install_command": "exit 1"}
+    },
+    "helix": {
+        "ubuntu": {"install_system": "helix", "snap": "classic"},
+        "arch": {"install_system": "helix"},
+        "debian": {"install_system": "com.helix_editor.Helix", "flatpak": true},
+        "fedora": {"install_system": "helix"}
+    },
+    "notion": {
+        "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
+        "debian": {"install_command": "echo \"Notion is not available on Debian.\""},
+        "arch": {"install_system": "notion-app-electron"},
+        "fedora": {"install_command": "echo \"Notion is not available on Fedora.\""}
+    },
+    "sober": {
+        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "fedora": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "debian": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
+    },
+    "brave": {
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
+        },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
+        },
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
+        }
+    },
+    "prismlauncher": {
+        "arch": {"install_system": "prismlauncher"},
+        "debian": {
+            "install_system": "org.prismlauncher.PrismLauncher",
+            "flatpak": true
+        },
+        "ubuntu": {
+            "install_system": "org.prismlauncher.PrismLauncher",
+            "flatpak": true
+        },
+        "fedora": {"install_system": "org.prismlauncher.PrismLauncher", "flatpak": true}
+    },
+    "rpmfusion": {
+        "fedora": {
+            "install_command": "sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+        },
         "ubuntu": {"install_command": "exit 1"},
         "debian": {"install_command": "exit 1"},
         "arch": {"install_command": "exit 1"}
@@ -76,11 +306,133 @@
             "install_system": "zen-browser"
         }
     },
-    "heroicgameslauncher": {
-        "debian": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
-        "ubuntu": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
-        "fedora": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
-        "arch": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true}
+    "ruff": {
+        "arch": {
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
+        },
+        "ubuntu": {
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
+        },
+        "fedora": {
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
+        },
+        "debian": {
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
+        }
+    },
+    "bun": {
+        "arch": {
+            "dependencies": ["curl", "unzip"],
+            "install_command": "curl -fsSL https://bun.com/install | bash",
+            "skip_if_exists": "$HOME/.bun/bin/bun"
+        },
+        "ubuntu": {
+            "dependencies": ["curl", "unzip"],
+            "install_command": "curl -fsSL https://bun.com/install | bash",
+            "skip_if_exists": "$HOME/.bun/bin/bun"
+        },
+        "fedora": {
+            "dependencies": ["curl", "unzip"],
+            "install_command": "curl -fsSL https://bun.com/install | bash",
+            "skip_if_exists": "$HOME/.bun/bin/bun"
+        },
+        "debian": {
+            "dependencies": ["curl", "unzip"],
+            "install_command": "curl -fsSL https://bun.com/install | bash",
+            "skip_if_exists": "$HOME/.bun/bin/bun"
+        }
+    },
+    "fedora-google-chrome": {
+        "fedora": {
+            "dependencies": ["fedora-workstation-repositories"],
+            "install_command": "sudo dnf -y config-manager setopt google-chrome.enabled=1"
+        },
+        "ubuntu": {"install_command": "exit 1"},
+        "debian": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "zsync": {
+        "arch": {"install_system": "zsync"},
+        "ubuntu": {"install_system": "zsync"},
+        "fedora": {"install_system": "zsync"},
+        "debian": {"install_system": "zsync"}
+    },
+    "chezmoi": {
+        "ubuntu": {"install_system": "chezmoi", "snap": "classic"},
+        "arch": {"install_system": "chezmoi"},
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "sudo sh -c \"$(curl -fsLS get.chezmoi.io)\" -- -b /usr/local/bin",
+            "skip_if_exists": "/usr/local/bin/chezmoi"
+        },
+        "fedora": {"dependencies": ["fedora-chezmoi"], "install_system": "chezmoi"}
+    },
+    "nicotine-plus": {
+        "ubuntu": {"install_system": "nicotine"},
+        "arch": {"install_system": "nicotine+"},
+        "debian": {"install_system": "nicotine"},
+        "fedora": {"install_system": "nicotine+"}
+    },
+    "ungoogled-chromium": {
+        "arch": {"install_system": "ungoogled-chromium-bin"},
+        "debian": {
+            "dependencies": ["apt-ungoogled-chromium"],
+            "install_system": "ungoogled-chromium"
+        },
+        "ubuntu": {
+            "dependencies": ["apt-ungoogled-chromium"],
+            "install_system": "ungoogled-chromium"
+        },
+        "fedora": {
+            "dependencies": ["fedora-ungoogled-chromium"],
+            "install_system": "ungoogled-chromium"
+        }
+    },
+    "transmission": {
+        "arch": {"install_system": "transmission-gtk"},
+        "ubuntu": {"install_system": "transmission-gtk"},
+        "fedora": {"install_system": "transmission-gtk"},
+        "debian": {"install_system": "transmission-gtk"}
+    },
+    "fedora-wezterm": {
+        "fedora": {
+            "install_command": "sudo dnf -y copr enable wezfurlong/wezterm-nightly"
+        },
+        "debian": {"install_command": "exit 1"},
+        "ubuntu": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "steam": {
+        "ubuntu": {"dependencies": ["apt-steam"], "install_system": "steam-launcher"},
+        "debian": {"dependencies": ["apt-steam"], "install_system": "steam-launcher"},
+        "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"},
+        "fedora": {"dependencies": ["rpmfusion"], "install_system": "steam"}
+    },
+    "unzip": {
+        "arch": {"install_system": "unzip"},
+        "ubuntu": {"install_system": "unzip"},
+        "fedora": {"install_system": "unzip"},
+        "debian": {"install_system": "unzip"}
+    },
+    "zoom-desktop": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
+        },
+        "arch": {"install_system": "zoom"},
+        "fedora": {"install_system": "https://zoom.us/client/latest/zoom_x86_64.rpm"}
     },
     "apt-ghostty": {
         "debian": {
@@ -92,95 +444,29 @@
         "arch": {"install_command": "exit 1"},
         "fedora": {"install_command": "exit 1"}
     },
-    "gimp": {
-        "debian": {"install_system": "gimp"},
-        "ubuntu": {"install_system": "gimp"},
-        "fedora": {"install_system": "gimp"},
-        "arch": {"install_system": "gimp"}
+    "stremio": {
+        "ubuntu": {"install_system": "com.stremio.Stremio", "flatpak": true},
+        "debian": {"install_system": "com.stremio.Stremio", "flatpak": true},
+        "arch": {"install_system": "stremio"},
+        "fedora": {"install_system": "com.stremio.Stremio", "flatpak": true}
+    },
+    "vscode": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
+        },
+        "arch": {"install_system": "visual-studio-code-bin"},
+        "fedora": {"dependencies": ["fedora-vscode"], "install_system": "code"}
     },
     "obsidian": {
         "ubuntu": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
         "debian": {"install_system": "md.obsidian.Obsidian", "flatpak": true},
         "arch": {"install_system": "obsidian"},
         "fedora": {"install_system": "md.obsidian.Obsidian", "flatpak": true}
-    },
-    "spotify": {
-        "ubuntu": {"dependencies": ["apt-spotify"], "install_system": "spotify-client"},
-        "debian": {"dependencies": ["apt-spotify"], "install_system": "spotify-client"},
-        "arch": {"install_system": "spotify"},
-        "fedora": {"install_system": "com.spotify.Client", "flatpak": true}
-    },
-    "tor-browser": {
-        "ubuntu": {"install_system": "torbrowser-launcher"},
-        "debian": {
-            "dependencies": ["debian-contrib"],
-            "install_system": "torbrowser-launcher"
-        },
-        "arch": {"install_system": "torbrowser-launcher"},
-        "fedora": {"install_system": "torbrowser-launcher"}
-    },
-    "sober": {
-        "debian": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "fedora": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
-    },
-    "fedora-google-chrome": {
-        "fedora": {
-            "dependencies": ["fedora-workstation-repositories"],
-            "install_command": "sudo dnf -y config-manager setopt google-chrome.enabled=1"
-        },
-        "ubuntu": {"install_command": "exit 1"},
-        "debian": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "curl": {
-        "debian": {"install_system": "curl"},
-        "ubuntu": {"install_system": "curl"},
-        "fedora": {"install_system": "curl"},
-        "arch": {"install_system": "curl"}
-    },
-    "arduino-ide": {
-        "debian": {"install_system": "cc.arduino.IDE2", "flatpak": true},
-        "ubuntu": {"install_system": "cc.arduino.IDE2", "flatpak": true},
-        "fedora": {"install_system": "cc.arduino.IDE2", "flatpak": true},
-        "arch": {"install_system": "cc.arduino.IDE2", "flatpak": true}
-    },
-    "transmission": {
-        "debian": {"install_system": "transmission-gtk"},
-        "ubuntu": {"install_system": "transmission-gtk"},
-        "fedora": {"install_system": "transmission-gtk"},
-        "arch": {"install_system": "transmission-gtk"}
-    },
-    "discord": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
-        },
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
-        },
-        "arch": {"install_system": "discord"},
-        "fedora": {"dependencies": ["rpmfusion"], "install_system": "discord"}
-    },
-    "vlc": {
-        "debian": {"install_system": "vlc"},
-        "ubuntu": {"install_system": "vlc"},
-        "fedora": {"install_system": "vlc"},
-        "arch": {"install_system": "vlc"}
-    },
-    "slack": {
-        "debian": {"install_system": "com.slack.Slack", "flatpak": true},
-        "ubuntu": {"install_system": "slack", "snap": true},
-        "fedora": {"install_system": "com.slack.Slack", "flatpak": true},
-        "arch": {"install_system": "slack-desktop"}
-    },
-    "git": {
-        "debian": {"install_system": "git"},
-        "ubuntu": {"install_system": "git"},
-        "fedora": {"install_system": "git"},
-        "arch": {"install_system": "git"}
     },
     "apt-spotify": {
         "ubuntu": {
@@ -198,256 +484,19 @@
         },
         "fedora": {"install_command": "exit 1"}
     },
-    "rustup": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
-            "skip_if_exists": "$HOME/.cargo/bin/rustup"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
-            "skip_if_exists": "$HOME/.cargo/bin/rustup"
-        },
-        "fedora": {
-            "dependencies": ["curl"],
-            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
-            "skip_if_exists": "$HOME/.cargo/bin/rustup"
-        },
-        "arch": {
-            "dependencies": ["curl"],
-            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
-            "skip_if_exists": "$HOME/.cargo/bin/rustup"
-        }
+    "heroicgameslauncher": {
+        "arch": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
+        "ubuntu": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
+        "fedora": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
+        "debian": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true}
     },
-    "debian-contrib": {
+    "debian-non-free": {
         "debian": {
-            "install_command": "sudo sed -i '/^[^#].* main/ {\n  /contrib/! s/main/& contrib/\n}' /etc/apt/sources.list && sudo apt update -y"
+            "install_command": "sudo sed -i '/^[^#].* main/ {\n  /non-free/! s/main/& non-free/\n}' /etc/apt/sources.list && sudo apt update -y"
         },
         "ubuntu": {"install_command": "exit 1"},
         "arch": {"install_command": "exit 1"},
         "fedora": {"install_command": "exit 1"}
-    },
-    "arch-multilib": {
-        "arch": {
-            "install_command": "grep -q '^\\[multilib\\]' /etc/pacman.conf || (sudo sed -i '/^\\[multilib\\]/,/Include/s/^#//' /etc/pacman.conf && sudo pacman -Syu)"
-        },
-        "ubuntu": {"install_command": "exit 1"},
-        "debian": {"install_command": "exit 1"},
-        "fedora": {"install_command": "exit 1"}
-    },
-    "zsync": {
-        "debian": {"install_system": "zsync"},
-        "ubuntu": {"install_system": "zsync"},
-        "fedora": {"install_system": "zsync"},
-        "arch": {"install_system": "zsync"}
-    },
-    "alacritty": {
-        "debian": {"install_system": "alacritty"},
-        "ubuntu": {"install_system": "alacritty"},
-        "fedora": {"install_system": "alacritty"},
-        "arch": {"install_system": "alacritty"}
-    },
-    "fedora-workstation-repositories": {
-        "debian": {"install_system": "fedora-workstation-repositories"},
-        "ubuntu": {"install_system": "fedora-workstation-repositories"},
-        "fedora": {"install_system": "fedora-workstation-repositories"},
-        "arch": {"install_system": "fedora-workstation-repositories"}
-    },
-    "steam": {
-        "ubuntu": {"dependencies": ["apt-steam"], "install_system": "steam-launcher"},
-        "debian": {"dependencies": ["apt-steam"], "install_system": "steam-launcher"},
-        "arch": {"dependencies": ["arch-multilib"], "install_system": "steam"},
-        "fedora": {"dependencies": ["rpmfusion"], "install_system": "steam"}
-    },
-    "kitty": {
-        "debian": {"install_system": "kitty"},
-        "ubuntu": {"install_system": "kitty"},
-        "fedora": {"install_system": "kitty"},
-        "arch": {"install_system": "kitty"}
-    },
-    "firefox": {
-        "debian": {"install_system": "firefox-esr"},
-        "ubuntu": {"install_system": "firefox"},
-        "arch": {"install_system": "firefox"},
-        "fedora": {"install_system": "firefox"}
-    },
-    "kdenlive": {
-        "debian": {"install_system": "kdenlive"},
-        "ubuntu": {"install_system": "kdenlive"},
-        "fedora": {"install_system": "kdenlive"},
-        "arch": {"install_system": "kdenlive"}
-    },
-    "notion": {
-        "ubuntu": {"install_command": "echo \"Notion is not available on Ubuntu.\""},
-        "debian": {"install_command": "echo \"Notion is not available on Debian.\""},
-        "arch": {"install_system": "notion-app-electron"},
-        "fedora": {"install_command": "echo \"Notion is not available on Fedora.\""}
-    },
-    "localsend": {
-        "debian": {"install_system": "org.localsend.localsend_app", "flatpak": true},
-        "fedora": {"install_system": "org.localsend.localsend_app", "flatpak": true},
-        "ubuntu": {"install_system": "localsend", "snap": true},
-        "arch": {"install_system": "localsend-bin"}
-    },
-    "gnome-boxes": {
-        "debian": {"install_system": "gnome-boxes"},
-        "ubuntu": {"install_system": "gnome-boxes"},
-        "fedora": {"install_system": "gnome-boxes"},
-        "arch": {"install_system": "gnome-boxes"}
-    },
-    "vesktop": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://vencord.dev/download/vesktop/amd64/deb -o /tmp/vesktop.deb && sudo apt -y install /tmp/vesktop.deb && rm /tmp/vesktop.deb"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://vencord.dev/download/vesktop/amd64/deb -o /tmp/vesktop.deb && sudo apt -y install /tmp/vesktop.deb && rm /tmp/vesktop.deb"
-        },
-        "fedora": {"install_system": "https://vencord.dev/download/vesktop/amd64/rpm"},
-        "arch": {"install_system": "vesktop"}
-    },
-    "apt-steam": {
-        "ubuntu": {
-            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y",
-            "skip_if_exists": "/usr/share/keyrings/steam.gpg"
-        },
-        "debian": {
-            "install_command": "wget -qO /usr/share/keyrings/steam.gpg https://repo.steampowered.com/steam/archive/stable/steam.gpg && echo \"deb [arch=amd64,i386 signed-by=/usr/share/keyrings/steam.gpg] https://repo.steampowered.com/steam/ stable steam\" | sudo tee /etc/apt/sources.list.d/steam-stable.list\nsudo dpkg --add-architecture i386\nsudo apt update -y",
-            "skip_if_exists": "/usr/share/keyrings/steam.gpg"
-        },
-        "arch": {"install_command": "exit 1"},
-        "fedora": {"install_command": "exit 1"}
-    },
-    "libreoffice": {
-        "ubuntu": {"install_system": "libreoffice"},
-        "arch": {"install_system": "libreoffice-fresh"},
-        "debian": {"install_system": "libreoffice"},
-        "fedora": {"install_system": "libreoffice"}
-    },
-    "fedora-ungoogled-chromium": {
-        "fedora": {
-            "install_command": "sudo dnf -y copr enable wojnilowicz/ungoogled-chromium"
-        },
-        "debian": {"install_command": "exit 1"},
-        "ubuntu": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "apt-ungoogled-chromium": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Debian_Sid/ /' | sudo tee /etc/apt/sources.list.d/home:ungoogled_chromium.list\ncurl -fsSL https://download.opensuse.org/repositories/home:ungoogled_chromium/Debian_Sid/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_ungoogled_chromium.gpg > /dev/null\nsudo apt -y update"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Ubuntu_Jammy/ /' | sudo tee /etc/apt/sources.list.d/home:ungoogled_chromium.list\ncurl -fsSL https://download.opensuse.org/repositories/home:ungoogled_chromium/Ubuntu_Jammy/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_ungoogled_chromium.gpg > /dev/null\nsudo apt -y update"
-        },
-        "fedora": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "google-chrome": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
-        },
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
-        },
-        "arch": {"install_system": "google-chrome"},
-        "fedora": {
-            "dependencies": ["fedora-google-chrome"],
-            "install_system": "google-chrome"
-        }
-    },
-    "stremio": {
-        "ubuntu": {"install_system": "com.stremio.Stremio", "flatpak": true},
-        "debian": {"install_system": "com.stremio.Stremio", "flatpak": true},
-        "arch": {"install_system": "stremio"},
-        "fedora": {"install_system": "com.stremio.Stremio", "flatpak": true}
-    },
-    "telegram": {
-        "ubuntu": {"install_system": "org.telegram.desktop", "flatpak": true},
-        "debian": {"install_system": "org.telegram.desktop", "flatpak": true},
-        "arch": {"install_system": "telegram-desktop"},
-        "fedora": {"dependencies": ["rpmfusion"], "install_system": "telegram-desktop"}
-    },
-    "blender": {
-        "debian": {"install_system": "blender"},
-        "ubuntu": {"install_system": "blender"},
-        "fedora": {"install_system": "blender"},
-        "arch": {"install_system": "blender"}
-    },
-    "fedora-wezterm": {
-        "fedora": {
-            "install_command": "sudo dnf -y copr enable wezfurlong/wezterm-nightly"
-        },
-        "debian": {"install_command": "exit 1"},
-        "ubuntu": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "uv": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "skip_if_exists": "$HOME/.local/bin/uv"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "skip_if_exists": "$HOME/.local/bin/uv"
-        },
-        "fedora": {
-            "dependencies": ["curl"],
-            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "skip_if_exists": "$HOME/.local/bin/uv"
-        },
-        "arch": {
-            "dependencies": ["curl"],
-            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "skip_if_exists": "$HOME/.local/bin/uv"
-        }
-    },
-    "lutris": {
-        "ubuntu": {"install_system": "net.lutris.Lutris", "flatpak": true},
-        "arch": {"install_system": "lutris"},
-        "debian": {"install_system": "net.lutris.Lutris", "flatpak": true},
-        "fedora": {"install_system": "lutris"}
-    },
-    "ffmpeg": {
-        "debian": {"install_system": "ffmpeg"},
-        "ubuntu": {"install_system": "ffmpeg"},
-        "fedora": {"install_system": "ffmpeg"},
-        "arch": {"install_system": "ffmpeg"}
-    },
-    "ruff": {
-        "debian": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        },
-        "ubuntu": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        },
-        "fedora": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        },
-        "arch": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        }
-    },
-    "helix": {
-        "ubuntu": {"install_system": "helix", "snap": "classic"},
-        "arch": {"install_system": "helix"},
-        "debian": {"install_system": "com.helix_editor.Helix", "flatpak": true},
-        "fedora": {"install_system": "helix"}
     },
     "fedora-zen-browser": {
         "fedora": {"install_command": "sudo dnf -y copr enable sneexy/zen-browser"},
@@ -455,187 +504,47 @@
         "debian": {"install_command": "exit 1"},
         "arch": {"install_command": "exit 1"}
     },
-    "fedora-ghostty": {
-        "fedora": {"install_command": "sudo dnf -y copr enable scottames/ghostty"},
-        "debian": {"install_command": "exit 1"},
-        "ubuntu": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
+    "wezterm": {
+        "debian": {"dependencies": ["apt-wezterm"], "install_system": "wezterm"},
+        "ubuntu": {"dependencies": ["apt-wezterm"], "install_system": "wezterm"},
+        "arch": {"install_system": "wezterm"},
+        "fedora": {"dependencies": ["fedora-wezterm"], "install_system": "wezterm"}
     },
-    "flameshot": {
-        "debian": {"install_system": "flameshot"},
-        "ubuntu": {"install_system": "flameshot"},
-        "fedora": {"install_system": "flameshot"},
-        "arch": {"install_system": "flameshot"}
-    },
-    "audacity": {
-        "debian": {"install_system": "audacity"},
-        "ubuntu": {"install_system": "audacity"},
-        "fedora": {"install_system": "audacity"},
-        "arch": {"install_system": "audacity"}
-    },
-    "brave": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
-        },
+    "discord": {
         "ubuntu": {
             "dependencies": ["curl"],
-            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
-        },
-        "fedora": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
-        },
-        "arch": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
-        }
-    },
-    "soundconverter": {
-        "debian": {"install_system": "soundconverter"},
-        "ubuntu": {"install_system": "soundconverter"},
-        "fedora": {"install_system": "soundconverter"},
-        "arch": {"install_system": "soundconverter"}
-    },
-    "ungoogled-chromium": {
-        "arch": {"install_system": "ungoogled-chromium-bin"},
-        "debian": {
-            "dependencies": ["apt-ungoogled-chromium"],
-            "install_system": "ungoogled-chromium"
-        },
-        "ubuntu": {
-            "dependencies": ["apt-ungoogled-chromium"],
-            "install_system": "ungoogled-chromium"
-        },
-        "fedora": {
-            "dependencies": ["fedora-ungoogled-chromium"],
-            "install_system": "ungoogled-chromium"
-        }
-    },
-    "fedora-vscode": {
-        "fedora": {
-            "install_command": "sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\necho -e \"[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null\ndnf check-update",
-            "skip_if_exists": "/etc/yum.repos.d/vscode.repo"
-        },
-        "ubuntu": {"install_command": "exit 1"},
-        "debian": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "nixite-updater": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        },
-        "fedora": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        },
-        "arch": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        }
-    },
-    "krita": {
-        "debian": {"install_system": "krita"},
-        "ubuntu": {"install_system": "krita"},
-        "fedora": {"install_system": "krita"},
-        "arch": {"install_system": "krita"}
-    },
-    "apt-wezterm": {
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg\necho 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list\nsudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg\nsudo apt update -y",
-            "skip_if_exists": "/usr/share/keyrings/wezterm-fury.gpg"
-        },
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg\necho 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list\nsudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg\nsudo apt update -y",
-            "skip_if_exists": "/usr/share/keyrings/wezterm-fury.gpg"
-        },
-        "fedora": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "proton-vpn": {
-        "ubuntu": {"install_system": "com.protonvpn.www", "flatpak": true},
-        "debian": {"install_system": "com.protonvpn.www", "flatpak": true},
-        "arch": {"install_system": "proton-vpn-gtk-app"},
-        "fedora": {"install_system": "com.protonvpn.www", "flatpak": true}
-    },
-    "rpmfusion": {
-        "fedora": {
-            "install_command": "sudo dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-        },
-        "ubuntu": {"install_command": "exit 1"},
-        "debian": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"}
-    },
-    "zoom-desktop": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
+            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
         },
         "debian": {
             "dependencies": ["curl"],
-            "install_command": "curl -L https://zoom.us/client/latest/zoom_amd64.deb -o /tmp/zoom.deb && sudo apt install -y /tmp/zoom.deb && rm /tmp/zoom.deb"
+            "install_command": "curl -L \"https://discord.com/api/download?platform=linux&format=deb\" -o /tmp/discord.deb && sudo apt install -y /tmp/discord.deb && rm /tmp/discord.deb"
         },
-        "arch": {"install_system": "zoom"},
-        "fedora": {"install_system": "https://zoom.us/client/latest/zoom_x86_64.rpm"}
-    },
-    "nicotine-plus": {
-        "ubuntu": {"install_system": "nicotine"},
-        "arch": {"install_system": "nicotine+"},
-        "debian": {"install_system": "nicotine"},
-        "fedora": {"install_system": "nicotine+"}
-    },
-    "prismlauncher": {
-        "arch": {"install_system": "prismlauncher"},
-        "debian": {
-            "install_system": "org.prismlauncher.PrismLauncher",
-            "flatpak": true
-        },
-        "ubuntu": {
-            "install_system": "org.prismlauncher.PrismLauncher",
-            "flatpak": true
-        },
-        "fedora": {"install_system": "org.prismlauncher.PrismLauncher", "flatpak": true}
-    },
-    "vscode": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
-        },
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "curl -L \"https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64\" -o /tmp/vscode.deb && sudo apt install -y /tmp/vscode.deb && rm /tmp/vscode.deb"
-        },
-        "arch": {"install_system": "visual-studio-code-bin"},
-        "fedora": {"dependencies": ["fedora-vscode"], "install_system": "code"}
-    },
-    "unzip": {
-        "debian": {"install_system": "unzip"},
-        "ubuntu": {"install_system": "unzip"},
-        "fedora": {"install_system": "unzip"},
-        "arch": {"install_system": "unzip"}
+        "arch": {"install_system": "discord"},
+        "fedora": {"dependencies": ["rpmfusion"], "install_system": "discord"}
     },
     "strawberry": {
-        "debian": {"install_system": "strawberry"},
+        "arch": {"install_system": "strawberry"},
         "ubuntu": {"install_system": "strawberry"},
         "fedora": {"install_system": "strawberry"},
-        "arch": {"install_system": "strawberry"}
+        "debian": {"install_system": "strawberry"}
     },
-    "inkscape": {
-        "debian": {"install_system": "inkscape"},
-        "ubuntu": {"install_system": "inkscape"},
-        "fedora": {"install_system": "inkscape"},
-        "arch": {"install_system": "inkscape"}
+    "easytag": {
+        "arch": {"install_system": "easytag"},
+        "ubuntu": {"install_system": "easytag"},
+        "fedora": {"install_system": "easytag"},
+        "debian": {"install_system": "easytag"}
+    },
+    "curl": {
+        "arch": {"install_system": "curl"},
+        "ubuntu": {"install_system": "curl"},
+        "fedora": {"install_system": "curl"},
+        "debian": {"install_system": "curl"}
+    },
+    "kitty": {
+        "arch": {"install_system": "kitty"},
+        "ubuntu": {"install_system": "kitty"},
+        "fedora": {"install_system": "kitty"},
+        "debian": {"install_system": "kitty"}
     },
     "retroarch": {
         "ubuntu": {"install_system": "org.libretro.RetroArch", "flatpak": true},
@@ -643,29 +552,57 @@
         "arch": {"install_system": "libretro"},
         "fedora": {"install_system": "org.libretro.RetroArch", "flatpak": true}
     },
-    "obs": {
-        "debian": {"install_system": "obs-studio"},
-        "ubuntu": {"install_system": "obs-studio"},
-        "fedora": {"install_system": "obs-studio"},
-        "arch": {"install_system": "obs-studio"}
+    "inkscape": {
+        "arch": {"install_system": "inkscape"},
+        "ubuntu": {"install_system": "inkscape"},
+        "fedora": {"install_system": "inkscape"},
+        "debian": {"install_system": "inkscape"}
     },
-    "ghostty": {
-        "arch": {"install_system": "ghostty"},
-        "fedora": {"dependencies": ["fedora-ghostty"], "install_system": "ghostty"},
-        "ubuntu": {"install_system": "ghostty", "snap": "classic"},
-        "debian": {"dependencies": ["apt-ghostty"], "install_system": "ghostty"}
+    "gimp": {
+        "arch": {"install_system": "gimp"},
+        "ubuntu": {"install_system": "gimp"},
+        "fedora": {"install_system": "gimp"},
+        "debian": {"install_system": "gimp"}
     },
-    "wezterm": {
-        "debian": {"dependencies": ["apt-wezterm"], "install_system": "wezterm"},
-        "ubuntu": {"dependencies": ["apt-wezterm"], "install_system": "wezterm"},
-        "arch": {"install_system": "wezterm"},
-        "fedora": {"dependencies": ["fedora-wezterm"], "install_system": "wezterm"}
+    "rustup": {
+        "arch": {
+            "dependencies": ["curl"],
+            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+            "skip_if_exists": "$HOME/.cargo/bin/rustup"
+        },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+            "skip_if_exists": "$HOME/.cargo/bin/rustup"
+        },
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+            "skip_if_exists": "$HOME/.cargo/bin/rustup"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+            "skip_if_exists": "$HOME/.cargo/bin/rustup"
+        }
     },
-    "thunderbird": {
-        "debian": {"install_system": "thunderbird"},
-        "ubuntu": {"install_system": "thunderbird"},
-        "fedora": {"install_system": "thunderbird"},
-        "arch": {"install_system": "thunderbird"}
+    "ffmpeg": {
+        "arch": {"install_system": "ffmpeg"},
+        "ubuntu": {"install_system": "ffmpeg"},
+        "fedora": {"install_system": "ffmpeg"},
+        "debian": {"install_system": "ffmpeg"}
+    },
+    "proton-vpn": {
+        "ubuntu": {"install_system": "com.protonvpn.www", "flatpak": true},
+        "debian": {"install_system": "com.protonvpn.www", "flatpak": true},
+        "arch": {"install_system": "proton-vpn-gtk-app"},
+        "fedora": {"install_system": "com.protonvpn.www", "flatpak": true}
+    },
+    "alacritty": {
+        "arch": {"install_system": "alacritty"},
+        "ubuntu": {"install_system": "alacritty"},
+        "fedora": {"install_system": "alacritty"},
+        "debian": {"install_system": "alacritty"}
     },
     "zed": {
         "ubuntu": {
@@ -682,18 +619,81 @@
             "install_command": "curl -f https://zed.dev/install.sh | sh"
         }
     },
-    "easytag": {
-        "debian": {"install_system": "easytag"},
-        "ubuntu": {"install_system": "easytag"},
-        "fedora": {"install_system": "easytag"},
-        "arch": {"install_system": "easytag"}
-    },
-    "debian-non-free": {
+    "apt-ungoogled-chromium": {
         "debian": {
-            "install_command": "sudo sed -i '/^[^#].* main/ {\n  /non-free/! s/main/& non-free/\n}' /etc/apt/sources.list && sudo apt update -y"
+            "dependencies": ["curl"],
+            "install_command": "echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Debian_Sid/ /' | sudo tee /etc/apt/sources.list.d/home:ungoogled_chromium.list\ncurl -fsSL https://download.opensuse.org/repositories/home:ungoogled_chromium/Debian_Sid/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_ungoogled_chromium.gpg > /dev/null\nsudo apt -y update"
         },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Ubuntu_Jammy/ /' | sudo tee /etc/apt/sources.list.d/home:ungoogled_chromium.list\ncurl -fsSL https://download.opensuse.org/repositories/home:ungoogled_chromium/Ubuntu_Jammy/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_ungoogled_chromium.gpg > /dev/null\nsudo apt -y update"
+        },
+        "fedora": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "localsend": {
+        "debian": {"install_system": "org.localsend.localsend_app", "flatpak": true},
+        "fedora": {"install_system": "org.localsend.localsend_app", "flatpak": true},
+        "ubuntu": {"install_system": "localsend", "snap": true},
+        "arch": {"install_system": "localsend-bin"}
+    },
+    "arduino-ide": {
+        "arch": {"install_system": "cc.arduino.IDE2", "flatpak": true},
+        "ubuntu": {"install_system": "cc.arduino.IDE2", "flatpak": true},
+        "fedora": {"install_system": "cc.arduino.IDE2", "flatpak": true},
+        "debian": {"install_system": "cc.arduino.IDE2", "flatpak": true}
+    },
+    "google-chrome": {
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
+        },
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o /tmp/google-chrome.deb && sudo apt install -y /tmp/google-chrome.deb && rm /tmp/google-chrome.deb"
+        },
+        "arch": {"install_system": "google-chrome"},
+        "fedora": {
+            "dependencies": ["fedora-google-chrome"],
+            "install_system": "google-chrome-stable"
+        }
+    },
+    "fedora-chezmoi": {
+        "fedora": {"install_command": "sudo dnf -y copr enable lihaohong/chezmoi"},
         "ubuntu": {"install_command": "exit 1"},
-        "arch": {"install_command": "exit 1"},
-        "fedora": {"install_command": "exit 1"}
+        "debian": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "apt-wezterm": {
+        "debian": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg\necho 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list\nsudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg\nsudo apt update -y",
+            "skip_if_exists": "/usr/share/keyrings/wezterm-fury.gpg"
+        },
+        "ubuntu": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg\necho 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list\nsudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg\nsudo apt update -y",
+            "skip_if_exists": "/usr/share/keyrings/wezterm-fury.gpg"
+        },
+        "fedora": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "soundconverter": {
+        "arch": {"install_system": "soundconverter"},
+        "ubuntu": {"install_system": "soundconverter"},
+        "fedora": {"install_system": "soundconverter"},
+        "debian": {"install_system": "soundconverter"}
+    },
+    "fedora-ghostty": {
+        "fedora": {"install_command": "sudo dnf -y copr enable scottames/ghostty"},
+        "debian": {"install_command": "exit 1"},
+        "ubuntu": {"install_command": "exit 1"},
+        "arch": {"install_command": "exit 1"}
+    },
+    "obs": {
+        "arch": {"install_system": "obs-studio"},
+        "ubuntu": {"install_system": "obs-studio"},
+        "fedora": {"install_system": "obs-studio"},
+        "debian": {"install_system": "obs-studio"}
     }
 }
