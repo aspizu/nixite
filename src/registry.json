@@ -12,12 +12,7 @@
         "arch": {"install_system": "vesktop"}
     },
     "uv": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
-            "skip_if_exists": "$HOME/.local/bin/uv"
-        },
-        "fedora": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
@@ -27,7 +22,12 @@
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
         },
-        "arch": {
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+            "skip_if_exists": "$HOME/.local/bin/uv"
+        },
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -LsSf https://astral.sh/uv/install.sh | sh",
             "skip_if_exists": "$HOME/.local/bin/uv"
@@ -40,16 +40,16 @@
         "fedora": {"dependencies": ["rpmfusion"], "install_system": "telegram-desktop"}
     },
     "thunderbird": {
-        "ubuntu": {"install_system": "thunderbird"},
-        "fedora": {"install_system": "thunderbird"},
+        "arch": {"install_system": "thunderbird"},
         "debian": {"install_system": "thunderbird"},
-        "arch": {"install_system": "thunderbird"}
+        "fedora": {"install_system": "thunderbird"},
+        "ubuntu": {"install_system": "thunderbird"}
     },
     "fedora-workstation-repositories": {
-        "ubuntu": {"install_system": "fedora-workstation-repositories"},
-        "fedora": {"install_system": "fedora-workstation-repositories"},
+        "arch": {"install_system": "fedora-workstation-repositories"},
         "debian": {"install_system": "fedora-workstation-repositories"},
-        "arch": {"install_system": "fedora-workstation-repositories"}
+        "fedora": {"install_system": "fedora-workstation-repositories"},
+        "ubuntu": {"install_system": "fedora-workstation-repositories"}
     },
     "fedora-vscode": {
         "fedora": {
@@ -61,10 +61,10 @@
         "arch": {"install_command": "exit 1"}
     },
     "krita": {
-        "ubuntu": {"install_system": "krita"},
-        "fedora": {"install_system": "krita"},
+        "arch": {"install_system": "krita"},
         "debian": {"install_system": "krita"},
-        "arch": {"install_system": "krita"}
+        "fedora": {"install_system": "krita"},
+        "ubuntu": {"install_system": "krita"}
     },
     "slack": {
         "debian": {"install_system": "com.slack.Slack", "flatpak": true},
@@ -108,10 +108,10 @@
         "arch": {"install_command": "exit 1"}
     },
     "blender": {
-        "ubuntu": {"install_system": "blender"},
-        "fedora": {"install_system": "blender"},
+        "arch": {"install_system": "blender"},
         "debian": {"install_system": "blender"},
-        "arch": {"install_system": "blender"}
+        "fedora": {"install_system": "blender"},
+        "ubuntu": {"install_system": "blender"}
     },
     "arch-multilib": {
         "arch": {
@@ -122,10 +122,10 @@
         "fedora": {"install_command": "exit 1"}
     },
     "vlc": {
-        "ubuntu": {"install_system": "vlc"},
-        "fedora": {"install_system": "vlc"},
+        "arch": {"install_system": "vlc"},
         "debian": {"install_system": "vlc"},
-        "arch": {"install_system": "vlc"}
+        "fedora": {"install_system": "vlc"},
+        "ubuntu": {"install_system": "vlc"}
     },
     "ghostty": {
         "arch": {"install_system": "ghostty"},
@@ -134,16 +134,16 @@
         "debian": {"dependencies": ["apt-ghostty"], "install_system": "ghostty"}
     },
     "kdenlive": {
-        "ubuntu": {"install_system": "kdenlive"},
-        "fedora": {"install_system": "kdenlive"},
+        "arch": {"install_system": "kdenlive"},
         "debian": {"install_system": "kdenlive"},
-        "arch": {"install_system": "kdenlive"}
+        "fedora": {"install_system": "kdenlive"},
+        "ubuntu": {"install_system": "kdenlive"}
     },
     "git": {
-        "ubuntu": {"install_system": "git"},
-        "fedora": {"install_system": "git"},
+        "arch": {"install_system": "git"},
         "debian": {"install_system": "git"},
-        "arch": {"install_system": "git"}
+        "fedora": {"install_system": "git"},
+        "ubuntu": {"install_system": "git"}
     },
     "debian-contrib": {
         "debian": {
@@ -154,10 +154,10 @@
         "fedora": {"install_command": "exit 1"}
     },
     "gnome-boxes": {
-        "ubuntu": {"install_system": "gnome-boxes"},
-        "fedora": {"install_system": "gnome-boxes"},
+        "arch": {"install_system": "gnome-boxes"},
         "debian": {"install_system": "gnome-boxes"},
-        "arch": {"install_system": "gnome-boxes"}
+        "fedora": {"install_system": "gnome-boxes"},
+        "ubuntu": {"install_system": "gnome-boxes"}
     },
     "firefox": {
         "debian": {"install_system": "firefox-esr"},
@@ -166,46 +166,19 @@
         "fedora": {"install_system": "firefox"}
     },
     "flameshot": {
-        "ubuntu": {"install_system": "flameshot"},
-        "fedora": {"install_system": "flameshot"},
+        "arch": {"install_system": "flameshot"},
         "debian": {"install_system": "flameshot"},
-        "arch": {"install_system": "flameshot"}
+        "fedora": {"install_system": "flameshot"},
+        "ubuntu": {"install_system": "flameshot"}
     },
     "audacity": {
-        "ubuntu": {"install_system": "audacity"},
-        "fedora": {"install_system": "audacity"},
+        "arch": {"install_system": "audacity"},
         "debian": {"install_system": "audacity"},
-        "arch": {"install_system": "audacity"}
-    },
-    "nixite-updater": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        },
-        "fedora": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        },
-        "debian": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        },
-        "arch": {
-            "dependencies": ["curl"],
-            "install_command": "sudo curl -L https://raw.githubusercontent.com/aspizu/nixite/refs/heads/main/nixite-updater.sh -o /usr/local/bin/nixite-updater && sudo chmod +x /usr/local/bin/nixite-updater",
-            "skip_if_exists": "/usr/local/bin/nixite-updater"
-        }
+        "fedora": {"install_system": "audacity"},
+        "ubuntu": {"install_system": "audacity"}
     },
     "goboscript": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
-            "skip_if_exists": "$HOME/.cargo/bin/goboscript"
-        },
-        "fedora": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
@@ -215,7 +188,12 @@
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
         },
-        "arch": {
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
+            "skip_if_exists": "$HOME/.cargo/bin/goboscript"
+        },
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -fsSL https://raw.githubusercontent.com/aspizu/goboscript/refs/heads/main/install.sh | sh",
             "skip_if_exists": "$HOME/.cargo/bin/goboscript"
@@ -246,17 +224,13 @@
         "fedora": {"install_command": "echo \"Notion is not available on Fedora.\""}
     },
     "sober": {
-        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "fedora": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
         "debian": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
-        "arch": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
+        "fedora": {"install_system": "org.vinegarhq.Sober", "flatpak": true},
+        "ubuntu": {"install_system": "org.vinegarhq.Sober", "flatpak": true}
     },
     "brave": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
-        },
-        "fedora": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         },
@@ -264,7 +238,11 @@
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         },
-        "arch": {
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
+        },
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl -fsS https://dl.brave.com/install.sh | sh"
         }
@@ -307,12 +285,7 @@
         }
     },
     "ruff": {
-        "ubuntu": {
-            "dependencies": ["uv"],
-            "install_command": "$HOME/.local/bin/uv tool install ruff",
-            "skip_if_exists": "$HOME/.local/bin/ruff"
-        },
-        "fedora": {
+        "arch": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
@@ -322,19 +295,19 @@
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
         },
-        "arch": {
+        "fedora": {
+            "dependencies": ["uv"],
+            "install_command": "$HOME/.local/bin/uv tool install ruff",
+            "skip_if_exists": "$HOME/.local/bin/ruff"
+        },
+        "ubuntu": {
             "dependencies": ["uv"],
             "install_command": "$HOME/.local/bin/uv tool install ruff",
             "skip_if_exists": "$HOME/.local/bin/ruff"
         }
     },
     "bun": {
-        "ubuntu": {
-            "dependencies": ["curl", "unzip"],
-            "install_command": "curl -fsSL https://bun.com/install | bash",
-            "skip_if_exists": "$HOME/.bun/bin/bun"
-        },
-        "fedora": {
+        "arch": {
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
@@ -344,7 +317,12 @@
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
         },
-        "arch": {
+        "fedora": {
+            "dependencies": ["curl", "unzip"],
+            "install_command": "curl -fsSL https://bun.com/install | bash",
+            "skip_if_exists": "$HOME/.bun/bin/bun"
+        },
+        "ubuntu": {
             "dependencies": ["curl", "unzip"],
             "install_command": "curl -fsSL https://bun.com/install | bash",
             "skip_if_exists": "$HOME/.bun/bin/bun"
@@ -360,10 +338,10 @@
         "arch": {"install_command": "exit 1"}
     },
     "zsync": {
-        "ubuntu": {"install_system": "zsync"},
-        "fedora": {"install_system": "zsync"},
+        "arch": {"install_system": "zsync"},
         "debian": {"install_system": "zsync"},
-        "arch": {"install_system": "zsync"}
+        "fedora": {"install_system": "zsync"},
+        "ubuntu": {"install_system": "zsync"}
     },
     "chezmoi": {
         "ubuntu": {"install_system": "chezmoi", "snap": "classic"},
@@ -397,10 +375,10 @@
         }
     },
     "transmission": {
-        "ubuntu": {"install_system": "transmission-gtk"},
-        "fedora": {"install_system": "transmission-gtk"},
+        "arch": {"install_system": "transmission-gtk"},
         "debian": {"install_system": "transmission-gtk"},
-        "arch": {"install_system": "transmission-gtk"}
+        "fedora": {"install_system": "transmission-gtk"},
+        "ubuntu": {"install_system": "transmission-gtk"}
     },
     "fedora-wezterm": {
         "fedora": {
@@ -417,10 +395,10 @@
         "fedora": {"dependencies": ["rpmfusion"], "install_system": "steam"}
     },
     "unzip": {
-        "ubuntu": {"install_system": "unzip"},
-        "fedora": {"install_system": "unzip"},
+        "arch": {"install_system": "unzip"},
         "debian": {"install_system": "unzip"},
-        "arch": {"install_system": "unzip"}
+        "fedora": {"install_system": "unzip"},
+        "ubuntu": {"install_system": "unzip"}
     },
     "zoom-desktop": {
         "ubuntu": {
@@ -485,10 +463,10 @@
         "fedora": {"install_command": "exit 1"}
     },
     "heroicgameslauncher": {
-        "ubuntu": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
-        "fedora": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
+        "arch": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
         "debian": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
-        "arch": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true}
+        "fedora": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true},
+        "ubuntu": {"install_system": "com.heroicgameslauncher.hgl", "flatpak": true}
     },
     "debian-non-free": {
         "debian": {
@@ -523,28 +501,28 @@
         "fedora": {"dependencies": ["rpmfusion"], "install_system": "discord"}
     },
     "strawberry": {
-        "ubuntu": {"install_system": "strawberry"},
-        "fedora": {"install_system": "strawberry"},
+        "arch": {"install_system": "strawberry"},
         "debian": {"install_system": "strawberry"},
-        "arch": {"install_system": "strawberry"}
+        "fedora": {"install_system": "strawberry"},
+        "ubuntu": {"install_system": "strawberry"}
     },
     "easytag": {
-        "ubuntu": {"install_system": "easytag"},
-        "fedora": {"install_system": "easytag"},
+        "arch": {"install_system": "easytag"},
         "debian": {"install_system": "easytag"},
-        "arch": {"install_system": "easytag"}
+        "fedora": {"install_system": "easytag"},
+        "ubuntu": {"install_system": "easytag"}
     },
     "curl": {
-        "ubuntu": {"install_system": "curl"},
-        "fedora": {"install_system": "curl"},
+        "arch": {"install_system": "curl"},
         "debian": {"install_system": "curl"},
-        "arch": {"install_system": "curl"}
+        "fedora": {"install_system": "curl"},
+        "ubuntu": {"install_system": "curl"}
     },
     "kitty": {
-        "ubuntu": {"install_system": "kitty"},
-        "fedora": {"install_system": "kitty"},
+        "arch": {"install_system": "kitty"},
         "debian": {"install_system": "kitty"},
-        "arch": {"install_system": "kitty"}
+        "fedora": {"install_system": "kitty"},
+        "ubuntu": {"install_system": "kitty"}
     },
     "retroarch": {
         "ubuntu": {"install_system": "org.libretro.RetroArch", "flatpak": true},
@@ -553,24 +531,19 @@
         "fedora": {"install_system": "org.libretro.RetroArch", "flatpak": true}
     },
     "inkscape": {
-        "ubuntu": {"install_system": "inkscape"},
-        "fedora": {"install_system": "inkscape"},
+        "arch": {"install_system": "inkscape"},
         "debian": {"install_system": "inkscape"},
-        "arch": {"install_system": "inkscape"}
+        "fedora": {"install_system": "inkscape"},
+        "ubuntu": {"install_system": "inkscape"}
     },
     "gimp": {
-        "ubuntu": {"install_system": "gimp"},
-        "fedora": {"install_system": "gimp"},
+        "arch": {"install_system": "gimp"},
         "debian": {"install_system": "gimp"},
-        "arch": {"install_system": "gimp"}
+        "fedora": {"install_system": "gimp"},
+        "ubuntu": {"install_system": "gimp"}
     },
     "rustup": {
-        "ubuntu": {
-            "dependencies": ["curl"],
-            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
-            "skip_if_exists": "$HOME/.cargo/bin/rustup"
-        },
-        "fedora": {
+        "arch": {
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
@@ -580,17 +553,22 @@
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         },
-        "arch": {
+        "fedora": {
+            "dependencies": ["curl"],
+            "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+            "skip_if_exists": "$HOME/.cargo/bin/rustup"
+        },
+        "ubuntu": {
             "dependencies": ["curl"],
             "install_command": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
             "skip_if_exists": "$HOME/.cargo/bin/rustup"
         }
     },
     "ffmpeg": {
-        "ubuntu": {"install_system": "ffmpeg"},
-        "fedora": {"install_system": "ffmpeg"},
+        "arch": {"install_system": "ffmpeg"},
         "debian": {"install_system": "ffmpeg"},
-        "arch": {"install_system": "ffmpeg"}
+        "fedora": {"install_system": "ffmpeg"},
+        "ubuntu": {"install_system": "ffmpeg"}
     },
     "proton-vpn": {
         "ubuntu": {"install_system": "com.protonvpn.www", "flatpak": true},
@@ -599,10 +577,10 @@
         "fedora": {"install_system": "com.protonvpn.www", "flatpak": true}
     },
     "alacritty": {
-        "ubuntu": {"install_system": "alacritty"},
-        "fedora": {"install_system": "alacritty"},
+        "arch": {"install_system": "alacritty"},
         "debian": {"install_system": "alacritty"},
-        "arch": {"install_system": "alacritty"}
+        "fedora": {"install_system": "alacritty"},
+        "ubuntu": {"install_system": "alacritty"}
     },
     "zed": {
         "ubuntu": {
@@ -638,10 +616,10 @@
         "arch": {"install_system": "localsend-bin"}
     },
     "arduino-ide": {
-        "ubuntu": {"install_system": "cc.arduino.IDE2", "flatpak": true},
-        "fedora": {"install_system": "cc.arduino.IDE2", "flatpak": true},
+        "arch": {"install_system": "cc.arduino.IDE2", "flatpak": true},
         "debian": {"install_system": "cc.arduino.IDE2", "flatpak": true},
-        "arch": {"install_system": "cc.arduino.IDE2", "flatpak": true}
+        "fedora": {"install_system": "cc.arduino.IDE2", "flatpak": true},
+        "ubuntu": {"install_system": "cc.arduino.IDE2", "flatpak": true}
     },
     "google-chrome": {
         "ubuntu": {
@@ -679,10 +657,10 @@
         "arch": {"install_command": "exit 1"}
     },
     "soundconverter": {
-        "ubuntu": {"install_system": "soundconverter"},
-        "fedora": {"install_system": "soundconverter"},
+        "arch": {"install_system": "soundconverter"},
         "debian": {"install_system": "soundconverter"},
-        "arch": {"install_system": "soundconverter"}
+        "fedora": {"install_system": "soundconverter"},
+        "ubuntu": {"install_system": "soundconverter"}
     },
     "fedora-ghostty": {
         "fedora": {"install_command": "sudo dnf -y copr enable scottames/ghostty"},
@@ -691,9 +669,9 @@
         "arch": {"install_command": "exit 1"}
     },
     "obs": {
-        "ubuntu": {"install_system": "obs-studio"},
-        "fedora": {"install_system": "obs-studio"},
+        "arch": {"install_system": "obs-studio"},
         "debian": {"install_system": "obs-studio"},
-        "arch": {"install_system": "obs-studio"}
+        "fedora": {"install_system": "obs-studio"},
+        "ubuntu": {"install_system": "obs-studio"}
     }
 }

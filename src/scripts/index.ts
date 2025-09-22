@@ -47,7 +47,7 @@ distroSelect.oninput = () => {
 }
 
 function onInstallClick() {
-    const selection: string[] = ["nixite-updater"]
+    const selection: string[] = []
     document.querySelectorAll(".pkg-checkbox").forEach((checkbox_) => {
         const checkbox = checkbox_ as HTMLInputElement
         if (checkbox.checked) {
