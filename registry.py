@@ -44,10 +44,10 @@ hooks = {}
 for hooks_path in registry_path.glob("@*.sh"):
     hooks[hooks_path.stem.removeprefix("@")] = hooks_path.read_text()
 
-with open("public/hooks.json", "w") as hooks_file:
+with open("src/hooks.json", "w") as hooks_file:
     json.dump(hooks, hooks_file)
 
-with open("public/registry.json", "w") as registry_file:
+with open("src/registry.json", "w") as registry_file:
     json.dump(registry, registry_file)
 
 

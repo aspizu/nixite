@@ -43,7 +43,7 @@ Use `search_pkgs.py` to find package names on various Linux distro repositories.
 Install Papirus icon theme and run:
 
 ```shell
-python registry.py && prettier -uwu public/*.json
+python registry.py && prettier -uwu src/*.json
 ```
 
 `flatpak = true` to install using flatpak, `install_system` should be the flathub package name.

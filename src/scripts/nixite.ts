@@ -1,5 +1,5 @@
-import hooks_ from "../../public/hooks.json"
-import registry_ from "../../public/registry.json"
+import hooks_ from "../hooks.json"
+import registry_ from "../registry.json"
 
 interface Pkg {
     dependencies?: string[]
