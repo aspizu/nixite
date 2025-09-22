@@ -1,13 +1,26 @@
 #!/usr/bin/env bash
 set -e
 
-printf "\e[0;30m"
-echo '        .__         .__   __            '
-echo '  ____  |__|___  ___|__|_/  |_   ____   '
-echo ' /    \ |  |\  \/  /|  |\   __\_/ __ \  '
-echo '|   |  \|  | >    < |  | |  |  \  ___/  '
-echo '|__|  /|__|/__/\_ \|__| |__|   \___  >  '
-echo '    \/           \/                \/   '
-printf "\e[1;34mSit back while we install your linux software.\n"
-printf "\e[1;0mReport bugs to https://github.com/aspizu/nixite/issues\n"
-printf "\e[0;0m\n"
+# Colors
+BLACK="\e[0;30m"
+BLUE="\e[1;34m"
+CYAN="\e[36m"
+RESET="\e[0m"
+UNDERLINE="\e[4m"
+NO_UNDERLINE="\e[24m"
+
+# ASCII art
+echo -e "${BLACK}"
+cat <<'EOF'
+                .__         .__   __
+        ____  |__|___  ___|__|_/  |_   ____
+        /    \ |  |\  \/  /|  |\   __\_/ __ \
+        |   |  \|  | >    < |  | |  |  \  ___/
+        |__|  /|__|/__/\_ \|__| |__|   \___  >
+            \/           \/                \/
+EOF
+
+# Messages
+echo -e "${BLUE}    Sit back while we install your linux software"
+echo -e "${RESET}Report bugs to ${CYAN}${UNDERLINE}https://github.com/aspizu/nixite/issues${NO_UNDERLINE}${RESET}"
+echo
