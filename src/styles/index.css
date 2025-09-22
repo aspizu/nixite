@@ -4,4 +4,8 @@
     :root {
         color-scheme: dark;
     }
+
+    option {
+        background-color: black;
+    }
 }
