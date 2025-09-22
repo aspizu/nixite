@@ -1,0 +1,14 @@
+[debian]
+dependencies = ["apt-vscodium"]
+install_system = "codium"
+
+[ubuntu]
+dependencies = ["apt-vscodium"]
+install_system = "codium"
+
+[fedora]
+dependencies = ["fedora-vscodium"]
+install_system = "codium"
+
+[arch]
+install_system = "vscodium-bin"

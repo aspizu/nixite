@@ -1,0 +1,11 @@
+[debian]
+install_command = "wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg\necho -e 'Types: deb\\nURIs: https://download.vscodium.com/debs\\nSuites: vscodium\\nComponents: main\\nArchitectures: amd64 arm64\\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' | sudo tee /etc/apt/sources.list.d/vscodium.sources\nsudo apt update -y"
+
+[ubuntu]
+install_command = "wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg\necho -e 'Types: deb\\nURIs: https://download.vscodium.com/debs\\nSuites: vscodium\\nComponents: main\\nArchitectures: amd64 arm64\\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' | sudo tee /etc/apt/sources.list.d/vscodium.sources\nsudo apt update -y"
+
+[fedora]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"
