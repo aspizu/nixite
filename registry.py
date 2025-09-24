@@ -17,6 +17,7 @@ icon_names = {
     "localsend": "localsend_app",
     "heroicgameslauncher": "com.heroicgameslauncher.hgl",
     "ungoogled-chromium": "com.github.Eloston.UngoogledChromium",
+    "ptyxis": "org.gnome.Ptyxis",
 }
 
 

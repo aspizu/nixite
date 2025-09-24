@@ -1,0 +1,13 @@
+[debian]
+install_system = "app.devsuite.Ptyxis"
+flatpak = true
+
+[ubuntu]
+install_system = "app.devsuite.Ptyxis"
+flatpak = true
+
+[fedora]
+install_system = "ptyxis"
+
+[arch]
+install_system = "ptyxis"
