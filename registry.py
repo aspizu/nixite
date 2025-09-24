@@ -9,15 +9,11 @@ distros = {"ubuntu", "debian", "fedora", "arch"}
 
 
 icon_names = {
-    "proton-vpn": "proton-vpn-logo",
-    "alacritty": "Alacritty",
-    "wezterm": "org.wezfurlong.wezterm",
-    "ghostty": "com.mitchellh.ghostty",
-    "prismlauncher": "org.prismlauncher.PrismLauncher",
-    "localsend": "localsend_app",
-    "heroicgameslauncher": "com.heroicgameslauncher.hgl",
-    "ungoogled-chromium": "com.github.Eloston.UngoogledChromium",
-    "ptyxis": "org.gnome.Ptyxis",
+    i[0].strip(): i[1].strip()
+    for i in (
+        i.split(":", maxsplit=1)
+        for i in Path("registry/_icons.yml").read_text().splitlines()
+    )
 }
 
 
