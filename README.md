@@ -20,6 +20,13 @@ Inspired by [**Ninite**](https://Ninite.com/), [**PackagePicker.co**](https://Pa
 - Fedora Workstation
 - Arch Linux
 
+## Why not just use \<GNOME Software / Discover / …>?
+
+On Linux distributions such as Debian or Ubuntu, installing third-party (often proprietary) software isn’t always straightforward. It typically requires several manual steps, such as adding official repositories to your `sources.list`, importing GPG keys, and configuring updates. In other words, you can’t always just run `sudo apt install google-chrome`.
+
+In addition, many development toolchains deliberately avoid system package managers and instead provide their own installation methods. For example, Rust is best installed using `rustup`, which not only manages the compiler itself but also keeps toolchains and dependencies up to date. These custom installers are generally more reliable for keeping third-party software current than relying on distribution-provided packages.
+
+
 ## Contributing
 
 To add a new package, create a file `app_name.toml` inside `registry/`
