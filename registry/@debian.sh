@@ -1,4 +1,5 @@
 export DEBIAN_FRONTEND=noninteractive
+sudo apt update
 
 install_system() {
     sudo apt install -y "$@"
