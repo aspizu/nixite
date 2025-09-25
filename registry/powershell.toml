@@ -1,0 +1,11 @@
+[debian]
+install_command = "wget -q https://packages.microsoft.com/config/debian/$VERSION_ID/packages-microsoft-prod.deb\nsudo apt -y install ./packages-microsoft-prod.deb\nrm -f ./packages-microsoft-prod.deb\nsudo apt update -y\nsudo apt install -y powershell"
+
+[ubuntu]
+install_command = "wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb\nsudo apt install -y ./packages-microsoft-prod.deb\nrm -f packages-microsoft-prod.deb\nsudo apt update -y\nsudo apt install -y powershell"
+
+[fedora]
+install_system = "https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-1.rh.x86_64.rpm"
+
+[arch]
+install_system = "powershell-bin"

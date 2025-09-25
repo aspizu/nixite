@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   fill="none"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="starship.svg"
+   width="24"
+   height="24"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="16.056062"
+     inkscape:cx="2.3667074"
+     inkscape:cy="21.05124"
+     inkscape:window-width="1728"
+     inkscape:window-height="911"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <mask
+     id="a"
+     width="2854"
+     height="2854"
+     x="0"
+     y="0"
+     maskUnits="userSpaceOnUse">
+    <circle
+       cx="1427"
+       cy="1427"
+       r="1427"
+       fill="#c4c4c4"
+       id="circle1" />
+  </mask>
+  <g
+     mask="url(#a)"
+     id="g3"
+     transform="matrix(0.00700771,0,0,0.00700771,1.9999978,1.9999978)">
+    <path
+       fill="url(#b)"
+       d="M 3351,-313 H -498 v 3480.04 h 3849 z"
+       id="path1"
+       style="fill:url(#b)" />
+    <path
+       fill="#ffffff"
+       fill-rule="evenodd"
+       d="M 543,785.6 C 681.837,812.501 760.616,894.738 784.537,1027.2 782.075,889.999 863.687,810.132 1026.07,785.6 879.712,770.128 801.909,686.776 784.537,544 767.723,681.851 692.939,767.666 543,785.6 Z m 1227.54,1028.55 -52.67,140.51 -432.48,-126.28 43.73,-150.69 -330.462,-131.2 C 1104.01,1417.75 1209.36,1354.52 1372.84,1274.26 1358.26,1021.52 1562.3,840.443 1805.31,662 c 193.15,237.105 278.66,447.51 146.61,742.75 109.39,118.55 156.28,308.94 154.52,486.86 z m 75.18,-670.18 c 0,69.45 -56.29,125.76 -125.73,125.76 -69.43,0 -125.72,-56.31 -125.72,-125.76 0,-69.45 56.29,-125.75 125.72,-125.75 69.44,0 125.73,56.3 125.73,125.75 z"
+       clip-rule="evenodd"
+       id="path2" />
+    <path
+       fill="#ffffff"
+       d="m 1606.37,2246.91 c 0,0 -97.37,583.09 -511.37,731.09 L 445,2564 c 572.5,0 777.71,-442.31 777.71,-442.31 z"
+       id="path3" />
+  </g>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="b"
+       x1="112.463"
+       x2="2365.3301"
+       y1="3485.8601"
+       y2="-827.77802"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#ED0A62"
+         id="stop3" />
+      <stop
+         offset="1"
+         stop-color="#890CEA"
+         id="stop4" />
+    </linearGradient>
+  </defs>
+</svg>

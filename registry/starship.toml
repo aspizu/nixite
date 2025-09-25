@@ -1,0 +1,12 @@
+[debian]
+install_system = "starship"
+
+[ubuntu]
+install_system = "starship"
+
+[fedora]
+dependencies = ["fedora-starship"]
+install_system = "starship"
+
+[arch]
+install_system = "starship"
