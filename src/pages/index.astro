@@ -188,11 +188,36 @@ const linkStyle = 'underline decoration-2 decoration-black/50 dark:decoration-wh
         </div>
         <div class="flex flex-col px-4 border-t-neutral-200 dark:border-t-neutral-800 border-t">
             <div class="flex flex-col max-w-[1024px] p-4 gap-4 w-full mx-auto">
-                <button id="install-btn" type="button" class="font-medium bg-blue-400 text-white px-3 py-1 rounded-lg shadow-sm active:bg-blue-500 transition-colors mx-auto">GET YOUR NIXITE</button>
+                <button
+                  id="install-btn"
+                  type="button"
+                  class="flex gap-1 bg-gradient-to-b from-blue-500 to-blue-600
+                         text-white font-semibold
+                         px-5 py-2.5
+                         rounded-lg
+                         shadow-md
+                         hover:from-blue-600 hover:to-blue-700
+                         active:from-blue-700 active:to-blue-800
+                         focus:outline-none focus:ring-2 focus:ring-blue-300
+                         transition-all duration-200 ease-in-out
+                         mx-auto"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+                  GET YOUR NIXITE
+                </button>
+
                 <p class="text-center text-sm text-neutral-600 dark:text-neutral-400">
                     Download and run <Cmd value="bash ~/Downloads/nixite.sh" /> in your terminal. Some installers may prompt for a password.
                 </p>
-                <pre class="border-neutral-300 dark:border-neutral-800 rounded-sm p-1 border font-mono overflow-x-scroll w-full" id="preview"></pre>
+
+                <div class="border-neutral-300 dark:border-neutral-800 bg-white dark:bg-black rounded-lg border font-mono">
+                    <span class="flex gap-4 px-4 py-2 bg-neutral-200 dark:bg-neutral-800/50 items-center">~/Downloads/nixite.sh
+                        <div class="ml-auto size-4 rounded-full bg-green-500 dark:bg-green-400"></div>
+                        <div class="size-4 rounded-full bg-yellow-500 dark:bg-yellow-400"></div>
+                        <div class="size-4 rounded-full bg-red-500 dark:bg-red-400"></div>
+                    </span>
+                    <pre id="preview" class="p-4 overflow-x-scroll w-full"></pre>
+                </div>
             </div>
         </div>
         <script src="../scripts/index.ts"></script>
