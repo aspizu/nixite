@@ -12,3 +12,11 @@ install_flatpak() {
     fi
     flatpak install flathub -y "$@"
 }
+
+install_snap() {
+    if ! command -v snap &> /dev/null; then
+        sudo apt install snapd -y
+        sudo snap install snapd
+    fi
+    sudo snap install "$@"
+}

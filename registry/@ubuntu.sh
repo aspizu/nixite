@@ -12,3 +12,7 @@ install_flatpak() {
     fi
     flatpak install flathub -y "$@"
 }
+
+install_snap() {
+    sudo snap install "$@"
+}
