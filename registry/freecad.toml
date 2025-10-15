@@ -4,11 +4,10 @@ snap = "classic"
 
 [debian]
 install_system = "freecad"
-snap = "classic"
 
 [arch]
-install_system = "freecad"
-snap = "classic"
+install_system = "org.freecad.FreeCAD"
+flatpak = true
 
 [fedora]
 install_system = "org.freecad.FreeCAD"
