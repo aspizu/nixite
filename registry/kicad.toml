@@ -1,11 +1,14 @@
 [ubuntu]
-install_command = "sudo add-apt-repository ppa:kicad/kicad-9.0-releases && sudo apt update -y && sudo apt install kicad -y"
+dependencies = ["apt-kicad"]
+install_system = "kicad"
 
 [fedora]
-install_system = "kicad kicad-packages3d kicad-doc"
+dependencies = ["fedora-kicad"]
+install_system = "kicad"
 
 [debian]
 install_system = "kicad"
 
 [arch]
-install_command = "sudo pacman -S kicad --asdeps kicad-library kicad-library-3d --noconfirm"
+dependencies = ["arch-kicad"]
+install_system = "kicad"

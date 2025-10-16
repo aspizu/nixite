@@ -1,0 +1,11 @@
+[ubuntu]
+install_command = "sudo add-apt-repository ppa:kicad/kicad-9.0-releases && sudo apt update"
+
+[debian]
+install_command = "exit 1"
+
+[fedora]
+install_command = "exit 1"
+
+[arch]
+install_command = "exit 1"
