@@ -6,12 +6,8 @@ snap = "classic"
 install_system = "freecad"
 
 [arch]
-install_system = "org.freecad.FreeCAD"
-flatpak = true
+install_system = "freecad"
 
 [fedora]
 install_system = "org.freecad.FreeCAD"
 flatpak = true
-
-
-
