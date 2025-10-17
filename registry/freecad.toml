@@ -1,0 +1,13 @@
+[ubuntu]
+install_system = "freecad"
+snap = "classic"
+
+[debian]
+install_system = "freecad"
+
+[arch]
+install_system = "freecad"
+
+[fedora]
+install_system = "org.freecad.FreeCAD"
+flatpak = true

@@ -1,0 +1,14 @@
+[ubuntu]
+dependencies = ["apt-kicad"]
+install_system = "kicad"
+
+[fedora]
+dependencies = ["fedora-kicad"]
+install_system = "kicad"
+
+[debian]
+install_system = "kicad"
+
+[arch]
+dependencies = ["arch-kicad"]
+install_system = "kicad"
