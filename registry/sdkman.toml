@@ -1,0 +1,3 @@
+dependencies = ["curl"]
+install_command = "curl -s 'https://get.sdkman.io' | bash"
+skip_if_exists = "$HOME/.sdkman/bin/sdkman-init.sh"
